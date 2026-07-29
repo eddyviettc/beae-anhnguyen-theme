@@ -21,6 +21,7 @@
         "slide_dPUPEy": {
           "type": "slide",
           "settings": {
+            "image": "shopify://shop_images/slide-1-v2.webp",
             "background_color": "#9baa83",
             "heading": "Softness in Comfort",
             "text": "<p>New Campaign</p>",
@@ -31,6 +32,7 @@
         "slide_aLVnLb": {
           "type": "slide",
           "settings": {
+            "image": "shopify://shop_images/slide-2-v2.webp",
             "background_color": "#9baa83",
             "heading": "Softness in Comfort",
             "text": "<p>New Campaign</p>",
