@@ -1,6 +1,7 @@
 {% liquid
   assign slide_count = section.blocks.size
   assign autoplay_interval = section.settings.autoplay_interval | times: 1000
+  assign heading_font = section.settings.heading_font
 %}
 
 <section
@@ -138,6 +139,7 @@
 </section>
 
 {% style %}
+  {{ heading_font | font_face: font_display: 'swap' }}
   #shopify-section-{{ section.id }} {
     position: sticky;
     top: 0;
@@ -335,9 +337,9 @@
     max-width: 10ch;
     margin: 0;
     color: #fff;
-    font-family: var(--font-heading-family);
-    font-style: var(--font-heading-style);
-    font-weight: var(--font-heading-weight);
+    font-family: 'Bricolage Grotesque', var(--font-heading-family);
+    font-style: normal;
+    font-weight: 600;
     font-size: clamp(5.2rem, 4.6vw, 9.6rem);
     line-height: .98;
     letter-spacing: -.055em;
@@ -373,20 +375,47 @@
     padding: .8rem .8rem .8rem 2.8rem;
     color: #111;
     background: #fff;
+    border: 0;
     border-radius: 999px;
-    font-family: var(--font-body-family);
+    font-family: 'Bricolage Grotesque', var(--font-body-family);
     font-size: 1.6rem;
     font-weight: 600;
     line-height: 1;
     text-decoration: none;
-    transition: transform 220ms ease, background-color 220ms ease;
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    transition: color 420ms cubic-bezier(.22, .61, .36, 1);
+  }
+
+  #LuxuryHero-{{ section.id }} .luxury-hero__button::before {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 6rem;
+    content: '';
+    background: #111;
+    border-radius: inherit;
+    transition: width 420ms cubic-bezier(.22, .61, .36, 1);
+  }
+
+  #LuxuryHero-{{ section.id }} .luxury-hero__button > span {
+    position: relative;
+    z-index: 1;
+  }
+
+  #LuxuryHero-{{ section.id }} .luxury-hero__button:hover::before,
+  #LuxuryHero-{{ section.id }} .luxury-hero__button:focus-visible::before {
+    width: 100%;
   }
 
   #LuxuryHero-{{ section.id }} .luxury-hero__button:hover,
   #LuxuryHero-{{ section.id }} .luxury-hero__button:focus-visible {
-    color: #111;
-    background: #f2f2f2;
-    transform: translateY(-2px);
+    color: #fff;
+    background: #fff;
+    transform: none;
   }
 
   #LuxuryHero-{{ section.id }} .luxury-hero__button-icon {
@@ -396,7 +425,9 @@
     width: 4.4rem;
     height: 4.4rem;
     color: #fff;
-    background: #111;
+    position: relative;
+    z-index: 1;
+    background: transparent;
     border-radius: 50%;
   }
 
@@ -871,6 +902,12 @@
   "class": "section-luxury-hero-slider",
   "max_blocks": 8,
   "settings": [
+    {
+      "type": "font_picker",
+      "id": "heading_font",
+      "label": "Hero heading font",
+      "default": "bricolage_grotesque_n6"
+    },
     {
       "type": "range",
       "id": "overlay_opacity",
