@@ -88,8 +88,8 @@
               <a class="luxury-hero__button" href="{{ cta_url }}">
                 <span>{{ block.settings.button_label | escape }}</span>
                 <span class="luxury-hero__button-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" focusable="false">
-                    <path d="m9 7 5 5-5 5"></path>
+                  <svg viewBox="0 0 20 20" focusable="false">
+                    <path d="M7.5 3.75 13.75 10 7.5 16.25"></path>
                   </svg>
                 </span>
               </a>
@@ -449,7 +449,7 @@
 
   #LuxuryHero-{{ section.id }} .luxury-hero__button:hover .luxury-hero__button-icon svg,
   #LuxuryHero-{{ section.id }} .luxury-hero__button:focus-visible .luxury-hero__button-icon svg {
-    animation: luxury-hero-arrow-travel-{{ section.id }} .8s ease-in-out infinite;
+    animation: luxury-hero-arrow-travel-{{ section.id }} 1.4s ease-in-out infinite;
   }
 
   @keyframes luxury-hero-arrow-travel-{{ section.id }} {
@@ -498,8 +498,8 @@
   #LuxuryHero-{{ section.id }} .luxury-hero__progress {
     position: relative;
     display: block;
-    width: clamp(8rem, 7vw, 11rem);
-    height: 1px;
+    width: 14rem;
+    height: 2px;
     overflow: hidden;
     background: rgba(255, 255, 255, .42);
   }
@@ -521,8 +521,8 @@
   #LuxuryHero-{{ section.id }} .luxury-hero__arrow {
     display: grid;
     place-items: center;
-    width: 4.8rem;
-    height: 4.8rem;
+    width: 1.6rem;
+    height: 1.6rem;
     padding: 0;
     color: #fff;
     background: transparent;
