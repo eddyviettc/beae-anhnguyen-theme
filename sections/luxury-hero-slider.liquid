@@ -368,11 +368,11 @@
     display: inline-flex;
     align-items: center;
     justify-content: space-between;
-    gap: 2rem;
-    min-width: 20rem;
+    gap: 1rem;
+    min-width: 19rem;
     min-height: 5.2rem;
     margin-top: 2.6rem;
-    padding: .4rem .4rem .4rem 2.4rem;
+    padding: .5rem 1rem .5rem 2.4rem;
     color: #111;
     background: #fff;
     border: 0;
@@ -391,14 +391,14 @@
   #LuxuryHero-{{ section.id }} .luxury-hero__button::before {
     position: absolute;
     z-index: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    width: 5.2rem;
+    top: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+    width: 3.2rem;
     content: '';
     background: #111;
     border-radius: inherit;
-    transition: width 420ms cubic-bezier(.22, .61, .36, 1);
+    transition: inset 420ms cubic-bezier(.22, .61, .36, 1), width 420ms cubic-bezier(.22, .61, .36, 1);
   }
 
   #LuxuryHero-{{ section.id }} .luxury-hero__button > span {
@@ -409,6 +409,9 @@
   #LuxuryHero-{{ section.id }} .luxury-hero__button:hover::before,
   #LuxuryHero-{{ section.id }} .luxury-hero__button:focus-visible::before {
     width: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
   }
 
   #LuxuryHero-{{ section.id }} .luxury-hero__button:hover,
@@ -422,8 +425,8 @@
     display: grid;
     place-items: center;
     flex: 0 0 auto;
-    width: 4rem;
-    height: 4rem;
+    width: 3.2rem;
+    height: 3.2rem;
     color: #fff;
     position: relative;
     z-index: 1;
@@ -432,8 +435,8 @@
   }
 
   #LuxuryHero-{{ section.id }} .luxury-hero__button-icon svg {
-    width: 1.4rem;
-    height: 1.4rem;
+    width: 1.2rem;
+    height: 1.2rem;
     fill: none;
     stroke: currentColor;
     stroke-width: 1.8;
@@ -607,12 +610,16 @@
     }
 
     #LuxuryHero-{{ section.id }} .luxury-hero__button-icon {
-      width: 4.2rem;
-      height: 4.2rem;
+      width: 4rem;
+      height: 4rem;
     }
+
     #LuxuryHero-{{ section.id }} .luxury-hero__button::before {
-      width: 5.6rem;
+      top: .8rem;
+      right: .8rem;
+      bottom: .8rem;
     }
+      width: 4rem;
 
 
     #LuxuryHero-{{ section.id }} .luxury-hero__controls {
