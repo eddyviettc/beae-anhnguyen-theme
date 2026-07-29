@@ -89,7 +89,7 @@
                 <span>{{ block.settings.button_label | escape }}</span>
                 <span class="luxury-hero__button-icon" aria-hidden="true">
                   <svg viewBox="0 0 24 24" focusable="false">
-                    <path d="M5 12h13M13 7l5 5-5 5"></path>
+                    <path d="m9 7 5 5-5 5"></path>
                   </svg>
                 </span>
               </a>
@@ -368,11 +368,11 @@
     display: inline-flex;
     align-items: center;
     justify-content: space-between;
-    gap: 2.8rem;
-    min-width: 23rem;
-    min-height: 6rem;
+    gap: 2rem;
+    min-width: 20rem;
+    min-height: 5.2rem;
     margin-top: 2.6rem;
-    padding: .8rem .8rem .8rem 2.8rem;
+    padding: .4rem .4rem .4rem 2.4rem;
     color: #111;
     background: #fff;
     border: 0;
@@ -394,7 +394,7 @@
     top: 0;
     right: 0;
     bottom: 0;
-    width: 6rem;
+    width: 5.2rem;
     content: '';
     background: #111;
     border-radius: inherit;
@@ -422,8 +422,8 @@
     display: grid;
     place-items: center;
     flex: 0 0 auto;
-    width: 4.4rem;
-    height: 4.4rem;
+    width: 4rem;
+    height: 4rem;
     color: #fff;
     position: relative;
     z-index: 1;
@@ -432,8 +432,8 @@
   }
 
   #LuxuryHero-{{ section.id }} .luxury-hero__button-icon svg {
-    width: 2rem;
-    height: 2rem;
+    width: 1.4rem;
+    height: 1.4rem;
     fill: none;
     stroke: currentColor;
     stroke-width: 1.8;
@@ -463,7 +463,7 @@
   }
 
   #LuxuryHero-{{ section.id }} .luxury-hero__current {
-    font-size: 2.4rem;
+    font-size: inherit;
   }
 
   #LuxuryHero-{{ section.id }} .luxury-hero__progress {
@@ -495,8 +495,8 @@
     width: 4.8rem;
     height: 4.8rem;
     padding: 0;
-    color: #111;
-    background: #fff;
+    color: #fff;
+    background: transparent;
     border: 0;
     border-radius: 50%;
     box-shadow: none;
@@ -506,13 +506,13 @@
 
   #LuxuryHero-{{ section.id }} .luxury-hero__arrow:hover,
   #LuxuryHero-{{ section.id }} .luxury-hero__arrow:focus-visible {
-    background: #f2f2f2;
-    transform: scale(1.06);
+    background: rgba(255, 255, 255, .12);
+    transform: none;
   }
 
   #LuxuryHero-{{ section.id }} .luxury-hero__arrow svg {
-    width: 2rem;
-    height: 2rem;
+    width: 1.6rem;
+    height: 1.6rem;
   }
 
   {% if request.page_type == 'index' %}
@@ -599,7 +599,7 @@
 
     #LuxuryHero-{{ section.id }} .luxury-hero__button {
       width: 100%;
-      min-height: 5.8rem;
+      min-height: 5.6rem;
       margin-top: 2.6rem;
       padding: .7rem .7rem .7rem 2.4rem;
       font-size: 1.8rem;
@@ -607,9 +607,13 @@
     }
 
     #LuxuryHero-{{ section.id }} .luxury-hero__button-icon {
-      width: 4.4rem;
-      height: 4.4rem;
+      width: 4.2rem;
+      height: 4.2rem;
     }
+    #LuxuryHero-{{ section.id }} .luxury-hero__button::before {
+      width: 5.6rem;
+    }
+
 
     #LuxuryHero-{{ section.id }} .luxury-hero__controls {
       right: 2rem;
@@ -627,7 +631,7 @@
     }
 
     #LuxuryHero-{{ section.id }} .luxury-hero__current {
-      font-size: 2rem;
+      font-size: inherit;
     }
 
     #LuxuryHero-{{ section.id }} .luxury-hero__progress {
