@@ -320,6 +320,18 @@
     transform: translate3d(0, 0, 0);
   }
 
+  #LuxuryHero-{{ section.id }} .luxury-hero__slide.luxury-hero__slide--leaving .luxury-hero__text,
+  #LuxuryHero-{{ section.id }} .luxury-hero__slide.luxury-hero__slide--leaving .luxury-hero__heading,
+  #LuxuryHero-{{ section.id }} .luxury-hero__slide.luxury-hero__slide--leaving .luxury-hero__button {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    transition-delay: 0ms;
+  }
+
+  #LuxuryHero-{{ section.id }} .luxury-hero__slide.luxury-hero__slide--leaving .luxury-hero__button {
+    transition-delay: 0ms, 0ms, 0ms;
+  }
+
   #LuxuryHero-{{ section.id }} .luxury-hero__slide.swiper-slide-active .luxury-hero__text {
     transition-delay: 0ms;
   }
@@ -828,6 +840,18 @@
         if (current) current.textContent = String(swiper.realIndex + 1);
       };
 
+      const clearLeavingSlides = () => {
+        slides.forEach((slide) => slide.classList.remove('luxury-hero__slide--leaving'));
+      };
+
+      const markLeavingSlide = (swiper) => {
+        clearLeavingSlides();
+        if (swiper.previousIndex === swiper.activeIndex) return;
+
+        const leavingSlide = swiper.slides[swiper.previousIndex];
+        if (leavingSlide) leavingSlide.classList.add('luxury-hero__slide--leaving');
+      };
+
       const pause = (swiper) => {
         if (!autoplayEnabled || !swiper.autoplay || !swiper.autoplay.running) return;
         interactionPaused = true;
@@ -882,6 +906,12 @@
           realIndexChange(instance) {
             updateCurrent(instance);
           },
+          slideChangeTransitionStart(instance) {
+            markLeavingSlide(instance);
+          },
+          slideChangeTransitionEnd() {
+            clearLeavingSlides();
+          },
           autoplayTimeLeft(instance, timeLeft, percentage) {
             if (progress) {
               const elapsed = Math.max(0, Math.min(1, 1 - percentage));
@@ -911,6 +941,7 @@
         if (selectedIndex < 0) return;
 
         pause(swiper);
+        clearLeavingSlides();
         if (swiper.params.loop) {
           swiper.slideToLoop(selectedIndex, 0);
         } else {
