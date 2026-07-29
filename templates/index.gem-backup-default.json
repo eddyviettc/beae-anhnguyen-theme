@@ -11,7 +11,7 @@
   "layout": "beae",
   "sections": {
     "beae-default-template": {
-      "type": "beae-test-homepage",
+      "type": "beae-preview-template-home",
       "blocks": {
         "beae-1s4fet4g": {
           "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/preview_badge_homepage\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
@@ -38,14 +38,9 @@
         "beae-8g1m0hrq"
       ],
       "settings": {}
-    },
-    "beae_test_section1_bcNF9c": {
-      "type": "beae-test-section1",
-      "settings": {}
     }
   },
   "order": [
-    "beae-default-template",
-    "beae_test_section1_bcNF9c"
+    "beae-default-template"
   ]
 }
