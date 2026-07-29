@@ -5,7 +5,7 @@
 
 <section
   id="LuxuryHero-{{ section.id }}"
-  class="luxury-hero"
+  class="luxury-hero luxury-hero--content-{{ section.settings.content_position }}"
   data-luxury-hero
   data-section-id="{{ section.id }}"
   data-slide-count="{{ slide_count }}"
@@ -105,7 +105,7 @@
     </div>
   </div>
 
-  {% if slide_count > 1 %}
+  {% if slide_count > 1 and section.settings.show_navigation %}
     <div class="luxury-hero__controls" aria-label="Slideshow controls">
       <div class="luxury-hero__status">
         <span class="luxury-hero__current" aria-live="polite">1</span>
@@ -270,6 +270,30 @@
     left: clamp(2rem, 5vw, 7.2rem);
     bottom: clamp(4.2rem, 8vh, 8rem);
     width: min(46rem, calc(100vw - 4rem));
+  }
+
+  #LuxuryHero-{{ section.id }}.luxury-hero--content-bottom_center .luxury-hero__content {
+    right: auto;
+    left: 50%;
+    text-align: center;
+    transform: translateX(-50%);
+  }
+
+  #LuxuryHero-{{ section.id }}.luxury-hero--content-bottom_center .luxury-hero__heading,
+  #LuxuryHero-{{ section.id }}.luxury-hero--content-bottom_center .luxury-hero__text {
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  #LuxuryHero-{{ section.id }}.luxury-hero--content-bottom_right .luxury-hero__content {
+    right: clamp(2rem, 5vw, 7.2rem);
+    left: auto;
+    text-align: right;
+  }
+
+  #LuxuryHero-{{ section.id }}.luxury-hero--content-bottom_right .luxury-hero__heading,
+  #LuxuryHero-{{ section.id }}.luxury-hero--content-bottom_right .luxury-hero__text {
+    margin-left: auto;
   }
 
   #LuxuryHero-{{ section.id }} .luxury-hero__content > .luxury-hero__text,
@@ -487,6 +511,25 @@
       left: 2rem;
       width: auto;
       text-align: center;
+    }
+
+    #LuxuryHero-{{ section.id }}.luxury-hero--content-bottom_left .luxury-hero__content,
+    #LuxuryHero-{{ section.id }}.luxury-hero--content-bottom_center .luxury-hero__content,
+    #LuxuryHero-{{ section.id }}.luxury-hero--content-bottom_right .luxury-hero__content {
+      right: 2rem;
+      left: 2rem;
+      width: auto;
+      transform: none;
+    }
+
+    #LuxuryHero-{{ section.id }}.luxury-hero--content-bottom_left .luxury-hero__content {
+      align-items: flex-start;
+      text-align: left;
+    }
+
+    #LuxuryHero-{{ section.id }}.luxury-hero--content-bottom_right .luxury-hero__content {
+      align-items: flex-end;
+      text-align: right;
     }
 
     #LuxuryHero-{{ section.id }} .luxury-hero__heading {
@@ -834,8 +877,38 @@
       "max": 12,
       "step": 1,
       "unit": "s",
-      "label": "Autoplay interval",
+      "label": "Autoplay delay",
       "default": 6
+    },
+    {
+      "type": "checkbox",
+      "id": "show_navigation",
+      "label": "Show navigation",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "content_position",
+      "label": "Content position",
+      "options": [
+        {
+          "value": "adaptive",
+          "label": "Left desktop, center mobile"
+        },
+        {
+          "value": "bottom_left",
+          "label": "Bottom left"
+        },
+        {
+          "value": "bottom_center",
+          "label": "Bottom center"
+        },
+        {
+          "value": "bottom_right",
+          "label": "Bottom right"
+        }
+      ],
+      "default": "adaptive"
     },
     {
       "type": "range",
