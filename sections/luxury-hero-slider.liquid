@@ -195,7 +195,7 @@
     display: flex;
     box-sizing: content-box;
     transition-property: transform;
-    transition-timing-function: cubic-bezier(.77, 0, .18, 1) !important;
+    transition-timing-function: ease !important;
   }
 
   #LuxuryHero-{{ section.id }} .luxury-hero__slide {
@@ -204,7 +204,7 @@
     flex-shrink: 0;
     overflow: hidden;
     opacity: 0;
-    transition: opacity var(--luxury-hero-transition) cubic-bezier(.77, 0, .18, 1);
+    transition: opacity var(--luxury-hero-transition) ease;
   }
 
   #LuxuryHero-{{ section.id }} .swiper-fade .luxury-hero__slide {
@@ -264,16 +264,14 @@
 
   #LuxuryHero-{{ section.id }} .luxury-hero__shade {
     z-index: 1;
-    background:
-      linear-gradient(180deg, rgba(0, 0, 0, .18) 0%, rgba(0, 0, 0, .02) 42%, rgba(0, 0, 0, .48) 100%),
-      rgba(0, 0, 0, var(--luxury-hero-overlay));
+    background: rgba(0, 0, 0, var(--luxury-hero-overlay));
     pointer-events: none;
   }
 
   #LuxuryHero-{{ section.id }} .luxury-hero__content {
     position: absolute;
     z-index: 2;
-    left: clamp(2rem, 3.5vw, 7.2rem);
+    left: max(5rem, calc((100vw - 144rem) / 2));
     top: clamp(18rem, 35.5vh, 40rem);
     bottom: auto;
     width: min(52rem, calc(100vw - 4rem));
@@ -293,7 +291,7 @@
   }
 
   #LuxuryHero-{{ section.id }}.luxury-hero--content-bottom_right .luxury-hero__content {
-    right: clamp(2rem, 5vw, 7.2rem);
+    right: max(5rem, calc((100vw - 144rem) / 2));
     left: auto;
     text-align: right;
   }
@@ -304,33 +302,34 @@
   }
 
   #LuxuryHero-{{ section.id }} .luxury-hero__content > .luxury-hero__text,
-  #LuxuryHero-{{ section.id }} .luxury-hero__content > .luxury-hero__heading,
+  #LuxuryHero-{{ section.id }} .luxury-hero__content > .luxury-hero__heading {
+    opacity: 0;
+    transform: translate3d(0, 1.2rem, 0);
+    transition: opacity 300ms ease, transform 420ms cubic-bezier(.22, .61, .36, 1);
+  }
+
   #LuxuryHero-{{ section.id }} .luxury-hero__content > .luxury-hero__button {
     opacity: 0;
-    transform: translate3d(0, 2.5rem, 0);
+    transform: translate3d(0, 1.2rem, 0);
+  }
+
+  #LuxuryHero-{{ section.id }} .luxury-hero__slide.swiper-slide-active .luxury-hero__text,
+  #LuxuryHero-{{ section.id }} .luxury-hero__slide.swiper-slide-active .luxury-hero__heading,
+  #LuxuryHero-{{ section.id }} .luxury-hero__slide.swiper-slide-active .luxury-hero__button {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
   }
 
   #LuxuryHero-{{ section.id }} .luxury-hero__slide.swiper-slide-active .luxury-hero__text {
-    animation: luxury-hero-fade-up-{{ section.id }} .7s cubic-bezier(.22, .61, .36, 1) .05s both;
+    transition-delay: 0ms;
   }
 
   #LuxuryHero-{{ section.id }} .luxury-hero__slide.swiper-slide-active .luxury-hero__heading {
-    animation: luxury-hero-fade-up-{{ section.id }} .7s cubic-bezier(.22, .61, .36, 1) .15s both;
+    transition-delay: 40ms;
   }
 
   #LuxuryHero-{{ section.id }} .luxury-hero__slide.swiper-slide-active .luxury-hero__button {
-    animation: luxury-hero-fade-up-{{ section.id }} .7s cubic-bezier(.22, .61, .36, 1) .25s both;
-  }
-
-  @keyframes luxury-hero-fade-up-{{ section.id }} {
-    from {
-      opacity: 0;
-      transform: translate3d(0, 2.5rem, 0);
-    }
-    to {
-      opacity: 1;
-      transform: translate3d(0, 0, 0);
-    }
+    transition-delay: 80ms;
   }
 
   #LuxuryHero-{{ section.id }} .luxury-hero__heading {
@@ -387,7 +386,7 @@
     position: relative;
     isolation: isolate;
     overflow: hidden;
-    transition: color 600ms cubic-bezier(.4, 0, .2, 1);
+    transition: color 600ms cubic-bezier(.4, 0, .2, 1), opacity 300ms ease, transform 420ms cubic-bezier(.22, .61, .36, 1);
   }
 
   #LuxuryHero-{{ section.id }} .luxury-hero__button::before {
@@ -470,7 +469,7 @@
   #LuxuryHero-{{ section.id }} .luxury-hero__controls {
     position: absolute;
     z-index: 3;
-    right: clamp(2rem, 5vw, 7.2rem);
+    right: max(5rem, calc((100vw - 144rem) / 2));
     bottom: clamp(4.2rem, 8vh, 8rem);
     display: flex;
     align-items: center;
@@ -771,7 +770,7 @@
     #LuxuryHero-{{ section.id }} .luxury-hero__content > .luxury-hero__button {
       opacity: 1;
       transform: none;
-      animation: none !important;
+      transition: none !important;
     }
 
     #LuxuryHero-{{ section.id }} .luxury-hero__progress-fill {
@@ -959,7 +958,7 @@
       "step": 5,
       "unit": "%",
       "label": "Overlay opacity",
-      "default": 20
+      "default": 10
     },
     {
       "type": "checkbox",
@@ -1010,12 +1009,12 @@
     {
       "type": "range",
       "id": "transition_duration",
-      "min": 600,
+      "min": 300,
       "max": 2000,
       "step": 100,
       "unit": "ms",
       "label": "Transition duration",
-      "default": 1200
+      "default": 300
     }
   ],
   "blocks": [
