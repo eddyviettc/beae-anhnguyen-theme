@@ -58,12 +58,12 @@
       ],
       "name": "Luxury hero slider",
       "settings": {
-        "overlay_opacity": 20,
+        "overlay_opacity": 10,
         "autoplay": true,
         "autoplay_interval": 6,
         "show_navigation": true,
         "content_position": "adaptive",
-        "transition_duration": 1200
+        "transition_duration": 600
       }
     },
     "collection_list_GLp9Dq": {
