@@ -236,18 +236,19 @@
   }
 
   #LuxuryHero-{{ section.id }} .luxury-hero__button {
+    box-sizing: border-box;
     display: inline-flex;
     align-items: center;
     justify-content: space-between;
-    gap: 2.4rem;
-    min-width: 18rem;
-    min-height: 5.4rem;
+    gap: 2.8rem;
+    min-width: 23rem;
+    min-height: 6rem;
     margin-top: 2.6rem;
-    padding: 1.2rem 1.2rem 1.2rem 2.4rem;
+    padding: .8rem .8rem .8rem 2.8rem;
     color: #111;
     background: #fff;
     border-radius: 999px;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     font-weight: 600;
     line-height: 1;
     text-decoration: none;
@@ -264,12 +265,13 @@
   #LuxuryHero-{{ section.id }} .luxury-hero__button-icon {
     display: grid;
     place-items: center;
-    width: 3.2rem;
-    height: 3.2rem;
+    flex: 0 0 auto;
+    width: 4.4rem;
+    height: 4.4rem;
     color: #fff;
     background: #111;
     border-radius: 50%;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
   }
 
   #LuxuryHero-{{ section.id }} .luxury-hero__controls {
@@ -377,46 +379,148 @@
 
   @media screen and (max-width: 749px) {
     #LuxuryHero-{{ section.id }} {
-      min-height: 56rem;
+      height: calc(100svh - 6.8rem);
+      min-height: min(56rem, calc(100svh - 6.8rem));
     }
 
     #LuxuryHero-{{ section.id }} .luxury-hero__content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       right: 2rem;
-      bottom: calc(10.8rem + env(safe-area-inset-bottom));
+      bottom: calc(12.4rem + env(safe-area-inset-bottom));
       left: 2rem;
       width: auto;
+      text-align: center;
     }
 
     #LuxuryHero-{{ section.id }} .luxury-hero__heading {
-      max-width: 9ch;
-      font-size: clamp(4.2rem, 15vw, 6.8rem);
+      max-width: 10ch;
+      font-size: clamp(4.2rem, 12vw, 6rem);
+      line-height: .96;
     }
 
     #LuxuryHero-{{ section.id }} .luxury-hero__text {
-      max-width: 30rem;
-      margin-top: 1.2rem;
+      order: -1;
+      max-width: 32rem;
+      margin: 0 0 2.2rem;
+      font-size: 1.5rem;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: .035em;
+      text-transform: uppercase;
     }
 
     #LuxuryHero-{{ section.id }} .luxury-hero__button {
-      min-height: 5rem;
-      margin-top: 1.8rem;
+      width: 100%;
+      min-height: 5.8rem;
+      margin-top: 2.6rem;
+      padding: .7rem .7rem .7rem 2.4rem;
+      font-size: 1.8rem;
+      text-align: left;
+    }
+
+    #LuxuryHero-{{ section.id }} .luxury-hero__button-icon {
+      width: 4.4rem;
+      height: 4.4rem;
     }
 
     #LuxuryHero-{{ section.id }} .luxury-hero__controls {
       right: 2rem;
-      bottom: calc(2.4rem + env(safe-area-inset-bottom));
+      bottom: calc(2.6rem + env(safe-area-inset-bottom));
       left: 2rem;
-      justify-content: flex-end;
-      gap: 1.2rem;
+      display: grid;
+      grid-template-columns: auto minmax(6rem, 1fr) auto;
+      gap: 1.4rem;
     }
 
     #LuxuryHero-{{ section.id }} .luxury-hero__status {
-      margin-right: auto;
+      min-width: auto;
+      margin: 0;
+      font-size: 1.6rem;
+    }
+
+    #LuxuryHero-{{ section.id }} .luxury-hero__current {
+      font-size: 2rem;
+    }
+
+    #LuxuryHero-{{ section.id }} .luxury-hero__progress {
+      width: 100%;
+    }
+
+    #LuxuryHero-{{ section.id }} .luxury-hero__navigation {
+      gap: .2rem;
     }
 
     #LuxuryHero-{{ section.id }} .luxury-hero__arrow {
-      width: 4.4rem;
-      height: 4.4rem;
+      width: 3.2rem;
+      height: 3.2rem;
+      color: #fff;
+      background: transparent;
+    }
+
+    #LuxuryHero-{{ section.id }} .luxury-hero__arrow:hover,
+    #LuxuryHero-{{ section.id }} .luxury-hero__arrow:focus-visible {
+      background: rgba(255, 255, 255, .12);
+    }
+
+    body:has(#MainContent > .shopify-section:first-child #LuxuryHero-{{ section.id }}) .section-header {
+      position: relative !important;
+      top: auto;
+      background: #fff;
+    }
+
+    body:has(#MainContent > .shopify-section:first-child #LuxuryHero-{{ section.id }}) .header-wrapper {
+      color: #111;
+      background: #fff !important;
+      border-bottom: .1rem solid rgba(17, 17, 17, .14);
+    }
+
+    body:has(#MainContent > .shopify-section:first-child #LuxuryHero-{{ section.id }}) .header {
+      box-sizing: border-box;
+      height: 6.8rem;
+      min-height: 6.8rem;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+
+    body:has(#MainContent > .shopify-section:first-child #LuxuryHero-{{ section.id }}) .header__heading-link .h2,
+    body:has(#MainContent > .shopify-section:first-child #LuxuryHero-{{ section.id }}) .header__menu-item,
+    body:has(#MainContent > .shopify-section:first-child #LuxuryHero-{{ section.id }}) .header__active-menu-item,
+    body:has(#MainContent > .shopify-section:first-child #LuxuryHero-{{ section.id }}) .header__icon {
+      color: #111;
+    }
+
+    body:has(#MainContent > .shopify-section:first-child #LuxuryHero-{{ section.id }}) .header__heading-logo {
+      filter: none;
+    }
+  }
+
+  @media screen and (max-width: 749px) and (max-height: 700px) {
+    #LuxuryHero-{{ section.id }} .luxury-hero__content {
+      bottom: calc(10.4rem + env(safe-area-inset-bottom));
+    }
+
+    #LuxuryHero-{{ section.id }} .luxury-hero__heading {
+      font-size: clamp(3.8rem, 10vw, 5rem);
+    }
+
+    #LuxuryHero-{{ section.id }} .luxury-hero__text {
+      margin-bottom: 1.2rem;
+    }
+
+    #LuxuryHero-{{ section.id }} .luxury-hero__button {
+      min-height: 5.2rem;
+      margin-top: 1.6rem;
+    }
+
+    #LuxuryHero-{{ section.id }} .luxury-hero__button-icon {
+      width: 3.8rem;
+      height: 3.8rem;
+    }
+
+    #LuxuryHero-{{ section.id }} .luxury-hero__controls {
+      bottom: calc(1.6rem + env(safe-area-inset-bottom));
     }
   }
 
