@@ -36,14 +36,9 @@
         "content"
       ],
       "settings": {}
-    },
-    "beae_our_blog_post_seciton_aMJVE3": {
-      "type": "beae-our-blog-post-seciton",
-      "settings": {}
     }
   },
   "order": [
-    "main",
-    "beae_our_blog_post_seciton_aMJVE3"
+    "main"
   ]
 }

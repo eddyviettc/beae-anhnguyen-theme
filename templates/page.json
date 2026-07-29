@@ -15,15 +15,9 @@
         "padding_top": 28,
         "padding_bottom": 28
       }
-    },
-    "beae_test_scroll1_rTyXk6": {
-      "type": "beae-test-scroll1",
-      "name": "test-scroll1",
-      "settings": {}
     }
   },
   "order": [
-    "main",
-    "beae_test_scroll1_rTyXk6"
+    "main"
   ]
 }
