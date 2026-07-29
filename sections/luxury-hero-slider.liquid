@@ -392,14 +392,13 @@
   #LuxuryHero-{{ section.id }} .luxury-hero__button::before {
     position: absolute;
     z-index: 0;
-    top: 1rem;
-    right: 1rem;
-    bottom: 1rem;
-    width: 3rem;
+    inset: .1rem;
     content: '';
     background: #111;
     border-radius: inherit;
-    transition: inset 600ms cubic-bezier(.4, 0, .2, 1), width 600ms cubic-bezier(.4, 0, .2, 1);
+    clip-path: circle(1.5rem at calc(100% - 2.4rem) 50%);
+    transition: clip-path 600ms cubic-bezier(.4, 0, .2, 1);
+    will-change: clip-path;
   }
 
   #LuxuryHero-{{ section.id }} .luxury-hero__button > span {
@@ -409,10 +408,7 @@
 
   #LuxuryHero-{{ section.id }} .luxury-hero__button:hover::before,
   #LuxuryHero-{{ section.id }} .luxury-hero__button:focus-visible::before {
-    width: calc(100% - .2rem);
-    top: .1rem;
-    right: .1rem;
-    bottom: .1rem;
+    clip-path: circle(150% at calc(100% - 2.4rem) 50%);
   }
 
   #LuxuryHero-{{ section.id }} .luxury-hero__button:hover,
@@ -638,14 +634,6 @@
       width: 3rem;
       height: 3rem;
     }
-
-    #LuxuryHero-{{ section.id }} .luxury-hero__button::before {
-      top: 1rem;
-      right: 1rem;
-      bottom: 1rem;
-      width: 3rem;
-    }
-
 
     #LuxuryHero-{{ section.id }} .luxury-hero__controls {
       right: 2rem;
