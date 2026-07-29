@@ -271,9 +271,10 @@
   #LuxuryHero-{{ section.id }} .luxury-hero__content {
     position: absolute;
     z-index: 2;
-    left: clamp(2rem, 5vw, 7.2rem);
-    bottom: clamp(4.2rem, 8vh, 8rem);
-    width: min(46rem, calc(100vw - 4rem));
+    left: clamp(2rem, 3.5vw, 7.2rem);
+    top: clamp(18rem, 35.5vh, 40rem);
+    bottom: auto;
+    width: min(52rem, calc(100vw - 4rem));
   }
 
   #LuxuryHero-{{ section.id }}.luxury-hero--content-bottom_center .luxury-hero__content {
@@ -334,11 +335,12 @@
     max-width: 10ch;
     margin: 0;
     color: #fff;
-    font-family: Georgia, 'Times New Roman', serif;
-    font-size: clamp(4.6rem, 7vw, 10rem);
-    font-weight: 400;
-    line-height: .9;
-    letter-spacing: -.045em;
+    font-family: var(--font-heading-family);
+    font-style: var(--font-heading-style);
+    font-weight: var(--font-heading-weight);
+    font-size: clamp(5.2rem, 4.6vw, 9.6rem);
+    line-height: .98;
+    letter-spacing: -.055em;
     text-wrap: balance;
   }
 
@@ -346,6 +348,7 @@
     max-width: 38rem;
     margin: 0 0 1.8rem;
     color: rgba(255, 255, 255, .9);
+    font-family: var(--font-body-family);
     font-size: clamp(1.4rem, 1.15vw, 1.7rem);
     font-weight: 700;
     line-height: 1.5;
@@ -371,6 +374,7 @@
     color: #111;
     background: #fff;
     border-radius: 999px;
+    font-family: var(--font-body-family);
     font-size: 1.6rem;
     font-weight: 600;
     line-height: 1;
