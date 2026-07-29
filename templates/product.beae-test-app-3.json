@@ -1,0 +1,35 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "layout": "theme",
+  "sections": {
+    "beae-test-app-3": {
+      "type": "beae-test-app-3",
+      "blocks": {
+        "beae-oa0424vz": {
+          "type": "shopify://apps/loox-reviews/blocks/loox-rating/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
+          "settings": {}
+        },
+        "beae-9675efep": {
+          "type": "shopify://apps/loox-reviews/blocks/loox-rating/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "beae-oa0424vz",
+        "beae-9675efep"
+      ],
+      "settings": {}
+    }
+  },
+  "order": [
+    "beae-test-app-3"
+  ]
+}

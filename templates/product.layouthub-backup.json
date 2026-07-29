@@ -1,0 +1,35 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "layout": "theme",
+  "sections": {
+    "beae-default-template": {
+      "type": "beae-product-test",
+      "blocks": {
+        "beae-uy4f96va": {
+          "type": "shopify://apps/aov-free-gift-bxgy/blocks/avada-promotion-card/de98edfe-90fa-4145-8a57-1055e0058723",
+          "settings": {}
+        },
+        "beae-gledynkn": {
+          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "beae-uy4f96va",
+        "beae-gledynkn"
+      ],
+      "settings": {}
+    }
+  },
+  "order": [
+    "beae-default-template"
+  ]
+}

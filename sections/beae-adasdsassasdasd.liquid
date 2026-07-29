@@ -1,0 +1,131 @@
+
+            {% assign beae_root_url = routes.root_url %}
+            {% if beae_root_url != '/'%}
+                {% assign beae_root_url = routes.root_url | append: '/' %}
+            {% endif %}
+        {%capture section_id %}beae-adasdsassasdasd{% endcapture%}{% if section_id == section.id %}{% if shop.metafields.beae.global_css %}
+            <!--BEAE-EMBED-->
+            <link href="data:text/css;base64,{{-shop.metafields.beae.global_css-}}" rel="stylesheet" id="beae-global-css"/>
+            <!--/BEAE-EMBED-->
+        {% endif %}
+
+{% render 'beae_header', BEAE_THEME: true %}{% endif %}<link rel="stylesheet" id="beae-exported-page-css" media="all" href="{{"beae-68e8c74138b8a75c0e0ba616.css" | asset_url}}"><link rel="dns-prefetch" href="https://cdn.shopify.com">
+                    <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
+                    <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
+                    <link rel="preload" type="text/css" href="https://cdn.shopify.com/s/files/1/0859/9483/2199/files/PlusJakartaSans-Regular.ttf?v=1731583913" as="font" type="font/truetype" crossorigin="anonymous">
+                    <style>
+                    @font-face {font-family: 'Beae-font-hgrs';font-weight: 200;src: url('https://cdn.shopify.com/s/files/1/0859/9483/2199/files/PlusJakartaSans-Regular.ttf?v=1731583913') format('truetype');font-display: swap;}
+                    </style><div class="beae-builder-v2 beae-builder"><div class="beae-sections beae-content-wrapper"><script type="text/javascript">if (!window.BEAEARGS) {window.BEAEARGS = {};}</script>
+<!----><section id="" data-sectionid="beae-upvmbnmc" data-width="1470" data-margin="30px" data-margin-mobile="15px" data-type="grid" class="beae-typo-p1 beae-upvmbnmc section-beae-upvmbnmc beae-section beae-core"><!----><!----><!----><div class="beae-grid-system" style="padding: 0px;"><div class="beae__section--container beae-grid-container grid-beae-upvmbnmc" style="--rows: 46; --rows-mobile: 46; --cols: 94; --cols-mobile: 30; max-width: var(--beae-page-width, 1470px);"><!----><!----></div><!----></div><!----><!----><!----><!----><!----><!----><!----><!----><!----></section><!----><script type="text/javascript">window.BEAEARGS['beae-upvmbnmcsection-js'] = {
+    "id": "beae-upvmbnmc",
+    "mode": {"value": "live"},
+    "optionsVideo":false,"optionsVideoMobile":false
+  };</script><!----><section id="" data-sectionid="beae-7tajzoh2" data-width="1470" data-margin="30px" data-margin-mobile="15px" data-type="flexContainer" class="beae-typo-p1 beae-7tajzoh2 section-beae-7tajzoh2 beae-section beae-core"><!----><!----><div class="beae-flexbox beae-typo-p1" style="padding: 0px;"><div class="beae__section--container beae-flexbox-container" style="max-width: var(--beae-page-width, 1470px);"><!----><div class="beae-flexbox-core beae-x-flex-section grid-container-width"><!----><div class="beae-q3qmwrrv beae-block beae-core beae-animation beae-unique-wcpd4lne beae-x-video beae-prevent-system" data-id="beae-q3qmwrrv" data-uniqueid="wcpd4lne" source="youtube"><!----><div class="beae-x-video--wrapper"><!----><div class="beae-block_video-player beae-prevent-system"><iframe id="beae-q3qmwrrv" target="do not remove" class="beae_iframe" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" src="https://www.youtube.com/embed/_9VUPq3SxOc?version=3&amp;controls=1&amp;showinfo=0&amp;iv_load_policy=3&amp;playlist=_9VUPq3SxOc"></iframe></div><button class="beae-close-video" is="close-button" aria-label="Close"><svg role="presentation" stroke-width="2" focusable="false" width="24" height="24" viewBox="0 0 24 24"><path d="M17.658 6.343 6.344 17.657M17.658 17.657 6.344 6.343" stroke="currentColor"></path></svg></button><script type="text/javascript">window.BEAEARGS['beae-q3qmwrrvblock-video'] = {
+    "id": "beae-q3qmwrrv",
+    "mode": {"value": "live"},
+    "id":"beae-q3qmwrrv","uniqueId":"","source":"youtube","mute":false,"loop":true,"srcYoutube":"https://www.youtube.com/watch?v=_9VUPq3SxOc","lightbox":false,"player_controls":true,"extendOptions":"{}"
+  };</script></div><!----></div><!----><!----></div></div></div><!----><!----><!----><!----><!----><!----></section><!----><script type="text/javascript">window.BEAEARGS['beae-7tajzoh2section-js'] = {
+    "id": "beae-7tajzoh2",
+    "mode": {"value": "live"},
+    "optionsVideo":false,"optionsVideoMobile":false
+  };</script>
+<script type="text/javascript">
+  (() => {
+    let testText = document.createElement('div');
+    testText.innerHTML = 'test';
+    testText.style.fontSize = '100px';
+    document.body.appendChild(testText);
+    let realFontSize = parseFloat(window.getComputedStyle(testText).getPropertyValue('font-size').replace('px', ''));
+    testText.style.zoom = '50%';
+    let detectDesktopRequestMode = window.getComputedStyle(testText).getPropertyValue('font-size') !== '100px';
+    document.body.removeChild(testText);
+    
+    document.body.style.setProperty('--font-size-ratio', (realFontSize / 100).toString());
+
+    function getTextNodesIn(elem) {
+      let textNodes = [];
+      if (elem) {
+        for (var nodes = elem.childNodes, i = nodes.length; i--;) {
+          let node = nodes[i], nodeType = node.nodeType;
+          if (nodeType == 1 || nodeType == 9 || nodeType == 11) {
+            textNodes = textNodes.concat(getTextNodesIn(node));
+          }
+        }
+      }
+      return textNodes;
+    }
+
+    let scaleFitGridBlock = () => {
+
+      document.querySelectorAll('.beae-section.beae-core').forEach((sec) => {
+        let container = sec.querySelector(".beae__section--container");
+        if (!container) { return; };
+        let winWidth = document.documentElement.offsetWidth;
+        if (winWidth >= 768) {
+          sec.querySelectorAll('.beae__section--container').forEach(container => {
+            container.parentNode.style.setProperty("--container-width", container.closest('.grid-container-width') ? container.closest('.grid-container-width').parentNode.offsetWidth+'px' : container.offsetWidth+'px');
+          });
+        }
+      });
+
+      document.querySelectorAll('.beae-grid-block').forEach(block => {
+       let child = block.querySelector('.beae-block.beae-core > *'),
+           zoom = 0,
+           count = 0;
+        child.style.zoom = '';
+        child.style.lineHeight = '';
+        while(child.offsetHeight > block.offsetHeight && count < 14 && (zoom === 0 || block.offsetHeight < (child.offsetHeight*zoom))) {
+            zoom = (block.offsetHeight+block.offsetWidth)/(child.offsetHeight+child.offsetWidth);
+            child.style.zoom = zoom < 1 ? Math.floor(zoom*100)+'%' : '';
+            child.style.lineHeight = '2.4rem';
+            count++;
+        }
+      });
+    };
+
+    scaleFitGridBlock();
+    let timmer = 0;
+    window.addEventListener('resize', () => {
+      clearTimeout(timmer);
+      timmer = setTimeout(scaleFitGridBlock, 150);
+    });
+    window.addEventListener('load', scaleFitGridBlock);
+    
+    if (document.getElementById('beae-exported-page-css')) {
+      document.getElementById('beae-exported-page-css').addEventListener('load', scaleFitGridBlock);
+    }
+
+  })();
+</script>
+</div></div>{% if section_id == section.id %}{% endif%}
+<script id="beae-exported-page-js" src="{{'beae-68e8c74138b8a75c0e0ba616.js'  | asset_url }}" defer></script>
+
+{% schema %}
+{
+    "name": "BEAE BUILDER APP",
+    "locales": {
+        "en": {
+            "be76480_html": "N\/A",
+            "be430210269_html": "Tax included. ",
+            "be72458158275_html": "<a href=\"{{shop.shipping_policy.url}}\">Shipping<\/a> calculated at checkout."
+        }
+    },
+    "settings": [
+        {
+            "type": "header",
+            "content": "The section was generated by BEAE BUILDER",
+            "info": "\n                        Beae is a flexible page builder app on Shopify AppStore.\n                        It provides 100+ Shopify Elements and pre-built templates library, \n                        so you can build unlimited pages that you can imagine with it.\n                    "
+        },
+        {
+            "type": "header",
+            "content": "[EDIT WITH BEAE APP \u2192](https:\/\/beae-anhnguyen.myshopify.com\/admin\/apps\/beae-flexible-page-builder\/next\/editor-v3\/page\/68e8c74138b8a75c0e0ba616)",
+            "info": "(*You must install the app to start editing this section [Learn more](https:\/\/docs.beae.com\/en\/article\/quick-start-guide-dkoesy\/))"
+        }
+    ],
+    "blocks": [
+        {
+            "type": "@app"
+        }
+    ]
+}
+{% endschema %}

@@ -1,0 +1,123 @@
+
+            {% assign beae_root_url = routes.root_url %}
+            {% if beae_root_url != '/'%}
+                {% assign beae_root_url = routes.root_url | append: '/' %}
+            {% endif %}
+        {%capture section_id %}beae-zcxzcxczxczxzcx{% endcapture%}{% if section_id == section.id %}{% if shop.metafields.beae.global_css %}
+            <!--BEAE-EMBED-->
+            <link href="data:text/css;base64,{{-shop.metafields.beae.global_css-}}" rel="stylesheet" id="beae-global-css"/>
+            <!--/BEAE-EMBED-->
+        {% endif %}
+
+{% render 'beae_header', BEAE_THEME: true %}{% endif %}<link rel="stylesheet" id="beae-exported-page-css" media="all" href="{{"beae-697b6e7ab8351b6fde018976.css" | asset_url}}"><link rel="preconnect" href="https://fonts.googleapis.com">
+                    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css?family=Inter:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet"><div class="beae-builder-v2 beae-builder"><div class="beae-sections beae-content-wrapper"><script type="text/javascript">if (!window.BEAEARGS) {window.BEAEARGS = {};}</script>
+<!----><section id="" data-sectionid="beae-bg4tqdtb" data-width="1470" data-margin="30px" data-margin-mobile="15px" data-type="grid" class="beae-typo-p1 beae-bg4tqdtb section-beae-bg4tqdtb beae-section beae-core"><!----><!----><!----><div class="beae-grid-system" style="padding: 0px;"><div class="beae__section--container beae-grid-container grid-beae-bg4tqdtb" style="--rows: 46; --rows-mobile: 46; --cols: 94; --cols-mobile: 30; max-width: var(--beae-page-width, 1470px);"><!----><!----></div><!----></div><!----><!----><!----><!----><!----><!----><!----><!----><!----></section><!----><script type="text/javascript">window.BEAEARGS['beae-bg4tqdtbsection-js'] = {
+    "id": "beae-bg4tqdtb",
+    "mode": {"value": "live"},
+    "optionsVideo":false,"optionsVideoMobile":false
+  };</script><!----><section id="" data-sectionid="beae-v4biwmh2" data-width="1470" data-margin="30px" data-margin-mobile="15px" data-type="flexContainer" class="beae-typo-p1 beae-v4biwmh2 section-beae-v4biwmh2 beae-section beae-core" data-template="Image with text overlay 5"><!----><!----><div class="beae-flexbox beae-typo-p1" style="padding: 0px;"><div class="beae__section--container beae-flexbox-container" style="max-width: var(--beae-page-width, 1470px);"><!----><div class="beae-flexbox-core beae-x-flex-section grid-container-width"><!----><div class="beae-rzr4bqx8 beae-block beae-core beae-animation beae-unique-480an8ai beae-flex-wrapper" data-id="beae-rzr4bqx8" data-uniqueid="480an8ai"><!----><!----><!----><div class="beae-bfvyj98y beae-block beae-core beae-animation beae-unique-akz2akyl" data-id="beae-bfvyj98y" data-uniqueid="akz2akyl"><!----><div class="beae-block beae-x-text beae-typo-p3" data-autolayout="beae-bfvyj98y">{{ 'sections.beae-zcxzcxczxczxzcx.be284685552_html' | t }}</div><!----><!----></div><!----><!----><!----><div class="beae-m6duu30x beae-block beae-core beae-animation beae-unique-gucuy6ye" data-id="beae-m6duu30x" data-uniqueid="gucuy6ye"><!----><div class="beae-block beae-x-text beae-typo-h2" data-autolayout="beae-m6duu30x">{{ 'sections.beae-zcxzcxczxczxzcx.be311426514_html' | t }}</div><!----><!----></div><!----><!----><!----><div class="beae-16w0ugyw beae-block beae-core beae-animation beae-unique-tiujjhgq" data-id="beae-16w0ugyw" data-uniqueid="tiujjhgq"><!----><div class="beae-block beae-x-text beae-typo-p2" data-autolayout="beae-16w0ugyw">{{ 'sections.beae-zcxzcxczxczxzcx.be242786539_html' | t }}</div><!----><!----></div><!----><!----><!----></div><!----><!----></div></div></div><!----><picture image-mode="" class="beae-wooq beae-background-image"><!----><img src="https://upload.beae.com/placeholder/background1.svg" alt="background1" width="267" height="150" fetchpriority="high" loading="lazy"></picture><!----><!----><!----><!----><!----></section><!----><script type="text/javascript">window.BEAEARGS['beae-v4biwmh2section-js'] = {
+    "id": "beae-v4biwmh2",
+    "mode": {"value": "live"},
+    "optionsVideo":{},"optionsVideoMobile":false
+  };</script>
+<script type="text/javascript">
+  (() => {
+    let testText = document.createElement('div');
+    testText.innerHTML = 'test';
+    testText.style.fontSize = '100px';
+    document.body.appendChild(testText);
+    let realFontSize = parseFloat(window.getComputedStyle(testText).getPropertyValue('font-size').replace('px', ''));
+    testText.style.zoom = '50%';
+    let detectDesktopRequestMode = window.getComputedStyle(testText).getPropertyValue('font-size') !== '100px';
+    document.body.removeChild(testText);
+    
+    document.body.style.setProperty('--font-size-ratio', (realFontSize / 100).toString());
+
+    function getTextNodesIn(elem) {
+      let textNodes = [];
+      if (elem) {
+        for (var nodes = elem.childNodes, i = nodes.length; i--;) {
+          let node = nodes[i], nodeType = node.nodeType;
+          if (nodeType == 1 || nodeType == 9 || nodeType == 11) {
+            textNodes = textNodes.concat(getTextNodesIn(node));
+          }
+        }
+      }
+      return textNodes;
+    }
+
+    let scaleFitGridBlock = () => {
+
+      document.querySelectorAll('.beae-section.beae-core').forEach((sec) => {
+        let container = sec.querySelector(".beae__section--container");
+        if (!container) { return; };
+        let winWidth = document.documentElement.offsetWidth;
+        if (winWidth >= 768) {
+          sec.querySelectorAll('.beae__section--container').forEach(container => {
+            container.parentNode.style.setProperty("--container-width", container.closest('.grid-container-width') ? container.closest('.grid-container-width').parentNode.offsetWidth+'px' : container.offsetWidth+'px');
+          });
+        }
+      });
+
+      document.querySelectorAll('.beae-grid-block').forEach(block => {
+       let child = block.querySelector('.beae-block.beae-core > *'),
+           zoom = 0,
+           count = 0;
+        child.style.zoom = '';
+        child.style.lineHeight = '';
+        while(child.offsetHeight > block.offsetHeight && count < 14 && (zoom === 0 || block.offsetHeight < (child.offsetHeight*zoom))) {
+            zoom = (block.offsetHeight+block.offsetWidth)/(child.offsetHeight+child.offsetWidth);
+            child.style.zoom = zoom < 1 ? Math.floor(zoom*100)+'%' : '';
+            child.style.lineHeight = '2.4rem';
+            count++;
+        }
+      });
+    };
+
+    scaleFitGridBlock();
+    let timmer = 0;
+    window.addEventListener('resize', () => {
+      clearTimeout(timmer);
+      timmer = setTimeout(scaleFitGridBlock, 150);
+    });
+    window.addEventListener('load', scaleFitGridBlock);
+    
+    if (document.getElementById('beae-exported-page-css')) {
+      document.getElementById('beae-exported-page-css').addEventListener('load', scaleFitGridBlock);
+    }
+
+  })();
+</script>
+</div></div>{% if section_id == section.id %}{% endif%}
+<script id="beae-exported-page-js" src="{{'beae-697b6e7ab8351b6fde018976.js'  | asset_url }}" defer></script>
+
+{% schema %}
+{
+    "name": "BEAE BUILDER APP",
+    "locales": {
+        "en": {
+            "be76480_html": "N\/A",
+            "be284685552_html": "Add a tagline",
+            "be311426514_html": "Image with text overlay",
+            "be242786539_html": "Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review."
+        }
+    },
+    "settings": [
+        {
+            "type": "header",
+            "content": "The section was generated by BEAE BUILDER",
+            "info": "\n                        Beae is a flexible page builder app on Shopify AppStore.\n                        It provides 100+ Shopify Elements and pre-built templates library, \n                        so you can build unlimited pages that you can imagine with it.\n                    "
+        },
+        {
+            "type": "header",
+            "content": "[EDIT WITH BEAE APP \u2192](https:\/\/beae-anhnguyen.myshopify.com\/admin\/apps\/beae-flexible-page-builder\/next\/editor-v3\/page\/697b6e7ab8351b6fde018976)",
+            "info": "(*You must install the app to start editing this section [Learn more](https:\/\/docs.beae.com\/en\/article\/quick-start-guide-dkoesy\/))"
+        }
+    ],
+    "blocks": [
+        {
+            "type": "@app"
+        }
+    ]
+}
+{% endschema %}

@@ -1,0 +1,1354 @@
+{% comment %}
+ LayoutHub (https://layouthub.com)
+ You SHOULD NOT modify source code in this page because
+ It is automatically generated from LayoutHub
+ {% endcomment %} 
+ <div class="lh-sections-wrapper" data-id="69b517f0c67fbc11630e5072" data-type="product">
+{% comment %}
+ LayoutHub (https://layouthub.com)
+ You SHOULD NOT modify source code in this page because
+ It is automatically generated from LayoutHub
+ {% endcomment %} 
+ <div class="lh-sections-wrapper" data-id="69b517f0c67fbc11630e5072" data-type="product">
+  
+<section id="" data-section-id="RLkdHtF9fw" data-section="banner-11" data-dev="thocuong" data-lh-page-id="638" data-lh-page-name="Landing - Perfume" data-layouthub="section">  
+  
+
+
+      <div class="lh-banner" >
+
+              <div class="lh-banner-item">
+
+                  <div class="lh-overlay no" data-hub-attr-state="class%3D%22lh-overlay%20%257B%253A%257Bsection.settings.overlay%257D%253A%257D%22"  data-hub-attr-overlay ></div>
+
+                  <div class="lh-container">
+
+                      <div class="lh-row">
+
+                              <div class="lh-banner-item-content lh-mr lh-col-md-12">
+
+                                <div class="lh-banner-item-content-info">
+
+                                    <p class="lh-banner-item-content-sub-title"  data-lhi="sub_title" data-lh-lang>{{ 'RLkdHtF9fw.lh_9xy8_title' | t }}</p>
+
+                                    <h3 class="lh-banner-item-content-title"  data-lhi="title" data-lh-lang>{{ 'RLkdHtF9fw.title' | t }}</h3>
+
+                                    <div class="lh-show-price">
+
+                                        <span class="lh-sale-price"  data-lhi="sale_price" data-lh-lang>{{ 'RLkdHtF9fw.lh_hcq7b_price' | t }}</span>
+
+                                        <span class="lh-price"  data-lhi="price" data-lh-lang>{{ 'RLkdHtF9fw.price' | t }}</span>
+
+                                    </div>
+
+                                    <p class="lh-banner-description"  data-lhi="description" data-lh-lang data-lh-live-editor>{{ 'RLkdHtF9fw.description_html' | t }}</p>
+
+                                    <p class="lh-banner-item-button"  data-lhi="btn" data-lh-lang data-lhi-child="a">{{ 'RLkdHtF9fw.btn_html' | t }}</p>
+
+                                </div>
+
+                              </div>
+
+                      </div>
+
+                  </div>   
+
+               </div>
+
+        
+
+      </div>
+
+
+
+
+
+  </section>  
+<section id="" data-section-id="TKHNM8qAbm" data-section="product-detail-22" data-dev="thocuong" data-lh-page-id="638" data-lh-page-name="Landing - Perfume" data-layouthub="section">  
+ {%- assign tpl =  template | replace: '.', ' ' | truncatewords: 1, '' | handle  -%}
+		 	 
+		 		{%- comment -%} Assign product when not in product page {%- endcomment -%}
+		 		{%- assign p  = all_products['short-shoes-sport']  -%}
+		 		{%- if  p.id != ""  and tpl != 'product' -%}
+		 			{% assign product  = p  %}
+		 		{%- endif -%}{%- assign color_names = '' | split: ',' -%}
+		{%- assign color_names_downcase = '' | split: ',' -%}
+		{%- assign color_values = '' | split: ','  -%}
+		{%- if shop.metafields.layouthub and shop.metafields.layouthub.colors and shop.metafields.layouthub.colors contains '|' -%}
+			{% assign colors = shop.metafields.layouthub.colors | split: '|' %}
+			{%- assign color_names = colors | first | strip | split: ',' -%}
+			{%- assign color_names_downcase = colors | first | strip | downcase | split: ',' -%}
+			{%- assign color_values = colors | last | strip | split: ',' -%}
+		 {%- endif -%}<div  class="lh-wrapper lh-product-single" data-pid="{{- product.id -}}" data-money-format='{{shop.money_format | url_encode }}'>
+
+		<div class="lh-container">
+			<div class="lh-details-product">
+			<div class="lh-row lh-align-start">
+				<div class="lh-col-md-12 lh-p">
+					<div class="lh-product-title">
+						<h3  data-lhi="title_product" data-lh-lang>{{ 'TKHNM8qAbm.lh_unv29k_product' | t }}</h3>
+					</div>
+				</div>
+				
+				<div class="lh-product-sync-images lh-col-md-6">
+					<div class="lh-details-images lh-row use-zoom-yes" data-hub-attr-state="class%3D%22lh-details-images%20lh-row%20use-zoom-%257B%253A%257Bsection.settings.use_zoom%257D%253A%257D%22"  data-hub-attr-use_zoom >
+						<div class="lh-small-slide">
+							<div class="block-slide-sm lh-slick-nav swiper-container">
+								<div class="swiper-wrapper lh-align">
+									{%- for image in product.images -%}
+				   <div class="items-img swiper-slide" data-variant_id="{{image.variants | map:'id' | join: ','}}">
+		                <img src="{{ image | img_url: "medium"}}"   alt="{{ image.alt}}">
+		            </div>
+				{%- endfor -%}</div>
+
+							</div>
+							<div class="lh-slide-small-nav">
+								<div class="swiper-button-prev">
+									<svg version="1.1" width="40" height="40" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+										<path fill="currentColor" d="M70.4,2.4L26.2,46.8c-0.9,0.9-1.3,2.1-1.3,3.3c0,1.2,0.5,2.4,1.3,3.3l44.2,44.2c1.1,1.1,2.8,1.1,3.9,0
+													c0.5-0.5,0.8-1.2,0.8-1.9c0-0.7-0.3-1.4-0.8-1.9L30.7,50.1L74.3,6.3c1.1-1.1,1.1-2.8,0-3.9C73.2,1.3,71.5,1.3,70.4,2.4z" ></path>
+									</svg>
+
+								</div>
+								<div class="swiper-button-next">
+									<svg version="1.1" width="40" height="40" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+										<path fill="currentColor" d="M29.6,97.6l44.2-44.4c0.9-0.9,1.3-2.1,1.3-3.3c0-1.2-0.5-2.4-1.3-3.3L29.6,2.4c-1.1-1.1-2.8-1.1-3.9,0
+													c-0.5,0.5-0.8,1.2-0.8,1.9c0,0.7,0.3,1.4,0.8,1.9l43.6,43.6L25.7,93.7c-1.1,1.1-1.1,2.8,0,3.9C26.8,98.7,28.5,98.7,29.6,97.6z" ></path>
+									</svg>
+
+								</div>
+							</div>
+							
+						</div>
+						<div class="lh-big-slide">
+							<div class="lh-big_slide-lg">
+								 
+								<div class=" block-slide-lg lh-slick-big swiper-container">
+									<div class="swiper-wrapper">
+										{%- for image in product.images -%}
+		          <div class="items-img swiper-slide zoom__image" data-variant_id="{{image.variants.first.id}}">
+		                      <img src="{{ image | img_url: "master"}}" data-width="{{image.width}}" data-height="{{image.height}}" data-bigimg="{{ image | img_url: "master"}}" alt="{{ image.alt}}">
+		                  </div>
+		        {%- endfor -%}</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="lh-summary lh-col-md-6 lh-pl0">
+					<div class="lh-content-summary" data-hidden="{% assign variant_slected = product.selected_or_first_available_variant %}
+				{% assign isHidden = true %}
+				{%- if variant_slected.available and variant_slected.price < variant_slected.compare_at_price -%}
+						{% assign isHidden = false %}
+				{%- endif -%}
+				{{isHidden}}">
+						<h3 class="product-name lh-product-title">
+							{{product.title}}</h3>
+						<div class="clearfix"></div>
+						 
+							<div class="lh-product-rating">
+				            {% render 'layouthub_review',  review_type: 'single' , product: product %}</div>
+							<div class="clearfix"></div>
+						 
+						<span class="lh-price-block price ">
+							<del class="lh-compare-at-price">
+					<span class="money">{%- if product.compare_at_price  > product.price  -%}{{ product.compare_at_price  | money }}{%- endif -%}</span>
+				</del>
+				<ins class="lh-price">
+		         <span class="money">{{ product.price | money }}</span>
+		    </ins></span>
+						<div class="lh-product-description"  data-lhi="description_product" data-lh-lang data-lh-live-editor>{{ 'TKHNM8qAbm.lh_lwcu4c_product_html' | t }}</div>
+						<include data-live-trans_quantity data-live-trans_buynow data-name="product-form" data-id="1">  
+ <form class="lh-product-form {% if product.variants.size > 1%} lh-form-product-variants{% else %} lh-form-product-variant {% endif%}" method="POST" accept-charset="utf-8" enctype="multipart/form-data"  action="/cart/add" data-pid="{{- product.id -}}">
+	<table class="lh-wrap-variant" data-variants-size="">
+		{% assign variant_slected = product.selected_or_first_available_variant %}
+				{% assign variant_id = product.selected_or_first_available_variant.id %}
+				{% assign arr_swatch = 'Color'  | downcase | replace: ' ','' | split: ',' %}
+				{%- if  arr_swatch.size > 0 %}
+					{%- if product.variants.size >= 1%}
+						{%- for option in product.options -%}
+							{%- assign option_index = forloop.index0 -%}
+							{%- assign o = option | downcase -%}
+								{%- if arr_swatch contains o -%}
+									{%- assign index = 'option' | append: forloop.index -%}
+									 	<tr class="lh-swatch-images  swatch-index lh-swatch-variations"  data-option-index="{{ option_index }}">
+											<td class="meta">
+												<label title="">{{ option }}:</label>
+												<span>{{variant_slected[index]}}</span>
+											</td>
+											<td class="list-swatch-images">
+														{%- assign values = ""  -%}
+														{%- for variant in product.variants -%}
+															{%- assign option_value = variant[index] -%}
+															{%- assign option_value_downcase = variant[index] | downcase -%}
+															{%- if values != ""%}
+																{%- assign tmp = values | split: '|' -%}
+																{%- if tmp contains option_value_downcase  -%} {%- continue-%}{%- endif -%}
+																{%- assign values = values  | append:   '|' | append: option_value_downcase -%}
+															{%- else -%}
+																{%- assign values =   option_value_downcase -%}
+															{%- endif -%}
+															
+															<li data-option-index="{{ option_index }}" data-lh-tooltip="{{option_value}}" class="lh-swatch-select lh-swatch-image lh-tooltip_top {% if option_value == variant_slected[index] %} active{% endif %}" data-value="{{option_value}}">
+																 
+																	<span><img src="{{ variant | img_url: "120x120", crop: 'center' }}" alt="{{option_value}}">
+																	</span>
+																 
+															</li>
+														{%- endfor -%}
+													</td>
+									  </tr>
+								{%- endif -%}
+						{%- endfor -%}
+					{%- endif -%}
+				{%- endif%}<tr class="lh-quantity">
+			<td class="meta">
+				<label title=""  data-lhi="trans_quantity" data-lh-lang>{{ 'TKHNM8qAbm.lh_up5omg_quantity' | t }}</label>
+			</td>
+			<td class="lh-quantity-form quantity-form lh-flex lh-flex-wrap">
+							 <div class="lh-quantity_form">
+									<div class="lh-control">
+										<input type="number" class="lh-input-qty lh-input-number lh-qty number "  name="quantity" value="1" min="1" max="{%- if current_variant.inventory_management != null -%}{{current_variant.inventory_quantity}}{%- else -%}999{%- endif -%}"><a href="javascript:;" class="lh-btn-number lh-qtyminus lh-quantity-minus" onclick="this.parentNode.querySelector('input[type=number]').stepDown();this.parentNode.querySelector('input[type=number]').dispatchEvent(new Event('change'))"  title=""> </a>
+										 <a href="javascript:;" class="lh-btn-number lh-qtyplus lh-quantity-plus" onclick="this.parentNode.querySelector('input[type=number]').stepUp();this.parentNode.querySelector('input[type=number]').dispatchEvent(new Event('change'))" title=""></a>
+									</div>
+							 </div>
+			</td>
+		</tr>
+	</table>
+	<div class="clearfix"></div>
+   <div class="lh-option-wrappers show-swatch-no" >
+       <select name="id"  id="product-select-{{- product.id -}}" style="display: none">
+          {%- assign current_variant = product.selected_or_first_available_variant -%}
+					{%- for variant in product.variants -%}
+		                {%- if variant.available -%}
+		                  <option {%  if variant == product.selected_or_first_available_variant   %} selected="selected" {%  endif  %} data-sku="{{ variant.sku }}" value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money_with_currency }}</option>
+		                {%- else -%}
+		                  <option disabled="disabled">
+		                    {{ variant.title }} - {{ 'products.product.sold_out' | t }}
+		                  </option>
+		                {%- endif -%}
+		              {%- endfor -%}</select>
+    </div>
+
+   <div class="lh-cart-button-group" data-available='{{product.selected_or_first_available_variant.available}}'>
+		<div class="lh-d-flex lh-flex-wrap lh-wrap-buynow">
+			    <button class="lh-buy-now bt lh-bt-primary lh-bt-type_01"  data-lhi="trans_buynow" data-lh-lang>{{ 'TKHNM8qAbm.lh_up5omg_buynow' | t }}</button>
+
+		</div>
+		<div class="clearfix"></div>
+   </div>
+</form>
+{%- unless product == empty -%}
+				        <script type="application/json" id="lh-product-json-{{product.id}}">
+				          {%- if true -%}
+								{
+								"id": {{product.id}},
+								"title": {{product.title | json}},
+								"handle": {{product.handle | json}},
+								"price": {{product.price| json}},
+								"price_min": {{product.price_min| json}},
+								"price_max": {{product.price_max| json}},
+								"available": {{product.available | json}},
+								"price_varies": {{product.price_varies| json}},
+								"compare_at_price": {{product.compare_at_price| json}},
+								"compare_at_price_min": {{product.compare_at_price_min| json}},
+								"compare_at_price_max": {{product.compare_at_price_max| json}},
+								"compare_at_price_varies": {{product.compare_at_price_varies| json}},
+								"variants": [
+								{%- for variant in product.variants -%}
+								{
+								"id": {{variant.id}},
+								"title": "{{variant.option1 | handleize }}{%- if product.options.size == 2 -%} / {%- endif -%}{{variant.option2 | handleize }}{%- if product.options.size == 3 -%} / {%- endif -%}{{variant.option3 | handleize }}",
+								"option1": {{variant.option1  | json}},
+								"option2": {%- if product.options.size == 1 -%}null{%-else-%}{{variant.option2  | json}}{%-endif-%},
+								"option3": {%- if product.options.size == 1 or product.options.size == 2 -%}null{%-else-%}{{variant.option3  | json}}{%-endif-%},
+								"sku": {{variant.sku | json}},
+								"requires_shipping": {{variant.requires_shipping}},
+								"taxable": {{variant.taxable |json}},
+								"featured_image": {%- if variant.image.id != blank -%}{
+								    "id": {{variant.image.id | json}},
+								    "product_id": {{product.id | json}},
+								    "width": {{variant.image.width | json}},
+								    "height": {{variant.image.height | json}},
+								    "src": {{variant.image.src | json}},
+								    "position":{{variant.image.position}}
+								  }{%- else-%}null{%-endif-%},
+								"available": {{variant.available}},
+								"public_title": "{{variant.option1 | handleize }}{%- if product.options.size == 2 -%} / {%- endif -%}{{variant.option2 | handleize }}{%- if product.options.size == 3 -%} / {%- endif -%}{{variant.option3 | handleize }}",
+								"options": [
+								"{{variant.option1  }}"
+								{%- if product.options.size == 2 -%},{{variant.option2  | json  }}{%- endif -%}
+								{%- if product.options.size == 3 -%},{{variant.option3 | json   }}{%- endif -%}
+								],
+								"price": {{variant.price| json}},
+								"weight": {{variant.weight| json}},
+								"compare_at_price": {{variant.compare_at_price | json}},
+								"inventory_quantity": {{variant.inventory_quantity | json}},
+								"inventory_management": {{variant.inventory_management | json}},
+								"inventory_policy": {{variant.inventory_policy | json}},
+								"barcode": {{variant.barcode | json}}
+								}{%- if forloop.last == false -%},{%- endif -%}
+								{%- endfor -%}
+								],
+								"featured_image": {{product.featured_image | json}},
+								"options": [
+								{%- for option in product.options -%}
+								{{ option | json}}{%- if forloop.last == false -%},{%- endif -%}
+								{%-endfor -%}
+								]
+								}
+							{%- endif -%}
+				        </script>
+				      {%- endunless -%}   </include></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+ 
+  </section>  
+<section id="" data-section-id="nh9qa89u8p" data-section="product-detail-222" data-dev="thocuong" data-lh-page-id="638" data-lh-page-name="Landing - Perfume" data-layouthub="section">  
+ {%- assign tpl =  template | replace: '.', ' ' | truncatewords: 1, '' | handle  -%}
+		 	 
+		 		{%- comment -%} Assign product when not in product page {%- endcomment -%}
+		 		{%- assign p  = all_products['adasdasd']  -%}
+		 		{%- if  p.id != ""  and tpl != 'product' -%}
+		 			{% assign product  = p  %}
+		 		{%- endif -%}{%- assign color_names = '' | split: ',' -%}
+		{%- assign color_names_downcase = '' | split: ',' -%}
+		{%- assign color_values = '' | split: ','  -%}
+		{%- if shop.metafields.layouthub and shop.metafields.layouthub.colors and shop.metafields.layouthub.colors contains '|' -%}
+			{% assign colors = shop.metafields.layouthub.colors | split: '|' %}
+			{%- assign color_names = colors | first | strip | split: ',' -%}
+			{%- assign color_names_downcase = colors | first | strip | downcase | split: ',' -%}
+			{%- assign color_values = colors | last | strip | split: ',' -%}
+		 {%- endif -%}<div  class="lh-wrapper lh-product-single" data-pid="{{- product.id -}}" data-money-format='{{shop.money_format | url_encode }}'>
+
+		<div class="lh-container">
+			<div class="lh-details-product">
+			<div class="lh-row lh-align-start">
+				<div class="lh-col-md-12 lh-p">
+					<div class="lh-product-title">
+						<h3  data-lhi="title_product" data-lh-lang>{{ 'nh9qa89u8p.lh_unv29k_product' | t }}</h3>
+					</div>
+				</div>
+				
+				<div class="lh-product-sync-images lh-col-md-6">
+					<div class="lh-details-images lh-row use-zoom-no" data-hub-attr-state="class%3D%22lh-details-images%20lh-row%20use-zoom-%257B%253A%257Bsection.settings.use_zoom%257D%253A%257D%22"  data-hub-attr-use_zoom >
+						<div class="lh-small-slide">
+							<div class="block-slide-sm lh-slick-nav swiper-container">
+								<div class="swiper-wrapper lh-align">
+									{%- for image in product.images -%}
+				   <div class="items-img swiper-slide" data-variant_id="{{image.variants | map:'id' | join: ','}}">
+		                <img src="{{ image | img_url: "medium"}}"   alt="{{ image.alt}}">
+		            </div>
+				{%- endfor -%}</div>
+
+							</div>
+							<div class="lh-slide-small-nav">
+								<div class="swiper-button-prev">
+									<svg version="1.1" width="40" height="40" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+										<path fill="currentColor" d="M70.4,2.4L26.2,46.8c-0.9,0.9-1.3,2.1-1.3,3.3c0,1.2,0.5,2.4,1.3,3.3l44.2,44.2c1.1,1.1,2.8,1.1,3.9,0
+													c0.5-0.5,0.8-1.2,0.8-1.9c0-0.7-0.3-1.4-0.8-1.9L30.7,50.1L74.3,6.3c1.1-1.1,1.1-2.8,0-3.9C73.2,1.3,71.5,1.3,70.4,2.4z" ></path>
+									</svg>
+
+								</div>
+								<div class="swiper-button-next">
+									<svg version="1.1" width="40" height="40" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+										<path fill="currentColor" d="M29.6,97.6l44.2-44.4c0.9-0.9,1.3-2.1,1.3-3.3c0-1.2-0.5-2.4-1.3-3.3L29.6,2.4c-1.1-1.1-2.8-1.1-3.9,0
+													c-0.5,0.5-0.8,1.2-0.8,1.9c0,0.7,0.3,1.4,0.8,1.9l43.6,43.6L25.7,93.7c-1.1,1.1-1.1,2.8,0,3.9C26.8,98.7,28.5,98.7,29.6,97.6z" ></path>
+									</svg>
+
+								</div>
+							</div>
+							
+						</div>
+						<div class="lh-big-slide">
+							<div class="lh-big_slide-lg">
+								 
+								<div class=" block-slide-lg lh-slick-big swiper-container">
+									<div class="swiper-wrapper">
+										{%- for image in product.images -%}
+		          <div class="items-img swiper-slide zoom__image" data-variant_id="{{image.variants.first.id}}">
+		                      <img src="{{ image | img_url: "master"}}" data-width="{{image.width}}" data-height="{{image.height}}" data-bigimg="{{ image | img_url: "master"}}" alt="{{ image.alt}}">
+		                  </div>
+		        {%- endfor -%}</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="lh-summary lh-col-md-6 lh-pl0">
+					<div class="lh-content-summary" data-hidden="{% assign variant_slected = product.selected_or_first_available_variant %}
+				{% assign isHidden = true %}
+				{%- if variant_slected.available and variant_slected.price < variant_slected.compare_at_price -%}
+						{% assign isHidden = false %}
+				{%- endif -%}
+				{{isHidden}}">
+						<h3 class="product-name lh-product-title">
+							{{product.title}}</h3>
+						<div class="clearfix"></div>
+						 
+						<span class="lh-price-block price ">
+							<del class="lh-compare-at-price">
+					<span class="money">{%- if product.compare_at_price  > product.price  -%}{{ product.compare_at_price  | money }}{%- endif -%}</span>
+				</del>
+				<ins class="lh-price">
+		         <span class="money">{{ product.price | money }}</span>
+		    </ins></span>
+						<div class="lh-product-description"  data-lhi="description_product" data-lh-lang data-lh-live-editor>{{ 'nh9qa89u8p.lh_lwcu4c_product_html' | t }}</div>
+						<include data-live-trans_quantity data-live-trans_buynow data-name="product-form" data-id="1">  
+ <form class="lh-product-form {% if product.variants.size > 1%} lh-form-product-variants{% else %} lh-form-product-variant {% endif%}" method="POST" accept-charset="utf-8" enctype="multipart/form-data"  action="/cart/add" data-pid="{{- product.id -}}">
+	<table class="lh-wrap-variant" data-variants-size="">
+		{% assign variant_slected = product.selected_or_first_available_variant %}
+				{% assign variant_id = product.selected_or_first_available_variant.id %}
+				{% assign arr_swatch = 'Color'  | downcase | replace: ' ','' | split: ',' %}
+				{%- if  arr_swatch.size > 0 %}
+					{%- if product.variants.size >= 1%}
+						{%- for option in product.options -%}
+							{%- assign option_index = forloop.index0 -%}
+							{%- assign o = option | downcase -%}
+								{%- if arr_swatch contains o -%}
+									{%- assign index = 'option' | append: forloop.index -%}
+									 	<tr class="lh-swatch-images  swatch-index lh-swatch-variations"  data-option-index="{{ option_index }}">
+											<td class="meta">
+												<label title="">{{ option }}:</label>
+												<span>{{variant_slected[index]}}</span>
+											</td>
+											<td class="list-swatch-images">
+														{%- assign values = ""  -%}
+														{%- for variant in product.variants -%}
+															{%- assign option_value = variant[index] -%}
+															{%- assign option_value_downcase = variant[index] | downcase -%}
+															{%- if values != ""%}
+																{%- assign tmp = values | split: '|' -%}
+																{%- if tmp contains option_value_downcase  -%} {%- continue-%}{%- endif -%}
+																{%- assign values = values  | append:   '|' | append: option_value_downcase -%}
+															{%- else -%}
+																{%- assign values =   option_value_downcase -%}
+															{%- endif -%}
+															
+															<li data-option-index="{{ option_index }}" data-lh-tooltip="{{option_value}}" class="lh-swatch-select lh-swatch-image lh-tooltip_top {% if option_value == variant_slected[index] %} active{% endif %}" data-value="{{option_value}}">
+																 
+																	<span><img src="{{ variant | img_url: "120x120", crop: 'center' }}" alt="{{option_value}}">
+																	</span>
+																 
+															</li>
+														{%- endfor -%}
+													</td>
+									  </tr>
+								{%- endif -%}
+						{%- endfor -%}
+					{%- endif -%}
+				{%- endif%}<tr class="lh-quantity">
+			<td class="meta">
+				<label title=""  data-lhi="trans_quantity" data-lh-lang>{{ 'nh9qa89u8p.lh_up5omg_quantity' | t }}</label>
+			</td>
+			<td class="lh-quantity-form quantity-form lh-flex lh-flex-wrap">
+							 <div class="lh-quantity_form">
+									<div class="lh-control">
+										<input type="number" class="lh-input-qty lh-input-number lh-qty number "  name="quantity" value="1" min="1" max="{%- if current_variant.inventory_management != null -%}{{current_variant.inventory_quantity}}{%- else -%}999{%- endif -%}"><a href="javascript:;" class="lh-btn-number lh-qtyminus lh-quantity-minus" onclick="this.parentNode.querySelector('input[type=number]').stepDown();this.parentNode.querySelector('input[type=number]').dispatchEvent(new Event('change'))"  title=""> </a>
+										 <a href="javascript:;" class="lh-btn-number lh-qtyplus lh-quantity-plus" onclick="this.parentNode.querySelector('input[type=number]').stepUp();this.parentNode.querySelector('input[type=number]').dispatchEvent(new Event('change'))" title=""></a>
+									</div>
+							 </div>
+			</td>
+		</tr>
+	</table>
+	<div class="clearfix"></div>
+   <div class="lh-option-wrappers show-swatch-no" >
+       <select name="id"  id="product-select-{{- product.id -}}" style="display: none">
+          {%- assign current_variant = product.selected_or_first_available_variant -%}
+					{%- for variant in product.variants -%}
+		                {%- if variant.available -%}
+		                  <option {%  if variant == product.selected_or_first_available_variant   %} selected="selected" {%  endif  %} data-sku="{{ variant.sku }}" value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money_with_currency }}</option>
+		                {%- else -%}
+		                  <option disabled="disabled">
+		                    {{ variant.title }} - {{ 'products.product.sold_out' | t }}
+		                  </option>
+		                {%- endif -%}
+		              {%- endfor -%}</select>
+    </div>
+
+   <div class="lh-cart-button-group" data-available='{{product.selected_or_first_available_variant.available}}'>
+		<div class="lh-d-flex lh-flex-wrap lh-wrap-buynow">
+			    <button class="lh-buy-now bt lh-bt-primary lh-bt-type_01"  data-lhi="trans_buynow" data-lh-lang>{{ 'nh9qa89u8p.lh_up5omg_buynow' | t }}</button>
+
+		</div>
+		<div class="clearfix"></div>
+   </div>
+</form>
+{%- unless product == empty -%}
+				        <script type="application/json" id="lh-product-json-{{product.id}}">
+				          {%- if true -%}
+								{
+								"id": {{product.id}},
+								"title": {{product.title | json}},
+								"handle": {{product.handle | json}},
+								"price": {{product.price| json}},
+								"price_min": {{product.price_min| json}},
+								"price_max": {{product.price_max| json}},
+								"available": {{product.available | json}},
+								"price_varies": {{product.price_varies| json}},
+								"compare_at_price": {{product.compare_at_price| json}},
+								"compare_at_price_min": {{product.compare_at_price_min| json}},
+								"compare_at_price_max": {{product.compare_at_price_max| json}},
+								"compare_at_price_varies": {{product.compare_at_price_varies| json}},
+								"variants": [
+								{%- for variant in product.variants -%}
+								{
+								"id": {{variant.id}},
+								"title": "{{variant.option1 | handleize }}{%- if product.options.size == 2 -%} / {%- endif -%}{{variant.option2 | handleize }}{%- if product.options.size == 3 -%} / {%- endif -%}{{variant.option3 | handleize }}",
+								"option1": {{variant.option1  | json}},
+								"option2": {%- if product.options.size == 1 -%}null{%-else-%}{{variant.option2  | json}}{%-endif-%},
+								"option3": {%- if product.options.size == 1 or product.options.size == 2 -%}null{%-else-%}{{variant.option3  | json}}{%-endif-%},
+								"sku": {{variant.sku | json}},
+								"requires_shipping": {{variant.requires_shipping}},
+								"taxable": {{variant.taxable |json}},
+								"featured_image": {%- if variant.image.id != blank -%}{
+								    "id": {{variant.image.id | json}},
+								    "product_id": {{product.id | json}},
+								    "width": {{variant.image.width | json}},
+								    "height": {{variant.image.height | json}},
+								    "src": {{variant.image.src | json}},
+								    "position":{{variant.image.position}}
+								  }{%- else-%}null{%-endif-%},
+								"available": {{variant.available}},
+								"public_title": "{{variant.option1 | handleize }}{%- if product.options.size == 2 -%} / {%- endif -%}{{variant.option2 | handleize }}{%- if product.options.size == 3 -%} / {%- endif -%}{{variant.option3 | handleize }}",
+								"options": [
+								"{{variant.option1  }}"
+								{%- if product.options.size == 2 -%},{{variant.option2  | json  }}{%- endif -%}
+								{%- if product.options.size == 3 -%},{{variant.option3 | json   }}{%- endif -%}
+								],
+								"price": {{variant.price| json}},
+								"weight": {{variant.weight| json}},
+								"compare_at_price": {{variant.compare_at_price | json}},
+								"inventory_quantity": {{variant.inventory_quantity | json}},
+								"inventory_management": {{variant.inventory_management | json}},
+								"inventory_policy": {{variant.inventory_policy | json}},
+								"barcode": {{variant.barcode | json}}
+								}{%- if forloop.last == false -%},{%- endif -%}
+								{%- endfor -%}
+								],
+								"featured_image": {{product.featured_image | json}},
+								"options": [
+								{%- for option in product.options -%}
+								{{ option | json}}{%- if forloop.last == false -%},{%- endif -%}
+								{%-endfor -%}
+								]
+								}
+							{%- endif -%}
+				        </script>
+				      {%- endunless -%}   </include></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+ 
+  </section>  
+<section id="" data-section-id="dnmiqmitc6" data-section="product-detail-2225" data-dev="thocuong" data-lh-page-id="638" data-lh-page-name="Landing - Perfume" data-layouthub="section">  
+ {%- assign tpl =  template | replace: '.', ' ' | truncatewords: 1, '' | handle  -%}
+		 	 
+		 		{%- comment -%} Assign product when not in product page {%- endcomment -%}
+		 		{%- assign p  = all_products['rainbow-pine-silhouette-square-36w-x-36h']  -%}
+		 		{%- if  p.id != ""  and tpl != 'product' -%}
+		 			{% assign product  = p  %}
+		 		{%- endif -%}{%- assign color_names = '' | split: ',' -%}
+		{%- assign color_names_downcase = '' | split: ',' -%}
+		{%- assign color_values = '' | split: ','  -%}
+		{%- if shop.metafields.layouthub and shop.metafields.layouthub.colors and shop.metafields.layouthub.colors contains '|' -%}
+			{% assign colors = shop.metafields.layouthub.colors | split: '|' %}
+			{%- assign color_names = colors | first | strip | split: ',' -%}
+			{%- assign color_names_downcase = colors | first | strip | downcase | split: ',' -%}
+			{%- assign color_values = colors | last | strip | split: ',' -%}
+		 {%- endif -%}<div  class="lh-wrapper lh-product-single" data-pid="{{- product.id -}}" data-money-format='{{shop.money_format | url_encode }}'>
+
+		<div class="lh-container">
+			<div class="lh-details-product">
+			<div class="lh-row lh-align-start">
+				<div class="lh-col-md-12 lh-p">
+					<div class="lh-product-title">
+						<h3  data-lhi="title_product" data-lh-lang>{{ 'dnmiqmitc6.lh_unv29k_product' | t }}</h3>
+					</div>
+				</div>
+				
+				<div class="lh-product-sync-images lh-col-md-6">
+					<div class="lh-details-images lh-row use-zoom-yes" data-hub-attr-state="class%3D%22lh-details-images%20lh-row%20use-zoom-%257B%253A%257Bsection.settings.use_zoom%257D%253A%257D%22"  data-hub-attr-use_zoom >
+						<div class="lh-small-slide">
+							<div class="block-slide-sm lh-slick-nav swiper-container">
+								<div class="swiper-wrapper lh-align">
+									{%- for image in product.images -%}
+				   <div class="items-img swiper-slide" data-variant_id="{{image.variants | map:'id' | join: ','}}">
+		                <img src="{{ image | img_url: "medium"}}"   alt="{{ image.alt}}">
+		            </div>
+				{%- endfor -%}</div>
+
+							</div>
+							<div class="lh-slide-small-nav">
+								<div class="swiper-button-prev">
+									<svg version="1.1" width="40" height="40" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+										<path fill="currentColor" d="M70.4,2.4L26.2,46.8c-0.9,0.9-1.3,2.1-1.3,3.3c0,1.2,0.5,2.4,1.3,3.3l44.2,44.2c1.1,1.1,2.8,1.1,3.9,0
+													c0.5-0.5,0.8-1.2,0.8-1.9c0-0.7-0.3-1.4-0.8-1.9L30.7,50.1L74.3,6.3c1.1-1.1,1.1-2.8,0-3.9C73.2,1.3,71.5,1.3,70.4,2.4z" ></path>
+									</svg>
+
+								</div>
+								<div class="swiper-button-next">
+									<svg version="1.1" width="40" height="40" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+										<path fill="currentColor" d="M29.6,97.6l44.2-44.4c0.9-0.9,1.3-2.1,1.3-3.3c0-1.2-0.5-2.4-1.3-3.3L29.6,2.4c-1.1-1.1-2.8-1.1-3.9,0
+													c-0.5,0.5-0.8,1.2-0.8,1.9c0,0.7,0.3,1.4,0.8,1.9l43.6,43.6L25.7,93.7c-1.1,1.1-1.1,2.8,0,3.9C26.8,98.7,28.5,98.7,29.6,97.6z" ></path>
+									</svg>
+
+								</div>
+							</div>
+							
+						</div>
+						<div class="lh-big-slide">
+							<div class="lh-big_slide-lg">
+								 
+								<div class=" block-slide-lg lh-slick-big swiper-container">
+									<div class="swiper-wrapper">
+										{%- for image in product.images -%}
+		          <div class="items-img swiper-slide zoom__image" data-variant_id="{{image.variants.first.id}}">
+		                      <img src="{{ image | img_url: "master"}}" data-width="{{image.width}}" data-height="{{image.height}}" data-bigimg="{{ image | img_url: "master"}}" alt="{{ image.alt}}">
+		                  </div>
+		        {%- endfor -%}</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="lh-summary lh-col-md-6 lh-pl0">
+					<div class="lh-content-summary" data-hidden="{% assign variant_slected = product.selected_or_first_available_variant %}
+				{% assign isHidden = true %}
+				{%- if variant_slected.available and variant_slected.price < variant_slected.compare_at_price -%}
+						{% assign isHidden = false %}
+				{%- endif -%}
+				{{isHidden}}">
+						<h3 class="product-name lh-product-title">
+							{{product.title}}</h3>
+						<div class="clearfix"></div>
+						 
+							<div class="lh-product-rating">
+				            {% render 'layouthub_review',  review_type: 'single' , product: product %}</div>
+							<div class="clearfix"></div>
+						 
+						<span class="lh-price-block price ">
+							<del class="lh-compare-at-price">
+					<span class="money">{%- if product.compare_at_price  > product.price  -%}{{ product.compare_at_price  | money }}{%- endif -%}</span>
+				</del>
+				<ins class="lh-price">
+		         <span class="money">{{ product.price | money }}</span>
+		    </ins></span>
+						<div class="lh-product-description"  data-lhi="description_product" data-lh-lang data-lh-live-editor>{{ 'dnmiqmitc6.lh_lwcu4c_product_html' | t }}</div>
+						<include data-live-trans_quantity data-live-trans_buynow data-name="product-form" data-id="1">  
+ <form class="lh-product-form {% if product.variants.size > 1%} lh-form-product-variants{% else %} lh-form-product-variant {% endif%}" method="POST" accept-charset="utf-8" enctype="multipart/form-data"  action="/cart/add" data-pid="{{- product.id -}}">
+	<table class="lh-wrap-variant" data-variants-size="">
+		{% assign variant_slected = product.selected_or_first_available_variant %}
+				{% assign variant_id = product.selected_or_first_available_variant.id %}
+				{% assign arr_swatch = 'Color'  | downcase | replace: ' ','' | split: ',' %}
+				{%- if  arr_swatch.size > 0 %}
+					{%- if product.variants.size >= 1%}
+						{%- for option in product.options -%}
+							{%- assign option_index = forloop.index0 -%}
+							{%- assign o = option | downcase -%}
+								{%- if arr_swatch contains o -%}
+									{%- assign index = 'option' | append: forloop.index -%}
+									 	<tr class="lh-swatch-images  swatch-index lh-swatch-variations"  data-option-index="{{ option_index }}">
+											<td class="meta">
+												<label title="">{{ option }}:</label>
+												<span>{{variant_slected[index]}}</span>
+											</td>
+											<td class="list-swatch-images">
+														{%- assign values = ""  -%}
+														{%- for variant in product.variants -%}
+															{%- assign option_value = variant[index] -%}
+															{%- assign option_value_downcase = variant[index] | downcase -%}
+															{%- if values != ""%}
+																{%- assign tmp = values | split: '|' -%}
+																{%- if tmp contains option_value_downcase  -%} {%- continue-%}{%- endif -%}
+																{%- assign values = values  | append:   '|' | append: option_value_downcase -%}
+															{%- else -%}
+																{%- assign values =   option_value_downcase -%}
+															{%- endif -%}
+															
+															<li data-option-index="{{ option_index }}" data-lh-tooltip="{{option_value}}" class="lh-swatch-select lh-swatch-image lh-tooltip_top {% if option_value == variant_slected[index] %} active{% endif %}" data-value="{{option_value}}">
+																 
+																	<span><img src="{{ variant | img_url: "120x120", crop: 'center' }}" alt="{{option_value}}">
+																	</span>
+																 
+															</li>
+														{%- endfor -%}
+													</td>
+									  </tr>
+								{%- endif -%}
+						{%- endfor -%}
+					{%- endif -%}
+				{%- endif%}<tr class="lh-quantity">
+			<td class="meta">
+				<label title=""  data-lhi="trans_quantity" data-lh-lang>{{ 'dnmiqmitc6.lh_up5omg_quantity' | t }}</label>
+			</td>
+			<td class="lh-quantity-form quantity-form lh-flex lh-flex-wrap">
+							 <div class="lh-quantity_form">
+									<div class="lh-control">
+										<input type="number" class="lh-input-qty lh-input-number lh-qty number "  name="quantity" value="1" min="1" max="{%- if current_variant.inventory_management != null -%}{{current_variant.inventory_quantity}}{%- else -%}999{%- endif -%}"><a href="javascript:;" class="lh-btn-number lh-qtyminus lh-quantity-minus" onclick="this.parentNode.querySelector('input[type=number]').stepDown();this.parentNode.querySelector('input[type=number]').dispatchEvent(new Event('change'))"  title=""> </a>
+										 <a href="javascript:;" class="lh-btn-number lh-qtyplus lh-quantity-plus" onclick="this.parentNode.querySelector('input[type=number]').stepUp();this.parentNode.querySelector('input[type=number]').dispatchEvent(new Event('change'))" title=""></a>
+									</div>
+							 </div>
+			</td>
+		</tr>
+	</table>
+	<div class="clearfix"></div>
+   <div class="lh-option-wrappers show-swatch-no" >
+       <select name="id"  id="product-select-{{- product.id -}}" style="display: none">
+          {%- assign current_variant = product.selected_or_first_available_variant -%}
+					{%- for variant in product.variants -%}
+		                {%- if variant.available -%}
+		                  <option {%  if variant == product.selected_or_first_available_variant   %} selected="selected" {%  endif  %} data-sku="{{ variant.sku }}" value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money_with_currency }}</option>
+		                {%- else -%}
+		                  <option disabled="disabled">
+		                    {{ variant.title }} - {{ 'products.product.sold_out' | t }}
+		                  </option>
+		                {%- endif -%}
+		              {%- endfor -%}</select>
+    </div>
+
+   <div class="lh-cart-button-group" data-available='{{product.selected_or_first_available_variant.available}}'>
+		<div class="lh-d-flex lh-flex-wrap lh-wrap-buynow">
+			    <button class="lh-buy-now bt lh-bt-primary lh-bt-type_01"  data-lhi="trans_buynow" data-lh-lang>{{ 'dnmiqmitc6.lh_up5omg_buynow' | t }}</button>
+
+		</div>
+		<div class="clearfix"></div>
+   </div>
+</form>
+{%- unless product == empty -%}
+				        <script type="application/json" id="lh-product-json-{{product.id}}">
+				          {%- if true -%}
+								{
+								"id": {{product.id}},
+								"title": {{product.title | json}},
+								"handle": {{product.handle | json}},
+								"price": {{product.price| json}},
+								"price_min": {{product.price_min| json}},
+								"price_max": {{product.price_max| json}},
+								"available": {{product.available | json}},
+								"price_varies": {{product.price_varies| json}},
+								"compare_at_price": {{product.compare_at_price| json}},
+								"compare_at_price_min": {{product.compare_at_price_min| json}},
+								"compare_at_price_max": {{product.compare_at_price_max| json}},
+								"compare_at_price_varies": {{product.compare_at_price_varies| json}},
+								"variants": [
+								{%- for variant in product.variants -%}
+								{
+								"id": {{variant.id}},
+								"title": "{{variant.option1 | handleize }}{%- if product.options.size == 2 -%} / {%- endif -%}{{variant.option2 | handleize }}{%- if product.options.size == 3 -%} / {%- endif -%}{{variant.option3 | handleize }}",
+								"option1": {{variant.option1  | json}},
+								"option2": {%- if product.options.size == 1 -%}null{%-else-%}{{variant.option2  | json}}{%-endif-%},
+								"option3": {%- if product.options.size == 1 or product.options.size == 2 -%}null{%-else-%}{{variant.option3  | json}}{%-endif-%},
+								"sku": {{variant.sku | json}},
+								"requires_shipping": {{variant.requires_shipping}},
+								"taxable": {{variant.taxable |json}},
+								"featured_image": {%- if variant.image.id != blank -%}{
+								    "id": {{variant.image.id | json}},
+								    "product_id": {{product.id | json}},
+								    "width": {{variant.image.width | json}},
+								    "height": {{variant.image.height | json}},
+								    "src": {{variant.image.src | json}},
+								    "position":{{variant.image.position}}
+								  }{%- else-%}null{%-endif-%},
+								"available": {{variant.available}},
+								"public_title": "{{variant.option1 | handleize }}{%- if product.options.size == 2 -%} / {%- endif -%}{{variant.option2 | handleize }}{%- if product.options.size == 3 -%} / {%- endif -%}{{variant.option3 | handleize }}",
+								"options": [
+								"{{variant.option1  }}"
+								{%- if product.options.size == 2 -%},{{variant.option2  | json  }}{%- endif -%}
+								{%- if product.options.size == 3 -%},{{variant.option3 | json   }}{%- endif -%}
+								],
+								"price": {{variant.price| json}},
+								"weight": {{variant.weight| json}},
+								"compare_at_price": {{variant.compare_at_price | json}},
+								"inventory_quantity": {{variant.inventory_quantity | json}},
+								"inventory_management": {{variant.inventory_management | json}},
+								"inventory_policy": {{variant.inventory_policy | json}},
+								"barcode": {{variant.barcode | json}}
+								}{%- if forloop.last == false -%},{%- endif -%}
+								{%- endfor -%}
+								],
+								"featured_image": {{product.featured_image | json}},
+								"options": [
+								{%- for option in product.options -%}
+								{{ option | json}}{%- if forloop.last == false -%},{%- endif -%}
+								{%-endfor -%}
+								]
+								}
+							{%- endif -%}
+				        </script>
+				      {%- endunless -%}   </include></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+ 
+  </section>  
+<section id="" data-section-id="ak3bjamjwf" data-section="product-detail-22256" data-dev="thocuong" data-lh-page-id="638" data-lh-page-name="Landing - Perfume" data-layouthub="section">  
+ {%- assign tpl =  template | replace: '.', ' ' | truncatewords: 1, '' | handle  -%}
+		 	 
+		 		{%- comment -%} Assign product when not in product page {%- endcomment -%}
+		 		{%- assign p  = all_products['rainbow-pine-portrait-18w-x-24h']  -%}
+		 		{%- if  p.id != ""  and tpl != 'product' -%}
+		 			{% assign product  = p  %}
+		 		{%- endif -%}{%- assign color_names = '' | split: ',' -%}
+		{%- assign color_names_downcase = '' | split: ',' -%}
+		{%- assign color_values = '' | split: ','  -%}
+		{%- if shop.metafields.layouthub and shop.metafields.layouthub.colors and shop.metafields.layouthub.colors contains '|' -%}
+			{% assign colors = shop.metafields.layouthub.colors | split: '|' %}
+			{%- assign color_names = colors | first | strip | split: ',' -%}
+			{%- assign color_names_downcase = colors | first | strip | downcase | split: ',' -%}
+			{%- assign color_values = colors | last | strip | split: ',' -%}
+		 {%- endif -%}<div  class="lh-wrapper lh-product-single" data-pid="{{- product.id -}}" data-money-format='{{shop.money_format | url_encode }}'>
+
+		<div class="lh-container">
+			<div class="lh-details-product">
+			<div class="lh-row lh-align-start">
+				<div class="lh-col-md-12 lh-p">
+					<div class="lh-product-title">
+						<h3  data-lhi="title_product" data-lh-lang>{{ 'ak3bjamjwf.lh_unv29k_product' | t }}</h3>
+					</div>
+				</div>
+				
+				<div class="lh-product-sync-images lh-col-md-6">
+					<div class="lh-details-images lh-row use-zoom-yes" data-hub-attr-state="class%3D%22lh-details-images%20lh-row%20use-zoom-%257B%253A%257Bsection.settings.use_zoom%257D%253A%257D%22"  data-hub-attr-use_zoom >
+						<div class="lh-small-slide">
+							<div class="block-slide-sm lh-slick-nav swiper-container">
+								<div class="swiper-wrapper lh-align">
+									{%- for image in product.images -%}
+				   <div class="items-img swiper-slide" data-variant_id="{{image.variants | map:'id' | join: ','}}">
+		                <img src="{{ image | img_url: "medium"}}"   alt="{{ image.alt}}">
+		            </div>
+				{%- endfor -%}</div>
+
+							</div>
+							<div class="lh-slide-small-nav">
+								<div class="swiper-button-prev">
+									<svg version="1.1" width="40" height="40" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+										<path fill="currentColor" d="M70.4,2.4L26.2,46.8c-0.9,0.9-1.3,2.1-1.3,3.3c0,1.2,0.5,2.4,1.3,3.3l44.2,44.2c1.1,1.1,2.8,1.1,3.9,0
+													c0.5-0.5,0.8-1.2,0.8-1.9c0-0.7-0.3-1.4-0.8-1.9L30.7,50.1L74.3,6.3c1.1-1.1,1.1-2.8,0-3.9C73.2,1.3,71.5,1.3,70.4,2.4z" ></path>
+									</svg>
+
+								</div>
+								<div class="swiper-button-next">
+									<svg version="1.1" width="40" height="40" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+										<path fill="currentColor" d="M29.6,97.6l44.2-44.4c0.9-0.9,1.3-2.1,1.3-3.3c0-1.2-0.5-2.4-1.3-3.3L29.6,2.4c-1.1-1.1-2.8-1.1-3.9,0
+													c-0.5,0.5-0.8,1.2-0.8,1.9c0,0.7,0.3,1.4,0.8,1.9l43.6,43.6L25.7,93.7c-1.1,1.1-1.1,2.8,0,3.9C26.8,98.7,28.5,98.7,29.6,97.6z" ></path>
+									</svg>
+
+								</div>
+							</div>
+							
+						</div>
+						<div class="lh-big-slide">
+							<div class="lh-big_slide-lg">
+								 
+								<div class=" block-slide-lg lh-slick-big swiper-container">
+									<div class="swiper-wrapper">
+										{%- for image in product.images -%}
+		          <div class="items-img swiper-slide zoom__image" data-variant_id="{{image.variants.first.id}}">
+		                      <img src="{{ image | img_url: "master"}}" data-width="{{image.width}}" data-height="{{image.height}}" data-bigimg="{{ image | img_url: "master"}}" alt="{{ image.alt}}">
+		                  </div>
+		        {%- endfor -%}</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="lh-summary lh-col-md-6 lh-pl0">
+					<div class="lh-content-summary" data-hidden="{% assign variant_slected = product.selected_or_first_available_variant %}
+				{% assign isHidden = true %}
+				{%- if variant_slected.available and variant_slected.price < variant_slected.compare_at_price -%}
+						{% assign isHidden = false %}
+				{%- endif -%}
+				{{isHidden}}">
+						<h3 class="product-name lh-product-title">
+							{{product.title}}</h3>
+						<div class="clearfix"></div>
+						 
+							<div class="lh-product-rating">
+				            {% render 'layouthub_review',  review_type: 'single' , product: product %}</div>
+							<div class="clearfix"></div>
+						 
+						<span class="lh-price-block price ">
+							<del class="lh-compare-at-price">
+					<span class="money">{%- if product.compare_at_price  > product.price  -%}{{ product.compare_at_price  | money }}{%- endif -%}</span>
+				</del>
+				<ins class="lh-price">
+		         <span class="money">{{ product.price | money }}</span>
+		    </ins></span>
+						<div class="lh-product-description"  data-lhi="description_product" data-lh-lang data-lh-live-editor>{{ 'ak3bjamjwf.lh_lwcu4c_product_html' | t }}</div>
+						<include data-live-trans_quantity data-live-trans_buynow data-name="product-form" data-id="1">  
+ <form class="lh-product-form {% if product.variants.size > 1%} lh-form-product-variants{% else %} lh-form-product-variant {% endif%}" method="POST" accept-charset="utf-8" enctype="multipart/form-data"  action="/cart/add" data-pid="{{- product.id -}}">
+	<table class="lh-wrap-variant" data-variants-size="">
+		{% assign variant_slected = product.selected_or_first_available_variant %}
+				{% assign variant_id = product.selected_or_first_available_variant.id %}
+				{% assign arr_swatch = 'Color'  | downcase | replace: ' ','' | split: ',' %}
+				{%- if  arr_swatch.size > 0 %}
+					{%- if product.variants.size >= 1%}
+						{%- for option in product.options -%}
+							{%- assign option_index = forloop.index0 -%}
+							{%- assign o = option | downcase -%}
+								{%- if arr_swatch contains o -%}
+									{%- assign index = 'option' | append: forloop.index -%}
+									 	<tr class="lh-swatch-images  swatch-index lh-swatch-variations"  data-option-index="{{ option_index }}">
+											<td class="meta">
+												<label title="">{{ option }}:</label>
+												<span>{{variant_slected[index]}}</span>
+											</td>
+											<td class="list-swatch-images">
+														{%- assign values = ""  -%}
+														{%- for variant in product.variants -%}
+															{%- assign option_value = variant[index] -%}
+															{%- assign option_value_downcase = variant[index] | downcase -%}
+															{%- if values != ""%}
+																{%- assign tmp = values | split: '|' -%}
+																{%- if tmp contains option_value_downcase  -%} {%- continue-%}{%- endif -%}
+																{%- assign values = values  | append:   '|' | append: option_value_downcase -%}
+															{%- else -%}
+																{%- assign values =   option_value_downcase -%}
+															{%- endif -%}
+															
+															<li data-option-index="{{ option_index }}" data-lh-tooltip="{{option_value}}" class="lh-swatch-select lh-swatch-image lh-tooltip_top {% if option_value == variant_slected[index] %} active{% endif %}" data-value="{{option_value}}">
+																 
+																	<span><img src="{{ variant | img_url: "120x120", crop: 'center' }}" alt="{{option_value}}">
+																	</span>
+																 
+															</li>
+														{%- endfor -%}
+													</td>
+									  </tr>
+								{%- endif -%}
+						{%- endfor -%}
+					{%- endif -%}
+				{%- endif%}<tr class="lh-quantity">
+			<td class="meta">
+				<label title=""  data-lhi="trans_quantity" data-lh-lang>{{ 'ak3bjamjwf.lh_up5omg_quantity' | t }}</label>
+			</td>
+			<td class="lh-quantity-form quantity-form lh-flex lh-flex-wrap">
+							 <div class="lh-quantity_form">
+									<div class="lh-control">
+										<input type="number" class="lh-input-qty lh-input-number lh-qty number "  name="quantity" value="1" min="1" max="{%- if current_variant.inventory_management != null -%}{{current_variant.inventory_quantity}}{%- else -%}999{%- endif -%}"><a href="javascript:;" class="lh-btn-number lh-qtyminus lh-quantity-minus" onclick="this.parentNode.querySelector('input[type=number]').stepDown();this.parentNode.querySelector('input[type=number]').dispatchEvent(new Event('change'))"  title=""> </a>
+										 <a href="javascript:;" class="lh-btn-number lh-qtyplus lh-quantity-plus" onclick="this.parentNode.querySelector('input[type=number]').stepUp();this.parentNode.querySelector('input[type=number]').dispatchEvent(new Event('change'))" title=""></a>
+									</div>
+							 </div>
+			</td>
+		</tr>
+	</table>
+	<div class="clearfix"></div>
+   <div class="lh-option-wrappers show-swatch-no" >
+       <select name="id"  id="product-select-{{- product.id -}}" style="display: none">
+          {%- assign current_variant = product.selected_or_first_available_variant -%}
+					{%- for variant in product.variants -%}
+		                {%- if variant.available -%}
+		                  <option {%  if variant == product.selected_or_first_available_variant   %} selected="selected" {%  endif  %} data-sku="{{ variant.sku }}" value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money_with_currency }}</option>
+		                {%- else -%}
+		                  <option disabled="disabled">
+		                    {{ variant.title }} - {{ 'products.product.sold_out' | t }}
+		                  </option>
+		                {%- endif -%}
+		              {%- endfor -%}</select>
+    </div>
+
+   <div class="lh-cart-button-group" data-available='{{product.selected_or_first_available_variant.available}}'>
+		<div class="lh-d-flex lh-flex-wrap lh-wrap-buynow">
+			    <button class="lh-buy-now bt lh-bt-primary lh-bt-type_01"  data-lhi="trans_buynow" data-lh-lang>{{ 'ak3bjamjwf.lh_up5omg_buynow' | t }}</button>
+
+		</div>
+		<div class="clearfix"></div>
+   </div>
+</form>
+{%- unless product == empty -%}
+				        <script type="application/json" id="lh-product-json-{{product.id}}">
+				          {%- if true -%}
+								{
+								"id": {{product.id}},
+								"title": {{product.title | json}},
+								"handle": {{product.handle | json}},
+								"price": {{product.price| json}},
+								"price_min": {{product.price_min| json}},
+								"price_max": {{product.price_max| json}},
+								"available": {{product.available | json}},
+								"price_varies": {{product.price_varies| json}},
+								"compare_at_price": {{product.compare_at_price| json}},
+								"compare_at_price_min": {{product.compare_at_price_min| json}},
+								"compare_at_price_max": {{product.compare_at_price_max| json}},
+								"compare_at_price_varies": {{product.compare_at_price_varies| json}},
+								"variants": [
+								{%- for variant in product.variants -%}
+								{
+								"id": {{variant.id}},
+								"title": "{{variant.option1 | handleize }}{%- if product.options.size == 2 -%} / {%- endif -%}{{variant.option2 | handleize }}{%- if product.options.size == 3 -%} / {%- endif -%}{{variant.option3 | handleize }}",
+								"option1": {{variant.option1  | json}},
+								"option2": {%- if product.options.size == 1 -%}null{%-else-%}{{variant.option2  | json}}{%-endif-%},
+								"option3": {%- if product.options.size == 1 or product.options.size == 2 -%}null{%-else-%}{{variant.option3  | json}}{%-endif-%},
+								"sku": {{variant.sku | json}},
+								"requires_shipping": {{variant.requires_shipping}},
+								"taxable": {{variant.taxable |json}},
+								"featured_image": {%- if variant.image.id != blank -%}{
+								    "id": {{variant.image.id | json}},
+								    "product_id": {{product.id | json}},
+								    "width": {{variant.image.width | json}},
+								    "height": {{variant.image.height | json}},
+								    "src": {{variant.image.src | json}},
+								    "position":{{variant.image.position}}
+								  }{%- else-%}null{%-endif-%},
+								"available": {{variant.available}},
+								"public_title": "{{variant.option1 | handleize }}{%- if product.options.size == 2 -%} / {%- endif -%}{{variant.option2 | handleize }}{%- if product.options.size == 3 -%} / {%- endif -%}{{variant.option3 | handleize }}",
+								"options": [
+								"{{variant.option1  }}"
+								{%- if product.options.size == 2 -%},{{variant.option2  | json  }}{%- endif -%}
+								{%- if product.options.size == 3 -%},{{variant.option3 | json   }}{%- endif -%}
+								],
+								"price": {{variant.price| json}},
+								"weight": {{variant.weight| json}},
+								"compare_at_price": {{variant.compare_at_price | json}},
+								"inventory_quantity": {{variant.inventory_quantity | json}},
+								"inventory_management": {{variant.inventory_management | json}},
+								"inventory_policy": {{variant.inventory_policy | json}},
+								"barcode": {{variant.barcode | json}}
+								}{%- if forloop.last == false -%},{%- endif -%}
+								{%- endfor -%}
+								],
+								"featured_image": {{product.featured_image | json}},
+								"options": [
+								{%- for option in product.options -%}
+								{{ option | json}}{%- if forloop.last == false -%},{%- endif -%}
+								{%-endfor -%}
+								]
+								}
+							{%- endif -%}
+				        </script>
+				      {%- endunless -%}   </include></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+ 
+  </section>  
+<section id="" data-section-id="eyqhEQbCvB" data-section="product-feature" data-lh-page-id="638" data-lh-page-name="Landing - Perfume" data-layouthub="section">  
+ 
+
+<div class="lh-services-block">
+
+	<div class="lh-services-wrapper">
+
+		<div class="lh-container">
+
+			<div class="lh-row">
+
+				<div class="lh-col-md-6 lh-order1">
+
+					<div class="lh-services-heading">
+
+						<h3  data-lhi="title" data-lh-lang>{{ 'eyqhEQbCvB.title' | t }}</h3>
+
+					</div>
+
+					 <div class="custom-range">
+
+						<div class="lh-services-item">
+
+							<div class="lh-service-item-inner">
+
+								<div class="lh-services-item-left">
+
+									<i class="lni lni-brush-alt" data-hub-attr-state="class%3D%22%22"   data-hub-attr-group_services_0_icon="group_services[0]icon" data-lhis="group_services-icon" ></i>
+
+								</div>
+
+								<div class="lh-services-item-right">
+
+									<span class="lh-services__title"  data-lhi="group_services[0]title" data-lh-lang data-lhis="group_services-title">{{ 'eyqhEQbCvB.lh_isvqof_title' | t }}</span>
+
+									<p class="lh-services__subtitle"  data-lhi="group_services[0]sub_title" data-lh-lang data-lh-live-editor data-lhis="group_services-sub_title">{{ 'eyqhEQbCvB.lh_60e4og_title_html' | t }}</p>
+
+								</div>
+
+							</div>
+
+						</div>
+
+					</div>
+
+					 <div class="custom-range">
+
+						<div class="lh-services-item">
+
+							<div class="lh-service-item-inner">
+
+								<div class="lh-services-item-left">
+
+									<i class="lni lni-delivery" data-hub-attr-state="class%3D%22%22"   data-hub-attr-group_services_1_icon="group_services[1]icon" data-lhis="group_services-icon" ></i>
+
+								</div>
+
+								<div class="lh-services-item-right">
+
+									<span class="lh-services__title"  data-lhi="group_services[1]title" data-lh-lang data-lhis="group_services-title">{{ 'eyqhEQbCvB.lh_isvqog_title' | t }}</span>
+
+									<p class="lh-services__subtitle"  data-lhi="group_services[1]sub_title" data-lh-lang data-lh-live-editor data-lhis="group_services-sub_title">{{ 'eyqhEQbCvB.lh_5r0hm7_title_html' | t }}</p>
+
+								</div>
+
+							</div>
+
+						</div>
+
+					</div>
+
+					 <div class="custom-range">
+
+						<div class="lh-services-item">
+
+							<div class="lh-service-item-inner">
+
+								<div class="lh-services-item-left">
+
+									<i class="lni lni-heart" data-hub-attr-state="class%3D%22%22"   data-hub-attr-group_services_2_icon="group_services[2]icon" data-lhis="group_services-icon" ></i>
+
+								</div>
+
+								<div class="lh-services-item-right">
+
+									<span class="lh-services__title"  data-lhi="group_services[2]title" data-lh-lang data-lhis="group_services-title">{{ 'eyqhEQbCvB.lh_isvqoh_title' | t }}</span>
+
+									<p class="lh-services__subtitle"  data-lhi="group_services[2]sub_title" data-lh-lang data-lh-live-editor data-lhis="group_services-sub_title">{{ 'eyqhEQbCvB.lh_5hmujy_title_html' | t }}</p>
+
+								</div>
+
+							</div>
+
+						</div>
+
+					</div>
+
+					 
+
+				</div>
+
+				<div class="lh-col-md-6 lh-order2">
+
+					<p class="lh-image-collection"  data-lhi="image"><img src="https://cdn.shopify.com/s/files/1/2059/6915/files/3_ZrNi.jpg?v=177334766449" alt="Product image" class="hub-img" /></p>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+</div>
+  </section>  
+<section id="" data-section-id="z2conjlv89l" data-section="section-10" data-dev="hongyen" data-lh-page-id="1469" data-lh-page-name="Green - Landing" data-layouthub="section">  
+  
+ 
+ 
+ 
+ 
+ 
+
+<div class="lh-section" >
+        <div class="lh-container">
+        	<div class="lh-row">
+                <div class="lh-col-md-5">
+                    <div class="lh-img"  data-lhi="img"><img src="https://cdn.shopify.com/s/files/1/2059/6915/files/Laura_Gallery_LR_copy.jpg?v=1613522242762" alt="Image" /></div>
+                </div>
+        		<div class="lh-col-md-7">
+        			<div class="lh-content">
+                        <h3 class="lh-title-main"  data-lhi="txt_title" data-lh-lang>{{ 'z2conjlv89l.lh_a168_title_html' | t }}</h3>
+                        <div class="lh-desc"  data-lhi="txt_desc" data-lh-lang data-lh-live-editor>{{ 'z2conjlv89l.lh_a168_desc_html' | t }}</div>
+                        <p class="lh-sign"  data-lhi="img_sign" data-lh-lang>{{ 'z2conjlv89l.lh_92xv_sign' | t }}</p>
+                        <div class="lh-info">
+                            <h5 class="lh-name"  data-lhi="txt_name" data-lh-lang>{{ 'z2conjlv89l.lh_a168_name' | t }}</h5>
+                            <p class="lh-pos"  data-lhi="txt_pos" data-lh-lang>{{ 'z2conjlv89l.lh_a168_pos_html' | t }}</p>
+                        </div>
+                    </div>
+                </div>
+        	</div>
+        </div>
+</div>
+  </section>  
+<section id="" data-section-id="nxg16e25gx" data-section="how-to-use" data-dev="hongyen" data-lh-page-id="1119" data-lh-page-name="Mayi" data-layouthub="section">  
+  
+ 
+ 
+ 
+ 
+
+<div class="lh-step">
+  <div class="lh-container">
+    <div class="lh-row">
+      <div class="lh-col-md-12">
+        <p class="lh-txt-main"  data-lhi="txt_title_top" data-lh-lang>{{ 'nxg16e25gx.lh_f5dibt_top' | t }}</p>
+        <h3 class="lh-title"  data-lhi="txt_title" data-lh-lang>{{ 'nxg16e25gx.lh_a168_title' | t }}</h3>
+    </div>
+    </div>
+    <div class="lh-list-step">
+     <div class="lh-row">
+      <div class="lh-col-md-5" >
+        <div class="lh-list">
+         <div class="lh-item">
+            <div class="lh-num">
+              <p class="lh-txt-num">1</p>
+              <div class="lh-next">
+                   
+                      <p class="lh-icon-img"  data-lhi="list_item[0]img_next" data-lhis="list_item-img_next"><img src="https://library.layouthub.com/HUB/files/SmFuLS0yMDIx/NjEwNDM1MTg1/release-1-2021/pages/ULZizmI1oOAj34PK/how/assets/images/Arrow2.png" /></p>
+                   
+            </div>
+          </div>
+            <div class="lh-text">
+              <p class="lh-title-step"  data-lhi="list_item[0]txt_title" data-lh-lang data-lhis="list_item-txt_title">{{ 'nxg16e25gx.lh_9wid92_title_html' | t }}</p>
+              <div class="lh-desc"  data-lhi="list_item[0]txt_desc" data-lh-lang data-lh-live-editor data-lhis="list_item-txt_desc">{{ 'nxg16e25gx.lh_9wid92_desc_html' | t }}</div>
+            </div>
+
+          </div>
+         <div class="lh-item">
+            <div class="lh-num">
+              <p class="lh-txt-num">2</p>
+              <div class="lh-next">
+                   
+                      <p class="lh-icon-img"  data-lhi="list_item[1]img_next" data-lhis="list_item-img_next"><img src="https://library.layouthub.com/HUB/files/SmFuLS0yMDIx/NjEwNDM1MTg1/release-1-2021/pages/ULZizmI1oOAj34PK/how/assets/images/Arrow2.png" /></p>
+                   
+            </div>
+          </div>
+            <div class="lh-text">
+              <p class="lh-title-step"  data-lhi="list_item[1]txt_title" data-lh-lang data-lhis="list_item-txt_title">{{ 'nxg16e25gx.lh_a5w0bb_title' | t }}</p>
+              <div class="lh-desc"  data-lhi="list_item[1]txt_desc" data-lh-lang data-lh-live-editor data-lhis="list_item-txt_desc">{{ 'nxg16e25gx.lh_a5w0bb_desc_html' | t }}</div>
+            </div>
+
+          </div>
+         <div class="lh-item">
+            <div class="lh-num">
+              <p class="lh-txt-num">3</p>
+              <div class="lh-next">
+                   
+                      <p class="lh-icon-img"  data-lhi="list_item[2]img_next" data-lhis="list_item-img_next"><img src="https://library.layouthub.com/HUB/files/SmFuLS0yMDIx/NjEwNDM1MTg1/release-1-2021/pages/ULZizmI1oOAj34PK/how/assets/images/Arrow2.png" /></p>
+                   
+            </div>
+          </div>
+            <div class="lh-text">
+              <p class="lh-title-step"  data-lhi="list_item[2]txt_title" data-lh-lang data-lhis="list_item-txt_title">{{ 'nxg16e25gx.lh_af9ndk_title_html' | t }}</p>
+              <div class="lh-desc"  data-lhi="list_item[2]txt_desc" data-lh-lang data-lh-live-editor data-lhis="list_item-txt_desc">{{ 'nxg16e25gx.lh_af9ndk_desc_html' | t }}</div>
+            </div>
+
+          </div>
+         
+        </div>
+        </div>
+         <div class="lh-col-md-1" ></div>
+        <div class="lh-col-md-6">
+          <p class="lh-img"  data-lhi="img"><img src="https://cdn.shopify.com/s/files/1/2059/6915/files/Gallery-Exterior-munzy-uptown-waterloo_c51c2bb4-bef8-41bf-88e7-7ecaa16b2a86.jpg?v=1705094330542" alt="Image Product" /></p>
+        </div>
+    </div>
+  </div>
+
+  </div>
+</div>
+  </section>  
+<section id="" data-section-id="sYSpGjFrdz" data-section="our-products-3" data-lh-page-id="638" data-lh-page-name="Landing - Perfume" data-layouthub="section">  
+ 
+
+
+
+  <div class="lh-container">
+
+    <div class="lh-row lh-mr">
+
+      <div class="lh-product-content lh-col-md-12 lh-no-sidebar" >
+
+        <div class="lh-row">
+
+          <div class="lh-info-wrapper bad_enable n_ellipsis" data-hub-attr-state="class%3D%22lh-info-wrapper%20%257B%253A%257Bsection.settings.button_badges%257D%253A%257D%20%257B%253A%257Bsection.settings.name_product%257D%253A%257D%22"  data-hub-attr-button_badges  data-hub-attr-name_product >
+
+          <include data-live-related_des data-name="product-grid" data-id="1">  
+ <div class="lh-col-md-12 lh-product-grid">
+	<div class="lh-collection-heading">
+        <h3 class="lh-collection-des"  data-lhi="related_des" data-lh-lang>{{ 'sYSpGjFrdz.lh_k191aj_des' | t }}</h3>
+	</div>
+	<div class="lh-product-slider">
+		<div class="lh-row">
+			{% assign current = collections['landscape-canvas-prints'] %}
+			 
+
+			{% assign limit = 4 %}
+
+			{% for product in current.products limit:limit %}
+			<div class="swiper-slide lh-col-md-3 lh-product-item">
+				<div class="lh-collection-item">
+					<div class="lh-product-thumb">
+						
+						<a href="{{product.url | within: collection}}">
+							 
+								<img src="{{ product.featured_image | img_url: '270x360_crop_center' }}" alt="{{product.title}}">
+								{% if product.images.size > 1 %}
+									<img src="{{product.images[1] | img_url : '270x360_crop_center' }}" class="lh-img-hover" alt="{{product.title}}">
+								{% else %}
+									<img src="{{product.featured_image | img_url: '270x360_crop_center' }}" class="lh-img-hover" alt="{{product.title}}">
+								{% endif %}
+							 
+						</a>
+						<div class="lh-product-badges">
+						   {% assign first_variant = product.selected_or_first_available_variant %}
+							{% if first_variant.available == false %}
+								<span class="lh-sold-out"  data-lhi="trans_soldout_text">Sold out</span>
+							{% else %}
+								{% if  first_variant.price < first_variant.compare_at_price and first_variant.available %}
+									{% assign onehundred = 100 %}
+									<span class="lh-onsale">-{{ 1.00 | plus: first_variant.compare_at_price | minus: first_variant.price | times: 100 | divided_by:first_variant.compare_at_price | round }}%</span>
+								{% else %}
+								{%- for tag in product.tags -%}
+									{%- if tag == 'new' -%}
+										<span class="lh-hot"  data-lhi="trans_new_text">New</span>
+										{%- break -%}
+									{%- endif -%}
+								{%- endfor -%}
+								{% endif %}
+							{% endif %}
+						</div>
+					</div>
+					<div class="lh-product-info">
+						<span class="lh-product-title">
+							<a href="{{product.url | within: collection}}">{{product.title}}</a>
+						</span>
+							<div class="lh-wrap-price">
+								 {% assign first_variant = product.selected_or_first_available_variant %}
+								{% if first_variant.compare_at_price > first_variant.price %}
+								<span class="lh-sale">{{first_variant.compare_at_price | money}}</span>
+								{% endif %}
+								<span class="lh-cost">{{first_variant.price | money}}</span>
+							</div>
+							 
+					</div>
+				</div>
+			</div>
+			{% endfor %}</div>
+	 
+	</div>
+</div>
+
+    </include></div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+   </section>
+</div>
+</div>
+ {%schema%} 
+{"locales":{"en":{"RLkdHtF9fw":{"lh_9xy8_title":"Ontario Inspired","title":"Rainbow Pine Art Series","description_html":"Discover the beauty of original art, exclusively by Munzy<!--lh-live-editor-->","btn_html":"<a href=\"#\" data-lhlink><\/a>"},"TKHNM8qAbm":{"lh_unv29k_product":"Make A Statement","lh_lwcu4c_product_html":"Bring your space to life with a stunning gallery wall featuring Munzy's 3 panel canvas print series.&nbsp; Gallery stretched, these beautiful pieces come ready-to-hang out of the box with wire and hanging nails included.&nbsp;<div><br><div><div>Rainbow Pine Silhouette 16\"W x 32\"H&nbsp;<\/div><div>Rainbow Pine Square 32\"W x 32\"H&nbsp;<\/div><div>Rainbow Pine Portrait 24\"W x 32\"H<!--lh-live-editor--><\/div><\/div><\/div>","lh_up5omg_quantity":"Quantity","lh_up5omg_buynow":"BUY NOW"},"nh9qa89u8p":{"lh_unv29k_product":"Tall and Narrow","lh_lwcu4c_product_html":"The perfect accent piece for above a narrow wall, accent furniture or staircase. Tall, narrow, and stunning.<!--lh-live-editor-->","lh_up5omg_quantity":"Quantity","lh_up5omg_buynow":"BUY NOW"},"dnmiqmitc6":{"lh_unv29k_product":"Hip to be Square","lh_lwcu4c_product_html":"Take a deep breath and enjoy the beautiful view inspired by a late summer sunset.&nbsp;&nbsp;<!--lh-live-editor-->","lh_up5omg_quantity":"Quantity","lh_up5omg_buynow":"BUY NOW"},"ak3bjamjwf":{"lh_unv29k_product":"Versatile Portrait","lh_lwcu4c_product_html":"Beautiful as a 3 panel set or stand alone piece, add a statement with the beauty of nature, bringing any space to life.<!--lh-live-editor-->","lh_up5omg_quantity":"Quantity","lh_up5omg_buynow":"BUY NOW"},"eyqhEQbCvB":{"title":"Live with Art You Love.","lh_isvqof_title":"Exclusive Art Collection","lh_60e4og_title_html":"You won't find Munzy fine art canvas prints anywhere else! Exclusively painted and reproduced by Munzy.<!--lh-live-editor-->","lh_isvqog_title":"21 Day Free Delivery","lh_5r0hm7_title_html":"Our ready-to-hang art canvas prints are printed, hand-stretched, and shipped directly from our trusted fine art print partner in Montreal.<!--lh-live-editor-->","lh_isvqoh_title":"1oo% Guarantee","lh_5hmujy_title_html":"We want you to live with art that you love. If you are not satisfied with your order, we offer exchanges and refunds.<!--lh-live-editor-->"},"z2conjlv89l":{"lh_a168_title_html":"\"Group of Seven Meets Tiffany Stained Glass\"","lh_a168_desc_html":"Welcome to the colourful world of Munzy. Since opening our Waterloo, Ontario gallery in 2013, we\u2019ve helped thousands of collectors find art they love. We\u2019re grateful to share Jonathan\u2019s gift of painting and to make finding your perfect piece an inspiring experience.<br><!--lh-live-editor-->","lh_a168_name":"Laura Munz","lh_a168_pos_html":"Gallery Manager + Artist's Sister"},"nxg16e25gx":{"lh_f5dibt_top":"Shop Local Art In","lh_a168_title":"3 Simple Steps","lh_9wid92_title_html":"Select Your Art&nbsp;","lh_9wid92_desc_html":"Yippee! Once you've placed your order you will receive a confirmation email and we'll take it from there.&nbsp;<!--lh-live-editor-->","lh_a5w0bb_title":"Get Your Hammer Ready","lh_a5w0bb_desc_html":"Munzy canvas prints are made to order. Once shipped, you\u2019ll get a notification with options for custom delivery. Each piece arrives ready to hang with wire on the back.&nbsp;<!--lh-live-editor-->","lh_af9ndk_title_html":"Enjoy Your New View&nbsp;","lh_af9ndk_desc_html":"Get ready for compliments on your new Munzy gallery wall! Our customers love their art\u2014and so do their friends and family. With beautiful artwork and exceptional service, we\u2019ll happily coordinate a return or exchange if you\u2019re not 100% satisfied.<!--lh-live-editor-->"},"sYSpGjFrdz":{"lh_k191aj_des":"Explore Canadian Landscapes"}}},"name":"product page"}
+ {%endschema%}

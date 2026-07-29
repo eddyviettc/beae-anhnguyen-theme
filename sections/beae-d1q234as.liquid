@@ -1,0 +1,829 @@
+
+            {% assign beae_root_url = routes.root_url %}
+            {% if beae_root_url != '/'%}
+                {% assign beae_root_url = routes.root_url | append: '/' %}
+            {% endif %}
+        {%capture section_id %}beae-d1q234as{% endcapture%}{% if section_id == section.id %}{% if shop.metafields.beae.global_css %}
+            <!--BEAE-EMBED-->
+            <link href="data:text/css;base64,{{-shop.metafields.beae.global_css-}}" rel="stylesheet" id="beae-global-css"/>
+            <!--/BEAE-EMBED-->
+        {% endif %}
+
+{% render 'beae_header', BEAE_THEME: true %}{% endif %}<link rel="stylesheet" id="beae-exported-page-css" media="all" href="{{"beae-697a61a88ef01f4bff08b235.css" | asset_url}}"><link rel="preconnect" href="https://fonts.googleapis.com">
+                    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css?family=Inter:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css?family=Inter:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css?family=Inter:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet"><div class="beae-builder-v2 beae-builder"><div class="beae-sections beae-content-wrapper"><script type="text/javascript">if (!window.BEAEARGS) {window.BEAEARGS = {};}</script>
+<!----><section id="" data-sectionid="beae-ndj29jbx" data-width="1470" data-margin="30px" data-margin-mobile="15px" data-type="flexContainer" class="beae-typo-p1 beae-ndj29jbx section-beae-ndj29jbx beae-section beae-core"><!----><!----><div class="beae-flexbox beae-typo-p1" style="padding: 0px;"><div class="beae__section--container beae-flexbox-container" style="max-width: var(--beae-page-width, 1470px);"><!----><div class="beae-flexbox-core beae-x-flex-section grid-container-width"><!----><div class="beae-dtiwh81k beae-block beae-core beae-animation beae-unique-cvacotih" data-id="beae-dtiwh81k" data-uniqueid="cvacotih""><!---->
+      {% capture beae_variant_size_guide_icon %}{% endcapture %}
+    {% capture beae_variant_size_guide_icon %}{% endcapture %}
+      {% capture beae_lp_unavailable_icon %}<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor"><path d="M464 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm0 394c0 3.3-2.7 6-6 6H54c-3.3 0-6-2.7-6-6V86c0-3.3 2.7-6 6-6h404c3.3 0 6 2.7 6 6v340zM356.5 194.6L295.1 256l61.4 61.4c4.6 4.6 4.6 12.1 0 16.8l-22.3 22.3c-4.6 4.6-12.1 4.6-16.8 0L256 295.1l-61.4 61.4c-4.6 4.6-12.1 4.6-16.8 0l-22.3-22.3c-4.6-4.6-4.6-12.1 0-16.8l61.4-61.4-61.4-61.4c-4.6-4.6-4.6-12.1 0-16.8l22.3-22.3c4.6-4.6 12.1-4.6 16.8 0l61.4 61.4 61.4-61.4c4.6-4.6 12.1-4.6 16.8 0l22.3 22.3c4.7 4.6 4.7 12.1 0 16.8z"></path></svg>{% endcapture %}
+      {% capture beae_lp_icon %}<svg xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check"><polyline points="20 6 9 17 4 12"></polyline></svg>{% endcapture %}
+        {% liquid
+          if request.page_type != 'product' or product == blank
+            assign beae_product = 'carte-de-conversation-wuddayah'
+            if beae_product == blank or beae_product == '' or all_products[beae_product] == blank
+              assign product = collections['all'].products.first
+            else
+              assign product = all_products[beae_product]
+            endif
+          endif
+          assign tmp_product = product
+          assign beae_lp_view_store_information = 'undefined'
+          assign beae_lp_check_availability_at_other_stores = 'undefined'
+          assign beae_lp_pickup_available = 'undefined'
+          assign beae_lp_pickup_available_at = 'undefined'
+          assign beae_lp_pickup_unavailable_at = 'undefined'
+          
+          assign beae_variant_type = 'radio'
+          assign beae_variant_show_option_name = 'true'
+          assign beae_variant_color_selector_type = ''
+          assign beae_variant_is_link = 'false'
+          assign beae_variant_option_name = 'Color'
+          assign beae_optionValues = ''
+          assign beae_sourceTypes = ''
+          assign beae_variant_size_guide = false
+          assign beae_variant_size_guide_name = 'Size'
+          assign beae_variant_size_guide_label = 'Size guide'
+          assign beae_variant_size_guide_type = 'page'
+          assign beae_variant_size_guide_page = ''
+          assign beae_size_guide_type = 'page'
+          assign beae_size_guide_page = ''
+          assign beae_price_badged = 'sale'
+          assign beae_size_chart_type = 'custom'
+          assign beae_size_chart_show_when = 'all'
+          assign beae_size_chart_value = ''
+          assign beae_size_chart_page = ''
+          assign beae_tags_limit = '5'
+          assign beae_custom_badged_source = 'tags'
+          assign beae_custom_badged_tag = ''
+          assign beae_ct_content_type = 'custom'
+          assign beae_ct_page_handle = ''
+        %}
+        {% capture beae_custom_badged_metafield %}{{  }}{%- endcapture -%}
+        {% capture beae_size_guide_dynamic_source %}{% endcapture %}
+        {% capture beae_variant_dynamic_source %}{% endcapture %}
+        {% capture beae_ct_namespace_and_key %}{% endcapture %}
+        
+        {%- if product != blank -%}
+          {%- form 'product', product,class: "beae-product-form-next beae-product-form--single beae-product-form-detail", data-product_id: product.id, data-handle: product.handle, data-variant-id: product.selected_or_first_available_variant.id, data-available: product.available -%}
+            {%- liquid
+              assign selected_variant = product.selected_or_first_available_variant
+            -%}
+         <div class="beae-flexbox-core beae-x-featuted_product" data-product_id="{{ product.id }}"><!----><!----><div class="beae-0ypq883p beae-block beae-core beae-animation beae-unique-vsjbwrhg" data-id="beae-0ypq883p" data-loop-index="0" data-uniqueid="vsjbwrhg""><!---->{% assign beae_image_pr = images['4e9d5bde5eec49963c07473ee4c8e2887be6595a.jpg'].alt %}
+        
+        
+        <!----><div class="beae-block beae-x-image beae-container-image beae-image-content-position beae-image-picture" hover-mode="false"><!----><!----><picture image-mode="" class="beae-emqnq beae-image-primary"><!----><img src="https://cdn.shopify.com/s/files/1/0953/0526/9572/files/4e9d5bde5eec49963c07473ee4c8e2887be6595a.jpg?v=1769437030" alt="4e9d5bde5eec49963c07473ee4c8e2887be6595a" width="2048" height="2048" fetchpriority="high" loading="lazy"></picture><!----></div><script type="text/javascript">window.BEAEARGS['beae-0ypq883pblock-image'] = {
+    "id": "beae-0ypq883p",
+    "mode": {"value": "live"},
+    "autoHover":false
+  };</script><!----></div><!----><!----><!----><div class="beae-p3ev3x78 beae-block beae-core beae-animation beae-unique-s5nei3cp beae-flex-wrapper" data-id="beae-p3ev3x78" data-loop-index="0" data-uniqueid="s5nei3cp"><!----><!----><!----><div class="beae-0r6rgy3w beae-block beae-core beae-animation beae-unique-alw51b4e" data-id="beae-0r6rgy3w" data-loop-index="0" data-uniqueid="alw51b4e"><!----><div class="beae-block beae-x-text beae-typo-p1" data-autolayout="beae-0r6rgy3w">{{ 'sections.beae-d1q234as.be1246874510_html' | t }}</div><!----><!----></div><!----><!----><!----><div class="beae-us0cdmye beae-block beae-core beae-animation beae-unique-ckci3vy4" data-id="beae-us0cdmye" data-loop-index="0" data-uniqueid="ckci3vy4"><!----><div class="beae-block beae-x-text beae-typo-p1" data-autolayout="beae-us0cdmye">{{ 'sections.beae-d1q234as.be405293365_html' | t }}</div><!----><!----></div><!----><!----><!----><div class="beae-4cjos33g beae-block beae-core beae-animation beae-unique-g3xxgoyr" data-id="beae-4cjos33g" data-loop-index="0" data-uniqueid="g3xxgoyr""><!----><!----><div class="beae-x-price" data-badged="sale"><div class="beae-prd-single-price-wrapper"><span class="beae-product-single__price" data-sale="true">
+    
+      {% if product.price_varies and product.compare_at_price %}
+        {% assign cheapest_variant = product.variants | sort: 'price' | first %}
+        {% capture price_normal %}
+          {% if settings.currency_code_enabled %}
+            {{ product.selected_or_first_available_variant.price | money_with_currency }}
+          {% else %}
+            {{ product.selected_or_first_available_variant.price | money }}
+          {% endif %}
+        {% endcapture %}
+        {% capture price_min %}
+          {% if settings.currency_code_enabled %}
+            {{ cheapest_variant.price | money_with_currency }}
+          {% else %}
+            {{ cheapest_variant.price | money }}
+          {% endif %}
+        {% endcapture %}
+        {% if cheapest_variant.price < cheapest_variant.compare_at_price %}
+          <span class="beae-price-on-sale">
+            <span class="beae-price-from">{{ 'sections.beae-d1q234as.be978022322_html' | t: price_min:price_min }}</span>
+            <span class="beae-price-normal">{{ 'sections.beae-d1q234as.be1950827197_html' | t: price_normal:price_normal }}</span>
+          </span>
+        {% else %}
+          <span class="beae-price-from">{{ 'sections.beae-d1q234as.be978022322_html' | t: price_min:price_min }}</span>
+          <span class="beae-price-normal">{{ 'sections.beae-d1q234as.be1950827197_html' | t: price_normal:price_normal }}</span>
+        {% endif %}
+      {% elsif product.price < product.compare_at_price %}
+        <span class="beae-price-on-sale">{% if settings.currency_code_enabled %}
+          {{ product.price | money_with_currency }}
+        {% else %}
+          {{ product.price | money }}
+        {% endif %}</span>
+      {% elsif product.price_varies %}
+        {% capture price_min %}
+          {% if settings.currency_code_enabled %}
+            {{ product.price_min | money_with_currency }}
+          {% else %}
+            {{ product.price_min | money }}
+          {% endif %}
+        {% endcapture %}
+        {% capture price_max %}
+          {% if settings.currency_code_enabled %}
+            {{ product.price_max | money_with_currency }}
+          {% else %}
+            {{ product.price_max | money }}
+          {% endif %}
+        {% endcapture %}
+        <span class="beae-price-from">{{ 'sections.beae-d1q234as.be978022322_html' | t: price_min:price_min }}</span>
+        <span class="beae-price-normal">{{ 'sections.beae-d1q234as.be1950827197_html' | t: price_normal:price_normal }}</span>
+      {% else %}
+        {% if settings.currency_code_enabled %}
+          {{ product.price | money_with_currency }}
+        {% else %}
+          {{ product.price | money }}
+        {% endif %}
+      {% endif %}
+      
+  </span><span class="beae-product-single__price--regular">{% liquid
+    assign print_compare = ''
+    if selected_variant != blank   
+      if selected_variant.price < selected_variant.compare_at_price
+        if settings.currency_code_enabled
+          assign print_compare = selected_variant.compare_at_price | money_with_currency
+        else
+          assign print_compare = selected_variant.compare_at_price | money
+        endif
+      endif
+    else                                                            
+      if product.price_varies and product.compare_at_price
+        assign cheapest_variant = product.variants | sort: 'price' | first
+        if cheapest_variant.price < cheapest_variant.compare_at_price
+          if settings.currency_code_enabled
+            assign print_compare = cheapest_variant.compare_at_price | money_with_currency
+          else
+            assign print_compare = cheapest_variant.compare_at_price | money
+          endif
+        endif
+      elsif product.price < product.compare_at_price
+        if settings.currency_code_enabled
+          assign print_compare = product.compare_at_price | money_with_currency
+        else
+          assign print_compare = product.compare_at_price | money
+        endif
+      endif
+    endif
+  %}{{ print_compare }}</span><span type="sale" class="beae-typo-p3 {% liquid
+    assign badge_class = ''
+    if product.available
+      assign checkHidden = true
+      if selected_variant != blank
+        if selected_variant.price < selected_variant.compare_at_price
+          assign checkHidden = false
+        endif
+      else
+        if product.price_varies and product.compare_at_price
+          assign cheapest_variant = product.variants | sort: 'price' | first
+          if cheapest_variant.price < cheapest_variant.compare_at_price
+            assign checkHidden = false
+          endif
+        elsif product.price < product.compare_at_price
+          assign checkHidden = false
+        endif
+      endif
+      if checkHidden
+        assign badge_class = 'beae-sale-hidden'
+      else
+        assign badge_class = 'beae-product-single__price--sale'
+      endif
+    else
+      assign badge_class = 'beae-sale-sold-out'
+    endif
+  %}{{ badge_class }} beae-product-single__price--badged" data-sale="{{ 'sections.beae-d1q234as.be2569319_html' | t }}" data-sold-out="{{ 'sections.beae-d1q234as.be1538363906_html' | t }}">
+    {% if product.available %}
+      {% if selected_variant != blank %}
+        {% if selected_variant.price < selected_variant.compare_at_price %}
+          {{ 'sections.beae-d1q234as.be2569319_html' | t }}
+        {% endif %}
+      {% else %}
+        {% if product.price_varies and product.compare_at_price %}
+          {% assign cheapest_variant = product.variants | sort: 'price' | first %}
+          {% if cheapest_variant.price < cheapest_variant.compare_at_price %}
+            {{ 'sections.beae-d1q234as.be2569319_html' | t }}
+          {% endif %}
+        {% elsif product.price < product.compare_at_price %}
+          {{ 'sections.beae-d1q234as.be2569319_html' | t }}
+        {% endif %}
+      {% endif %}
+    {% else %}
+      {{ 'sections.beae-d1q234as.be1538363906_html' | t }}
+    {% endif %}
+  </span></div><div class="beae-product-single__tax-shipping">
+      {%- if cart.taxes_included or shop.shipping_policy.body != blank -%}
+        <div class="beae-tax-shipping-policy">
+        {%- if shop.taxes_included -%}
+          {% capture include_taxes_text %}{{ 'products.product.include_taxes' | t }}{% endcapture %}
+          {% unless include_taxes_text contains 'Translation missing' %}
+            {{ include_taxes_text }}
+          {% else %}
+            {{ 'sections.beae-d1q234as.be430210269_html' | t }} 
+          {% endunless %}
+        {%- endif -%}
+        {%- if shop.shipping_policy.body != blank -%}
+          {% capture shipping_policy_text %}{{ 'products.product.shipping_policy_html' | t: link: shop.shipping_policy.url }}{% endcapture %}
+          {% unless shipping_policy_text contains 'Translation missing' %}
+            {{ shipping_policy_text }}
+          {% else %}
+            <a href="{{shop.shipping_policy.url}}">{{ 'sections.beae-d1q234as.be198651612937_html' | t }}
+          {% endunless %}
+        {%- endif -%}
+        </div>
+      {%- endif -%}
+    </div></div><!----></div><!----><!----><!----><div class="beae-a24jjusd beae-block beae-core beae-animation beae-unique-okf9ibtd" data-id="beae-a24jjusd" data-loop-index="0" data-uniqueid="okf9ibtd""><!----><style type="text/css"></style><div class="beae-slider-wrapper beae-slider slider-beae-a24jjusd items-per-1" data-draggable="true" data-desktop-layout="grid" data-mobile-layout="grid" data-effect="slide" data-pagination="true" data-navigation="true" style="--items-per: 1; --items-per-mobile: 1; --items-gap: 11px; --items-gap-mobile: 10px; --autoplay-delay: 5s;"><div class="beae-slider-content beae-slider-items"><div data-loop-index="0" class="beae-list-item beae-06nhu15w"><!----><!----><div class="beae-gxmd8xd1 beae-block beae-core beae-unique-t74a2aip" data-id="beae-gxmd8xd1" data-loop-index="0" data-uniqueid="t74a2aip""><!---->{% assign beae_image_pr = images['Vector.png'].alt %}
+        
+        
+        <!----><div class="beae-block beae-x-image beae-container-image beae-image-content-position beae-image-picture" hover-mode="false"><!----><!----><picture image-mode="" class="beae-3ecau beae-image-primary"><!----><img src="https://cdn.shopify.com/s/files/1/0953/0526/9572/files/Vector.png?v=1769438034" alt="Vector" width="22" height="21" fetchpriority="high" loading="lazy"></picture><!----></div><script type="text/javascript">window.BEAEARGS['beae-gxmd8xd1block-imageloop-0'] = {
+    "id": "beae-gxmd8xd1",
+    "mode": {"value": "live"},
+    "autoHover":false
+  };</script><!----></div><!----><!----><!----><div class="beae-yjdu06hv beae-block beae-core beae-unique-bdwfnlwv" data-id="beae-yjdu06hv" data-loop-index="0" data-uniqueid="bdwfnlwv"><!----><div class="beae-block beae-x-text beae-typo-p1" data-autolayout="beae-yjdu06hv">{{ 'sections.beae-d1q234as.be424550659_html' | t }}</div><!----><!----></div><!----><!----></div><div data-loop-index="1" class="beae-list-item beae-lerqjiar"><!----><!----><div class="beae-gxmd8xd1 beae-block beae-core beae-unique-7wki3nnp" data-id="beae-gxmd8xd1" data-loop-index="1" data-uniqueid="7wki3nnp""><!---->{% assign beae_image_pr = images['Vector.png'].alt %}
+        
+        
+        <!----><div class="beae-block beae-x-image beae-container-image beae-image-content-position beae-image-picture" hover-mode="false"><!----><!----><picture image-mode="" class="beae-ih7pi beae-image-primary"><!----><img src="https://cdn.shopify.com/s/files/1/0953/0526/9572/files/Vector.png?v=1769438034" alt="Vector" width="22" height="21" fetchpriority="high" loading="lazy"></picture><!----></div><script type="text/javascript">window.BEAEARGS['beae-gxmd8xd1block-imageloop-1'] = {
+    "id": "beae-gxmd8xd1",
+    "mode": {"value": "live"},
+    "autoHover":false
+  };</script><!----></div><!----><!----><!----><div class="beae-yjdu06hv beae-block beae-core beae-unique-5rj7b6kd" data-id="beae-yjdu06hv" data-loop-index="1" data-uniqueid="5rj7b6kd"><!----><div class="beae-block beae-x-text beae-typo-p1" data-autolayout="beae-yjdu06hv">{{ 'sections.beae-d1q234as.be1839233980_html' | t }}</div><!----><!----></div><!----><!----></div><div data-loop-index="2" class="beae-list-item beae-jg6dvu1f"><!----><!----><div class="beae-gxmd8xd1 beae-block beae-core beae-unique-a6n5hvi8" data-id="beae-gxmd8xd1" data-loop-index="2" data-uniqueid="a6n5hvi8""><!---->{% assign beae_image_pr = images['Vector.png'].alt %}
+        
+        
+        <!----><div class="beae-block beae-x-image beae-container-image beae-image-content-position beae-image-picture" hover-mode="false"><!----><!----><picture image-mode="" class="beae-ixlc beae-image-primary"><!----><img src="https://cdn.shopify.com/s/files/1/0953/0526/9572/files/Vector.png?v=1769438034" alt="Vector" width="22" height="21" fetchpriority="high" loading="lazy"></picture><!----></div><script type="text/javascript">window.BEAEARGS['beae-gxmd8xd1block-imageloop-2'] = {
+    "id": "beae-gxmd8xd1",
+    "mode": {"value": "live"},
+    "autoHover":false
+  };</script><!----></div><!----><!----><!----><div class="beae-yjdu06hv beae-block beae-core beae-unique-cg7qk6rx" data-id="beae-yjdu06hv" data-loop-index="2" data-uniqueid="cg7qk6rx"><!----><div class="beae-block beae-x-text beae-typo-p1" data-autolayout="beae-yjdu06hv">{{ 'sections.beae-d1q234as.be496980800_html' | t }}</div><!----><!----></div><!----><!----></div><div data-loop-index="3" class="beae-list-item beae-bw52vq0l"><!----><!----><div class="beae-gxmd8xd1 beae-block beae-core beae-unique-lc3wkd2h" data-id="beae-gxmd8xd1" data-loop-index="3" data-uniqueid="lc3wkd2h""><!---->{% assign beae_image_pr = images['Vector.png'].alt %}
+        
+        
+        <!----><div class="beae-block beae-x-image beae-container-image beae-image-content-position beae-image-picture" hover-mode="false"><!----><!----><picture image-mode="" class="beae-84sgf beae-image-primary"><!----><img src="https://cdn.shopify.com/s/files/1/0953/0526/9572/files/Vector.png?v=1769438034" alt="Vector" width="22" height="21" fetchpriority="high" loading="lazy"></picture><!----></div><script type="text/javascript">window.BEAEARGS['beae-gxmd8xd1block-imageloop-3'] = {
+    "id": "beae-gxmd8xd1",
+    "mode": {"value": "live"},
+    "autoHover":false
+  };</script><!----></div><!----><!----><!----><div class="beae-yjdu06hv beae-block beae-core beae-unique-8bosqjsc" data-id="beae-yjdu06hv" data-loop-index="3" data-uniqueid="8bosqjsc"><!----><div class="beae-block beae-x-text beae-typo-p1" data-autolayout="beae-yjdu06hv">{{ 'sections.beae-d1q234as.be2082491438_html' | t }}</div><!----><!----></div><!----><!----></div><div data-loop-index="4" class="beae-list-item beae-16tfjzq9"><!----><!----><div class="beae-gxmd8xd1 beae-block beae-core beae-unique-ql7802zx" data-id="beae-gxmd8xd1" data-loop-index="4" data-uniqueid="ql7802zx""><!---->{% assign beae_image_pr = images['Vector.png'].alt %}
+        
+        
+        <!----><div class="beae-block beae-x-image beae-container-image beae-image-content-position beae-image-picture" hover-mode="false"><!----><!----><picture image-mode="" class="beae-2nega beae-image-primary"><!----><img src="https://cdn.shopify.com/s/files/1/0953/0526/9572/files/Vector.png?v=1769438034" alt="Vector" width="22" height="21" fetchpriority="high" loading="lazy"></picture><!----></div><script type="text/javascript">window.BEAEARGS['beae-gxmd8xd1block-imageloop-4'] = {
+    "id": "beae-gxmd8xd1",
+    "mode": {"value": "live"},
+    "autoHover":false
+  };</script><!----></div><!----><!----><!----><div class="beae-yjdu06hv beae-block beae-core beae-unique-bhw7c90f" data-id="beae-yjdu06hv" data-loop-index="4" data-uniqueid="bhw7c90f"><!----><div class="beae-block beae-x-text beae-typo-p1" data-autolayout="beae-yjdu06hv">{{ 'sections.beae-d1q234as.be205077255_html' | t }}</div><!----><!----></div><!----><!----></div></div><div class="beae-slider-controls"><div class="beae-slider-controls-wrp"><div class="beae-slider-indicator"><div class="beae-slider-progress"></div></div><div class="beae-slider-nav-left"><button aria-label="button" type="button"><svg xmlns="http: //www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg></button></div><div class="beae-slider-pagination-wrp"></div><div class="beae-slider-nav-right"><button aria-label="button" type="button"><svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg></button></div></div></div></div><script type="text/javascript">window.BEAEARGS['beae-a24jjusdsection-slide-show'] = {
+    "id": "beae-a24jjusd",
+    "mode": {"value": "live"},
+    "layout":"grid","layoutMobile":"grid","effect":"slide","isLoop":true,"autoPlay":false,"autoPlayDelay":5,"itemsPerSlide":1,"itemsPerSlideMobile":1,"itemsGap":"11px","itemsGapMobile":"10px","paginationImage":false,"paginationImageMobile":false,"typeScroll":"default","numItemsScroll":1,"showNavigation":true,"showPagination":true,"showProgress":true,"hookSliderInit":"","hookBeforeSlideChange":"","hookAfterSlideChange":"","noRunJs":false,"itemGap":0,"itemGapMobile":0
+  };</script><!----></div><!----><!----><!----><div class="beae-ywjp9vmy beae-block beae-core beae-animation beae-unique-9vwf2dlr beae-flexbox-core beae-x-button" data-id="beae-ywjp9vmy" data-loop-index="0" data-uniqueid="9vwf2dlr"><!----><a href="#" class="beae-btn-pr beae-button-js"><span class="beae-btn-txt">{{ 'sections.beae-d1q234as.be325169237_html' | t }} <!----></span></a><!----><script type="text/javascript">window.BEAEARGS['beae-ywjp9vmybutton-js'] = {
+    "id": "beae-ywjp9vmy",
+    "mode": {"value": "live"},
+    "id":"beae-ywjp9vmy","pageContent":"","extendOptions":"{}","type":"pages"
+  };</script><!----></div><!----><!----><!----><div class="beae-brbo530k beae-block beae-core beae-animation beae-unique-pzyb58sd beae-flex-wrapper" data-id="beae-brbo530k" data-loop-index="0" data-uniqueid="pzyb58sd"><!----><!----><!----><div class="beae-ddjgcljz beae-block beae-core beae-animation beae-unique-bztrvf7d beae-flex-wrapper" data-id="beae-ddjgcljz" data-loop-index="0" data-uniqueid="bztrvf7d"><!----><!----><!----><div class="beae-c4ez3qvg beae-block beae-core beae-animation beae-unique-brqhk6xj" data-id="beae-c4ez3qvg" data-loop-index="0" data-uniqueid="brqhk6xj""><!---->{% assign beae_image_pr = images['bd7895ba15af7cd7b2e52488bd9fc392936fd4f5.png'].alt %}
+        
+        
+        <!----><div class="beae-block beae-x-image beae-container-image beae-image-content-position beae-image-picture" hover-mode="false"><!----><!----><picture image-mode="" class="beae-dhh64 beae-image-primary"><!----><img src="https://cdn.shopify.com/s/files/1/0953/0526/9572/files/bd7895ba15af7cd7b2e52488bd9fc392936fd4f5.png?v=1769425632" alt="bd7895ba15af7cd7b2e52488bd9fc392936fd4f5" width="512" height="512" fetchpriority="high" loading="lazy"></picture><!----></div><script type="text/javascript">window.BEAEARGS['beae-c4ez3qvgblock-image'] = {
+    "id": "beae-c4ez3qvg",
+    "mode": {"value": "live"},
+    "autoHover":false
+  };</script><!----></div><!----><!----><!----><div class="beae-dbs5wdts beae-block beae-core beae-animation beae-unique-oz4icxci" data-id="beae-dbs5wdts" data-loop-index="0" data-uniqueid="oz4icxci"><!----><div class="beae-block beae-x-text beae-typo-p1" data-autolayout="beae-dbs5wdts">{{ 'sections.beae-d1q234as.be1400694144_html' | t }}</div><!----><!----></div><!----><!----><!----></div><!----><!----><!----><div class="beae-d8eh1bic beae-block beae-core beae-animation beae-unique-mmciz6hc beae-flex-wrapper" data-id="beae-d8eh1bic" data-loop-index="0" data-uniqueid="mmciz6hc"><!----><!----><!----><div class="beae-r3hvnuan beae-block beae-core beae-animation beae-unique-7fh34au4" data-id="beae-r3hvnuan" data-loop-index="0" data-uniqueid="7fh34au4""><!---->{% assign beae_image_pr = images['b7aa6faff5ac691cc287b3e42b274aecfda2271e.png'].alt %}
+        
+        
+        <!----><div class="beae-block beae-x-image beae-container-image beae-image-content-position beae-image-picture" hover-mode="false"><!----><!----><picture image-mode="" class="beae-8garll beae-image-primary"><!----><img src="https://cdn.shopify.com/s/files/1/0953/0526/9572/files/b7aa6faff5ac691cc287b3e42b274aecfda2271e.png?v=1769438543" alt="b7aa6faff5ac691cc287b3e42b274aecfda2271e" width="600" height="620" fetchpriority="high" loading="lazy"></picture><!----></div><script type="text/javascript">window.BEAEARGS['beae-r3hvnuanblock-image'] = {
+    "id": "beae-r3hvnuan",
+    "mode": {"value": "live"},
+    "autoHover":false
+  };</script><!----></div><!----><!----><!----><div class="beae-sh5frc8k beae-block beae-core beae-animation beae-unique-g4im8xf8" data-id="beae-sh5frc8k" data-loop-index="0" data-uniqueid="g4im8xf8"><!----><div class="beae-block beae-x-text beae-typo-p1" data-autolayout="beae-sh5frc8k">{{ 'sections.beae-d1q234as.be1653135791_html' | t }}</div><!----><!----></div><!----><!----><!----></div><!----><!----><!----></div><!----><!----><!----><div class="beae-z08436bg beae-block beae-core beae-animation beae-unique-vzqxp5hy beae-flex-wrapper" data-id="beae-z08436bg" data-loop-index="0" data-uniqueid="vzqxp5hy"><!----><!----><!----><div class="beae-izrjl4xz beae-block beae-core beae-animation beae-unique-6gxsgnrp" data-id="beae-izrjl4xz" data-loop-index="0" data-uniqueid="6gxsgnrp""><!---->{% assign beae_image_pr = images['65e1ffe869870f9c0361bbf5e73eccbaac25007b.png'].alt %}
+        
+        
+        <!----><div class="beae-block beae-x-image beae-container-image beae-image-content-position beae-image-picture" hover-mode="false"><!----><!----><picture image-mode="" class="beae-oi4d beae-image-primary"><!----><img src="https://cdn.shopify.com/s/files/1/0953/0526/9572/files/65e1ffe869870f9c0361bbf5e73eccbaac25007b.png?v=1769438861" alt="65e1ffe869870f9c0361bbf5e73eccbaac25007b" width="1000" height="1000" fetchpriority="high" loading="lazy"></picture><!----></div><script type="text/javascript">window.BEAEARGS['beae-izrjl4xzblock-image'] = {
+    "id": "beae-izrjl4xz",
+    "mode": {"value": "live"},
+    "autoHover":false
+  };</script><!----></div><!----><!----><!----><div class="beae-lf6mpzka beae-block beae-core beae-animation beae-unique-4osa2bwk" data-id="beae-lf6mpzka" data-loop-index="0" data-uniqueid="4osa2bwk"><!----><div class="beae-block beae-x-text beae-typo-p1" data-autolayout="beae-lf6mpzka">{{ 'sections.beae-d1q234as.be1747850634_html' | t }}</div><!----><!----></div><!----><!----><!----></div><!----><!----><!----></div><!----><!----></div><div class="beae-money-format" style="display: none;">{% if settings.currency_code_enabled %}{{ shop.money_with_currency_format | escape }}{% else %}{{ shop.money_format | escape }}{% endif %}</div><script data-id="Product-json-beae-dtiwh81k" type="application/json">
+    {
+      "id":  {{ product.id | json }},
+      "title":  {{ product.title | json }},
+      "handle":  {{ product.handle | json }},
+      "price":  {{ product.price| json }},
+      "price_min":  {{ product.price_min| json }},
+      "price_max":  {{ product.price_max| json }},
+      "price_normal":  {{ product.selected_or_first_available_variant.price| json }},
+      "available":  {{ product.available | json }},
+      "price_varies":  {{ product.price_varies| json }},
+      "compare_at_price":  {{ product.compare_at_price| json }},
+      "compare_at_price_min":  {{ product.compare_at_price_min| json }},
+      "compare_at_price_max":  {{ product.compare_at_price_max| json }},
+      "compare_at_price_varies":  {{ product.compare_at_price_varies| json }},
+      "has_only_default_variant":  {{ product.has_only_default_variant | json }},
+      "selected_or_first_available_variant":  {{ product.selected_or_first_available_variant | json }},
+      "options":  {{ product.options_with_values | json }},
+      "variants": [
+        {%- for variant in product.variants -%}
+          {
+            "id":  {{ variant.id | json }},
+            "title": " {{ variant.option1 | handleize }}{%- if product.options.size == 2 -%} / {%- endif -%} {{ variant.option2 | handleize }}{%- if product.options.size == 3 -%} / {%- endif -%} {{ variant.option3 | handleize }}",
+            "option1":  {{ variant.option1  | json }},
+            "option2": {%- if product.options.size == 1 -%}null{%-else-%} {{ variant.option2  | json }}{%-endif-%},
+            "option3": {%- if product.options.size == 1 or product.options.size == 2 -%}null{%-else-%} {{ variant.option3  | json }}{%-endif-%},
+            "sku":  {{ variant.sku | json }},
+            "requires_shipping":  {{ variant.requires_shipping }},
+            "taxable":  {{ variant.taxable | json }},
+            "selling_plan_allocations":{{variant.selling_plan_allocations | json }},
+            "featured_image": {%- if variant.image.id != blank -%}{
+              "id":  {{ variant.image.id | json }},
+              "product_id":  {{ product.id | json }},
+              "width":  {{ variant.image.width | json }},
+              "height":  {{ variant.image.height | json }},
+              "src":  {{ variant.image.src | json }},
+              "position": {{ variant.image.position }}
+            }{%- else-%}null{%-endif-%},
+            "featured_media": {{ variant.featured_media | json }},
+            "available":  {{ variant.available }},
+            "public_title": " {{ variant.option1 | handleize }}{%- if product.options.size == 2 -%} / {%- endif -%} {{ variant.option2 | handleize }}{%- if product.options.size == 3 -%} / {%- endif -%} {{ variant.option3 | handleize }}",
+            "options":   {{ variant.options | json }},
+            "price":  {{ variant.price | json }},
+            "weight":  {{ variant.weight | json }},
+            "compare_at_price":  {{ variant.compare_at_price | json }},
+            "inventory_quantity":  {{ variant.inventory_quantity | json }},
+            "inventory_management":  {{ variant.inventory_management | json }},
+            "inventory_policy":  {{ variant.inventory_policy | json }},
+            "next_incoming_date": {% if variant.next_incoming_date %}{{variant.next_incoming_date | date: "%Y-%m-%d %H:%M" | time_tag | json }}{% else%}null{% endif %},
+            "barcode":  {{ variant.barcode | json }},
+            "store_availabilities": [
+              {%- for variantStore in variant.store_availabilities -%}
+                {
+                  "location": {
+                    "name": {{ variantStore.location.name | json }},
+                    "address": {{ variantStore.location.address | json }},
+                    "id": {{ variantStore.location.id | json }}
+                  },
+                  "available": {{ variantStore.available | json }},
+                  "pick_up_enabled": {{ variantStore.pick_up_enabled | json }},
+                  "pick_up_time": {{ variantStore.pick_up_time | json }}
+                }{%- if forloop.last == false -%},{%- endif -%}
+              {%- endfor -%}
+            ],
+            "unit_price":  {{ variant.unit_price | json }},
+            "unit_price_measurement":  {
+              "measured_type": {{ variant.unit_price_measurement.measured_type | json }},
+              "quantity_value": {{ variant.unit_price_measurement.quantity_value | json }},
+              "quantity_unit": {{ variant.unit_price_measurement.quantity_unit | json }},
+              "reference_value": {{ variant.unit_price_measurement.reference_value | json }},
+              "reference_unit": {{ variant.unit_price_measurement.reference_unit | json }}
+            }
+          }{%- if forloop.last == false -%},{%- endif -%}
+        {%- endfor -%}
+      ],
+      "featured_image":  {{ product.featured_image | json }},
+      "size_available":[
+        {%- for value in product.options_with_values[0].values -%}
+        {%- assign available_ops = product.variants | where: "available" | where: "option1",value -%}
+          {{available_ops.size}}{%- unless forloop.last %},{% endunless -%}
+        {%- endfor -%}
+      ],
+      "shopColors": {{ shop.metafields.beae.colors }}
+    }
+  </script><script src="https://cdn.beae.com/vendors/js-v2/shopify_option_selection.min.js"></script><!----><script type="text/javascript">window.BEAEARGS['beae-dtiwh81ksection-featured-product'] = {
+    "id": "beae-dtiwh81k",
+    "mode": {"value": "live"},
+    "reactiveJs":{"id":"15428927586628","name":"Carte de conversation Wuddayah","thumbnail":"https://cdn.shopify.com/s/files/1/0953/0526/9572/files/526EDC12-00E9-4A73-B180-DE59C7753D18.png?v=1769302823","handle":"carte-de-conversation-wuddayah","value":"carte-de-conversation-wuddayah","image":"https://cdn.shopify.com/s/files/1/0953/0526/9572/files/526EDC12-00E9-4A73-B180-DE59C7753D18.png?v=1769302823"},"reactiveLength":17
+  };</script> 
+            <!-- <input type="hidden" name="id" value="{{product.selected_or_first_available_variant.id}}" /> -->
+    
+            <input type="hidden" name="sections" value="cart-notification-product,cart-notification-button,cart-icon-bubble">
+            <input type="hidden" name="section_url" value="{{product.handle}}">
+    
+          {%- endform -%}
+    
+            {% assign beae_has_variant_picker = false %}
+            
+            <script type="text/javascript">
+              var afterpay_product_selector = 'afterpay-placement.beae-afterpay-integrate';
+              var afterpay_cart_integration_enabled  = window.afterpay_cart_integration_enabled ||  true;
+              var afterpay_shop_currency = {{ shop.currency | json }};
+              var afterpay_cart_currency = {{ cart.currency.iso_code | json }};
+              var afterpay_shop_money_format = {{ shop.money_format | json }};
+              var afterpay_shop_permanent_domain = {{ shop.permanent_domain | json }};
+              var afterpay_theme_name = {{ theme.name | json }};
+              var afterpay_product = {% if beae_product_json%}{{beae_product_json}}{% else %}{{ product | json }}{% endif %};
+              var afterpay_current_variant = {{ product.selected_or_first_available_variant | json }};
+              var afterpay_cart_total_price = {{ cart.total_price | json }};
+              var afterpay_js_snippet_version = '1.0.10';
+            </script>
+    
+          {%- endif -%}
+
+          {% assign product = tmp_product %}
+        <!----></div><!----><!----></div></div></div><!----><!----><!----><!----><!----><!----></section><!----><script type="text/javascript">window.BEAEARGS['beae-ndj29jbxsection-js'] = {
+    "id": "beae-ndj29jbx",
+    "mode": {"value": "live"},
+    "optionsVideo":false,"optionsVideoMobile":false
+  };</script><!----><section id="" data-sectionid="beae-svhrohkx" data-width="1470" data-margin="30px" data-margin-mobile="15px" data-type="flexContainer" class="beae-typo-p1 beae-svhrohkx section-beae-svhrohkx beae-section beae-core"><!----><!----><div class="beae-flexbox beae-typo-p1" style="padding: 0px;"><div class="beae__section--container beae-flexbox-container" style="max-width: var(--beae-page-width, 1470px);"><!----><div class="beae-flexbox-core beae-x-flex-section grid-container-width"><!----><div class="beae-fg29vth5 beae-block beae-core beae-animation beae-unique-tzeihq7n" data-id="beae-fg29vth5" data-uniqueid="tzeihq7n""><!----><style type="text/css"></style><div class="beae-slider-wrapper beae-slider slider-beae-fg29vth5 items-per-3" data-draggable="true" data-desktop-layout="slider" data-mobile-layout="slider" data-effect="slide" data-pagination="false" data-navigation="true" style="--items-per: 3; --items-per-mobile: 1.6; --items-gap: 20px; --items-gap-mobile: 20px; --autoplay-delay: 5s;"><div class="beae-slider-content beae-slider-items"><div data-loop-index="0" class="beae-list-item beae-wetsmney"><!----><!----><div class="beae-2pixwjfb beae-block beae-core beae-unique-jo5tfexe beae-x-video beae-prevent-system" data-id="beae-2pixwjfb" data-loop-index="0" data-uniqueid="jo5tfexe" source="youtube"><!----><div class="beae-x-video--wrapper"><!----><div class="beae-block_video-player beae-prevent-system"><iframe id="jo5tfexe" target="do not remove" class="beae_iframe" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" src="https://www.youtube.com/embed/_9VUPq3SxOc?version=3&amp;controls=1&amp;showinfo=0&amp;iv_load_policy=3"></iframe></div><button class="beae-close-video" is="close-button" aria-label="Close"><svg role="presentation" stroke-width="2" focusable="false" width="24" height="24" viewBox="0 0 24 24"><path d="M17.658 6.343 6.344 17.657M17.658 17.657 6.344 6.343" stroke="currentColor"></path></svg></button><script type="text/javascript">window.BEAEARGS['beae-2pixwjfbblock-videoloop-0'] = {
+    "id": "beae-2pixwjfb",
+    "mode": {"value": "live"},
+    "id":"beae-2pixwjfb","uniqueId":"jo5tfexe","source":"youtube","mute":false,"srcYoutube":"https://www.youtube.com/watch?v=_9VUPq3SxOc","lightbox":false,"player_controls":true,"extendOptions":"{}"
+  };</script></div><!----></div><!----><!----></div><div data-loop-index="1" class="beae-list-item beae-t1q2m0fe"><!----><!----><div class="beae-2pixwjfb beae-block beae-core beae-unique-3h6t0ojf beae-x-video beae-prevent-system" data-id="beae-2pixwjfb" data-loop-index="1" data-uniqueid="3h6t0ojf" source="youtube"><!----><div class="beae-x-video--wrapper"><!----><div class="beae-block_video-player beae-prevent-system"><iframe id="3h6t0ojf" target="do not remove" class="beae_iframe" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" src="https://www.youtube.com/embed/_9VUPq3SxOc?version=3&amp;controls=1&amp;showinfo=0&amp;iv_load_policy=3"></iframe></div><button class="beae-close-video" is="close-button" aria-label="Close"><svg role="presentation" stroke-width="2" focusable="false" width="24" height="24" viewBox="0 0 24 24"><path d="M17.658 6.343 6.344 17.657M17.658 17.657 6.344 6.343" stroke="currentColor"></path></svg></button><script type="text/javascript">window.BEAEARGS['beae-2pixwjfbblock-videoloop-1'] = {
+    "id": "beae-2pixwjfb",
+    "mode": {"value": "live"},
+    "id":"beae-2pixwjfb","uniqueId":"3h6t0ojf","source":"youtube","mute":false,"srcYoutube":"https://www.youtube.com/watch?v=_9VUPq3SxOc","lightbox":false,"player_controls":true,"extendOptions":"{}"
+  };</script></div><!----></div><!----><!----></div><div data-loop-index="2" class="beae-list-item beae-z0ph6cel"><!----><!----><div class="beae-2pixwjfb beae-block beae-core beae-unique-c31wvvvk beae-x-video beae-prevent-system" data-id="beae-2pixwjfb" data-loop-index="2" data-uniqueid="c31wvvvk" source="youtube"><!----><div class="beae-x-video--wrapper"><!----><div class="beae-block_video-player beae-prevent-system"><iframe id="c31wvvvk" target="do not remove" class="beae_iframe" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" src="https://www.youtube.com/embed/_9VUPq3SxOc?version=3&amp;controls=1&amp;showinfo=0&amp;iv_load_policy=3"></iframe></div><button class="beae-close-video" is="close-button" aria-label="Close"><svg role="presentation" stroke-width="2" focusable="false" width="24" height="24" viewBox="0 0 24 24"><path d="M17.658 6.343 6.344 17.657M17.658 17.657 6.344 6.343" stroke="currentColor"></path></svg></button><script type="text/javascript">window.BEAEARGS['beae-2pixwjfbblock-videoloop-2'] = {
+    "id": "beae-2pixwjfb",
+    "mode": {"value": "live"},
+    "id":"beae-2pixwjfb","uniqueId":"c31wvvvk","source":"youtube","mute":false,"srcYoutube":"https://www.youtube.com/watch?v=_9VUPq3SxOc","lightbox":false,"player_controls":true,"extendOptions":"{}"
+  };</script></div><!----></div><!----><!----></div></div><div class="beae-slider-controls"><div class="beae-slider-controls-wrp"><!----><div class="beae-slider-nav-left"><button aria-label="button" type="button"><svg xmlns="http: //www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg></button></div><!----><div class="beae-slider-nav-right"><button aria-label="button" type="button"><svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg></button></div></div></div></div><script type="text/javascript">window.BEAEARGS['beae-fg29vth5section-slide-show'] = {
+    "id": "beae-fg29vth5",
+    "mode": {"value": "live"},
+    "layout":"slider","layoutMobile":"slider","effect":"slide","isLoop":true,"autoPlay":false,"autoPlayDelay":5,"itemsPerSlide":3,"itemsPerSlideMobile":1.6,"itemsGap":"20px","itemsGapMobile":"20px","paginationImage":false,"paginationImageMobile":false,"typeScroll":"default","numItemsScroll":1,"showNavigation":true,"showPagination":false,"showProgress":false,"hookSliderInit":"","hookBeforeSlideChange":"","hookAfterSlideChange":"","noRunJs":false
+  };</script><!----></div><!----><!----></div></div></div><!----><!----><!----><!----><!----><!----></section><!----><script type="text/javascript">window.BEAEARGS['beae-svhrohkxsection-js'] = {
+    "id": "beae-svhrohkx",
+    "mode": {"value": "live"},
+    "optionsVideo":{},"optionsVideoMobile":false
+  };</script><!----><section id="" data-sectionid="beae-6bvfu0zb" data-width="1470" data-margin="30px" data-margin-mobile="15px" data-type="flexContainer" class="beae-typo-p1 beae-6bvfu0zb section-beae-6bvfu0zb beae-section beae-core"><!----><!----><div class="beae-flexbox beae-typo-p1" style="padding: 0px;"><div class="beae__section--container beae-flexbox-container" style="max-width: var(--beae-page-width, 1470px);"><!----><div class="beae-flexbox-core beae-x-flex-section grid-container-width"><!----><div class="beae-7hae4a86 beae-block beae-core beae-animation beae-unique-qknqyl5y" data-id="beae-7hae4a86" data-uniqueid="qknqyl5y""><!---->{% assign beae_image_pr = images['7feae426a997339816de9e2b3ae3403d36140c72.png'].alt %}
+        
+        
+        <!----><div class="beae-block beae-x-image beae-container-image beae-image-content-position beae-image-picture" hover-mode="false"><!----><!----><picture image-mode="" class="beae-95mte beae-image-primary"><!----><img src="https://cdn.shopify.com/s/files/1/0953/0526/9572/files/7feae426a997339816de9e2b3ae3403d36140c72.png?v=1769441233" alt="7feae426a997339816de9e2b3ae3403d36140c72" width="600" height="400" fetchpriority="high" loading="lazy"></picture><!----></div><script type="text/javascript">window.BEAEARGS['beae-7hae4a86block-image'] = {
+    "id": "beae-7hae4a86",
+    "mode": {"value": "live"},
+    "autoHover":false
+  };</script><!----></div><!----><!----><!----><div class="beae-6l50c7hg beae-block beae-core beae-animation beae-unique-7l5fhjtu beae-flex-wrapper" data-id="beae-6l50c7hg" data-uniqueid="7l5fhjtu"><!----><!----><!----><div class="beae-8oibfkba beae-block beae-core beae-animation beae-unique-b1zjkhs0" data-id="beae-8oibfkba" data-uniqueid="b1zjkhs0"><!----><div class="beae-block beae-x-text beae-typo-p1" data-autolayout="beae-8oibfkba">{{ 'sections.beae-d1q234as.be68916198_html' | t }}</div><!----><!----></div><!----><!----><!----><div class="beae-tiavd7cs beae-block beae-core beae-animation beae-unique-co70pw1y" data-id="beae-tiavd7cs" data-uniqueid="co70pw1y"><!----><div class="beae-block beae-x-text beae-typo-p1" data-autolayout="beae-tiavd7cs">{{ 'sections.beae-d1q234as.be318314767_html' | t }}</div><!----><!----></div><!----><!----><!----><div class="beae-qgcykqo9 beae-block beae-core beae-animation beae-unique-oftw8xli" data-id="beae-qgcykqo9" data-uniqueid="oftw8xli""><!----><style type="text/css"></style><div class="beae-slider-wrapper beae-slider slider-beae-qgcykqo9 items-per-1" data-draggable="true" data-desktop-layout="grid" data-mobile-layout="grid" data-effect="slide" data-pagination="true" data-navigation="true" style="--items-per: 1; --items-per-mobile: 1; --items-gap: 11px; --items-gap-mobile: 20px; --autoplay-delay: 5s;"><div class="beae-slider-content beae-slider-items"><div data-loop-index="0" class="beae-list-item beae-osk2p6tp"><!----><!----><div class="beae-6xhaufyq beae-block beae-core beae-unique-flwdb9gc" data-id="beae-6xhaufyq" data-loop-index="0" data-uniqueid="flwdb9gc""><!---->{% assign beae_image_pr = images['60527f2d8c9f204444f04d5efc2263ca3306fc4d.png'].alt %}
+        
+        
+        <!----><div class="beae-block beae-x-image beae-container-image beae-image-content-position beae-image-picture" hover-mode="false"><!----><!----><picture image-mode="" class="beae-nl71d beae-image-primary"><!----><img src="https://cdn.shopify.com/s/files/1/0953/0526/9572/files/60527f2d8c9f204444f04d5efc2263ca3306fc4d.png?v=1769441664" alt="60527f2d8c9f204444f04d5efc2263ca3306fc4d" width="360" height="360" fetchpriority="high" loading="lazy"></picture><!----></div><script type="text/javascript">window.BEAEARGS['beae-6xhaufyqblock-imageloop-0'] = {
+    "id": "beae-6xhaufyq",
+    "mode": {"value": "live"},
+    "autoHover":false
+  };</script><!----></div><!----><!----><!----><div class="beae-lza8xvb8 beae-block beae-core beae-unique-pt34z819" data-id="beae-lza8xvb8" data-loop-index="0" data-uniqueid="pt34z819"><!----><div class="beae-block beae-x-text beae-typo-p1" data-autolayout="beae-lza8xvb8">{{ 'sections.beae-d1q234as.be23854039_html' | t }}</div><!----><!----></div><!----><!----></div><div data-loop-index="1" class="beae-list-item beae-hxgt5upp"><!----><!----><div class="beae-6xhaufyq beae-block beae-core beae-unique-tladvtpw" data-id="beae-6xhaufyq" data-loop-index="1" data-uniqueid="tladvtpw""><!---->{% assign beae_image_pr = images['60527f2d8c9f204444f04d5efc2263ca3306fc4d.png'].alt %}
+        
+        
+        <!----><div class="beae-block beae-x-image beae-container-image beae-image-content-position beae-image-picture" hover-mode="false"><!----><!----><picture image-mode="" class="beae-dbye beae-image-primary"><!----><img src="https://cdn.shopify.com/s/files/1/0953/0526/9572/files/60527f2d8c9f204444f04d5efc2263ca3306fc4d.png?v=1769441664" alt="60527f2d8c9f204444f04d5efc2263ca3306fc4d" width="360" height="360" fetchpriority="high" loading="lazy"></picture><!----></div><script type="text/javascript">window.BEAEARGS['beae-6xhaufyqblock-imageloop-1'] = {
+    "id": "beae-6xhaufyq",
+    "mode": {"value": "live"},
+    "autoHover":false
+  };</script><!----></div><!----><!----><!----><div class="beae-lza8xvb8 beae-block beae-core beae-unique-lo8djl7r" data-id="beae-lza8xvb8" data-loop-index="1" data-uniqueid="lo8djl7r"><!----><div class="beae-block beae-x-text beae-typo-p1" data-autolayout="beae-lza8xvb8">{{ 'sections.beae-d1q234as.be821750422_html' | t }}</div><!----><!----></div><!----><!----></div><div data-loop-index="2" class="beae-list-item beae-di6w0ljm"><!----><!----><div class="beae-6xhaufyq beae-block beae-core beae-unique-ejdi2z3m" data-id="beae-6xhaufyq" data-loop-index="2" data-uniqueid="ejdi2z3m""><!---->{% assign beae_image_pr = images['60527f2d8c9f204444f04d5efc2263ca3306fc4d.png'].alt %}
+        
+        
+        <!----><div class="beae-block beae-x-image beae-container-image beae-image-content-position beae-image-picture" hover-mode="false"><!----><!----><picture image-mode="" class="beae-r4ewm beae-image-primary"><!----><img src="https://cdn.shopify.com/s/files/1/0953/0526/9572/files/60527f2d8c9f204444f04d5efc2263ca3306fc4d.png?v=1769441664" alt="60527f2d8c9f204444f04d5efc2263ca3306fc4d" width="360" height="360" fetchpriority="high" loading="lazy"></picture><!----></div><script type="text/javascript">window.BEAEARGS['beae-6xhaufyqblock-imageloop-2'] = {
+    "id": "beae-6xhaufyq",
+    "mode": {"value": "live"},
+    "autoHover":false
+  };</script><!----></div><!----><!----><!----><div class="beae-lza8xvb8 beae-block beae-core beae-unique-0rijwh4z" data-id="beae-lza8xvb8" data-loop-index="2" data-uniqueid="0rijwh4z"><!----><div class="beae-block beae-x-text beae-typo-p1" data-autolayout="beae-lza8xvb8">{{ 'sections.beae-d1q234as.be1763019430_html' | t }}</div><!----><!----></div><!----><!----></div><div data-loop-index="3" class="beae-list-item beae-kuh3armx"><!----><!----><div class="beae-6xhaufyq beae-block beae-core beae-unique-jj926cze" data-id="beae-6xhaufyq" data-loop-index="3" data-uniqueid="jj926cze""><!---->{% assign beae_image_pr = images['60527f2d8c9f204444f04d5efc2263ca3306fc4d.png'].alt %}
+        
+        
+        <!----><div class="beae-block beae-x-image beae-container-image beae-image-content-position beae-image-picture" hover-mode="false"><!----><!----><picture image-mode="" class="beae-hzlc9 beae-image-primary"><!----><img src="https://cdn.shopify.com/s/files/1/0953/0526/9572/files/60527f2d8c9f204444f04d5efc2263ca3306fc4d.png?v=1769441664" alt="60527f2d8c9f204444f04d5efc2263ca3306fc4d" width="360" height="360" fetchpriority="high" loading="lazy"></picture><!----></div><script type="text/javascript">window.BEAEARGS['beae-6xhaufyqblock-imageloop-3'] = {
+    "id": "beae-6xhaufyq",
+    "mode": {"value": "live"},
+    "autoHover":false
+  };</script><!----></div><!----><!----><!----><div class="beae-lza8xvb8 beae-block beae-core beae-unique-8tuc0moj" data-id="beae-lza8xvb8" data-loop-index="3" data-uniqueid="8tuc0moj"><!----><div class="beae-block beae-x-text beae-typo-p1" data-autolayout="beae-lza8xvb8">{{ 'sections.beae-d1q234as.be404154355_html' | t }}</div><!----><!----></div><!----><!----></div><div data-loop-index="4" class="beae-list-item beae-9lhqyd0r"><!----><!----><div class="beae-6xhaufyq beae-block beae-core beae-unique-l17lmxd5" data-id="beae-6xhaufyq" data-loop-index="4" data-uniqueid="l17lmxd5""><!---->{% assign beae_image_pr = images['60527f2d8c9f204444f04d5efc2263ca3306fc4d.png'].alt %}
+        
+        
+        <!----><div class="beae-block beae-x-image beae-container-image beae-image-content-position beae-image-picture" hover-mode="false"><!----><!----><picture image-mode="" class="beae-n0rjh beae-image-primary"><!----><img src="https://cdn.shopify.com/s/files/1/0953/0526/9572/files/60527f2d8c9f204444f04d5efc2263ca3306fc4d.png?v=1769441664" alt="60527f2d8c9f204444f04d5efc2263ca3306fc4d" width="360" height="360" fetchpriority="high" loading="lazy"></picture><!----></div><script type="text/javascript">window.BEAEARGS['beae-6xhaufyqblock-imageloop-4'] = {
+    "id": "beae-6xhaufyq",
+    "mode": {"value": "live"},
+    "autoHover":false
+  };</script><!----></div><!----><!----><!----><div class="beae-lza8xvb8 beae-block beae-core beae-unique-x7cytwhp" data-id="beae-lza8xvb8" data-loop-index="4" data-uniqueid="x7cytwhp"><!----><div class="beae-block beae-x-text beae-typo-p1" data-autolayout="beae-lza8xvb8">{{ 'sections.beae-d1q234as.be398833027_html' | t }}</div><!----><!----></div><!----><!----></div></div><div class="beae-slider-controls"><div class="beae-slider-controls-wrp"><div class="beae-slider-indicator"><div class="beae-slider-progress"></div></div><div class="beae-slider-nav-left"><button aria-label="button" type="button"><svg xmlns="http: //www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg></button></div><div class="beae-slider-pagination-wrp"></div><div class="beae-slider-nav-right"><button aria-label="button" type="button"><svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg></button></div></div></div></div><script type="text/javascript">window.BEAEARGS['beae-qgcykqo9section-slide-show'] = {
+    "id": "beae-qgcykqo9",
+    "mode": {"value": "live"},
+    "layout":"grid","layoutMobile":"grid","effect":"slide","isLoop":true,"autoPlay":false,"autoPlayDelay":5,"itemsPerSlide":1,"itemsPerSlideMobile":1,"itemsGap":"11px","itemsGapMobile":"20px","paginationImage":false,"paginationImageMobile":false,"typeScroll":"default","numItemsScroll":1,"showNavigation":true,"showPagination":true,"showProgress":true,"hookSliderInit":"","hookBeforeSlideChange":"","hookAfterSlideChange":"","noRunJs":false,"itemGap":0,"itemGapMobile":0
+  };</script><!----></div><!----><!----><!----><div class="beae-5ryb6qtv beae-block beae-core beae-animation beae-unique-7mj4etm7 beae-flex-wrapper" data-id="beae-5ryb6qtv" data-uniqueid="7mj4etm7"><!----><!----><!----><div class="beae-i02rltmy beae-block beae-core beae-animation beae-unique-zvyrcs39" data-id="beae-i02rltmy" data-uniqueid="zvyrcs39"><!----><div class="beae-block beae-x-text beae-typo-p1" data-autolayout="beae-i02rltmy">{{ 'sections.beae-d1q234as.be1323249553119_html' | t }}</div><!----><!----></div><!----><!----><!----></div><!----><!----><!----></div><!----><!----></div></div></div><!----><!----><!----><!----><!----><!----></section><!----><script type="text/javascript">window.BEAEARGS['beae-6bvfu0zbsection-js'] = {
+    "id": "beae-6bvfu0zb",
+    "mode": {"value": "live"},
+    "optionsVideo":false,"optionsVideoMobile":false
+  };</script><!----><section id="" data-sectionid="beae-b09ea7b1" data-width="1470" data-margin="30px" data-margin-mobile="15px" data-type="flexContainer" class="beae-typo-p1 beae-b09ea7b1 section-beae-b09ea7b1 beae-section beae-core"><!----><!----><div class="beae-flexbox beae-typo-p1" style="padding: 0px;"><div class="beae__section--container beae-flexbox-container" style="max-width: var(--beae-page-width, 1470px);"><!----><div class="beae-flexbox-core beae-x-flex-section grid-container-width"><!----><div class="beae-kzd1q5q5 beae-block beae-core beae-animation beae-unique-o5u8m2pe beae-flexbox-core beae-x-button" data-id="beae-kzd1q5q5" data-uniqueid="o5u8m2pe"><!----><a href="#" class="beae-btn-pr beae-button-js"><span class="beae-btn-txt">{{ 'sections.beae-d1q234as.be474359551_html' | t }} <!----></span></a><!----><script type="text/javascript">window.BEAEARGS['beae-kzd1q5q5button-js'] = {
+    "id": "beae-kzd1q5q5",
+    "mode": {"value": "live"},
+    "id":"beae-kzd1q5q5","pageContent":"","extendOptions":"{}","type":"pages"
+  };</script><!----></div><!----><!----></div></div></div><!----><!----><!----><!----><!----><!----></section><!----><script type="text/javascript">window.BEAEARGS['beae-b09ea7b1section-js'] = {
+    "id": "beae-b09ea7b1",
+    "mode": {"value": "live"},
+    "optionsVideo":false,"optionsVideoMobile":false
+  };</script><!----><section id="" data-sectionid="beae-gy2s3fi4" data-width="1470" data-margin="30px" data-margin-mobile="15px" data-type="flexContainer" class="beae-typo-p1 beae-gy2s3fi4 section-beae-gy2s3fi4 beae-section beae-core"><!----><!----><div class="beae-flexbox beae-typo-p1" style="padding: 0px;"><div class="beae__section--container beae-flexbox-container" style="max-width: var(--beae-page-width, 1470px);"><!----><div class="beae-flexbox-core beae-x-flex-section grid-container-width"><!----><div class="beae-19ioprhi beae-block beae-core beae-animation beae-unique-0f2kehao" data-id="beae-19ioprhi" data-uniqueid="0f2kehao"><!----><div class="beae-block beae-x-text beae-typo-p1" data-autolayout="beae-19ioprhi">{{ 'sections.beae-d1q234as.be786942423_html' | t }}</div><!----><!----></div><!----><!----><!----><div class="beae-qhuvklq3 beae-block beae-core beae-animation beae-unique-t0qrp3o9 beae-flex-wrapper" data-id="beae-qhuvklq3" data-uniqueid="t0qrp3o9"><!----><!----><!----><div class="beae-7x1i9iy3 beae-block beae-core beae-animation beae-unique-kw9ygsr4 beae-flex-wrapper" data-id="beae-7x1i9iy3" data-uniqueid="kw9ygsr4"><!----><!----><!----><div class="beae-wk4cuabt beae-block beae-core beae-animation beae-unique-su4jgwjf" data-id="beae-wk4cuabt" data-uniqueid="su4jgwjf""><!---->{% assign beae_image_pr = images['078a23be0f63ad031ea1db62b9b5ce342b5281d3.jpg'].alt %}
+        
+        
+        <!----><div class="beae-block beae-x-image beae-container-image beae-image-content-position beae-image-picture" hover-mode="false"><!----><!----><picture image-mode="" class="beae-sf3y9 beae-image-primary"><!----><img src="https://cdn.shopify.com/s/files/1/0953/0526/9572/files/078a23be0f63ad031ea1db62b9b5ce342b5281d3.jpg?v=1769442922" alt="078a23be0f63ad031ea1db62b9b5ce342b5281d3" width="200" height="300" fetchpriority="high" loading="lazy"></picture><!----></div><script type="text/javascript">window.BEAEARGS['beae-wk4cuabtblock-image'] = {
+    "id": "beae-wk4cuabt",
+    "mode": {"value": "live"},
+    "autoHover":false
+  };</script><!----></div><!----><!----><!----><div class="beae-9fuzpvrx beae-block beae-core beae-animation beae-unique-u8m2dn36" data-id="beae-9fuzpvrx" data-uniqueid="u8m2dn36"><!----><div class="beae-block beae-x-text beae-typo-p1" data-autolayout="beae-9fuzpvrx">{{ 'sections.beae-d1q234as.be777819605_html' | t }}</div><!----><!----></div><!----><!----><!----><div class="beae-cvg3hkfd beae-block beae-core beae-animation beae-unique-ufgtrsoe beae-flex-wrapper" data-id="beae-cvg3hkfd" data-uniqueid="ufgtrsoe"><!----><!----><!----><div class="beae-fhg0f2gf beae-block beae-core beae-animation beae-unique-5rsr5jn4" data-id="beae-fhg0f2gf" data-uniqueid="5rsr5jn4""><!----><style type="text/css"></style><div class="beae-slider-wrapper beae-slider slider-beae-fhg0f2gf items-per-1" data-draggable="true" data-desktop-layout="grid" data-mobile-layout="grid" data-effect="slide" data-pagination="true" data-navigation="true" style="--items-per: 1; --items-per-mobile: 1; --items-gap: 20px; --items-gap-mobile: 14px; --autoplay-delay: 5s;"><div class="beae-slider-content beae-slider-items"><div data-loop-index="0" class="beae-list-item beae-2s0louq1"><!----><!----><div class="beae-3ak8n9jc beae-block beae-core beae-unique-zndn21gi" data-id="beae-3ak8n9jc" data-loop-index="0" data-uniqueid="zndn21gi""><!---->{% assign beae_image_pr = images['f663b6787033f82d9bac4bae973f322cbf4af400.png'].alt %}
+        
+        
+        <!----><div class="beae-block beae-x-image beae-container-image beae-image-content-position beae-image-picture" hover-mode="false"><!----><!----><picture image-mode="" class="beae-jjyp8 beae-image-primary"><!----><img src="https://cdn.shopify.com/s/files/1/0953/0526/9572/files/f663b6787033f82d9bac4bae973f322cbf4af400.png?v=1769442881" alt="f663b6787033f82d9bac4bae973f322cbf4af400" width="512" height="512" fetchpriority="high" loading="lazy"></picture><!----></div><script type="text/javascript">window.BEAEARGS['beae-3ak8n9jcblock-imageloop-0'] = {
+    "id": "beae-3ak8n9jc",
+    "mode": {"value": "live"},
+    "autoHover":false
+  };</script><!----></div><!----><!----><!----><div class="beae-78b7l2cr beae-block beae-core beae-unique-ohi7gpyp" data-id="beae-78b7l2cr" data-loop-index="0" data-uniqueid="ohi7gpyp"><!----><div class="beae-block beae-x-text beae-typo-p1" data-autolayout="beae-78b7l2cr">{{ 'sections.beae-d1q234as.be1629103330_html' | t }}</div><!----><!----></div><!----><!----></div><div data-loop-index="1" class="beae-list-item beae-njrc4j3k"><!----><!----><div class="beae-3ak8n9jc beae-block beae-core beae-unique-ff9bf4tn" data-id="beae-3ak8n9jc" data-loop-index="1" data-uniqueid="ff9bf4tn""><!---->{% assign beae_image_pr = images['f663b6787033f82d9bac4bae973f322cbf4af400.png'].alt %}
+        
+        
+        <!----><div class="beae-block beae-x-image beae-container-image beae-image-content-position beae-image-picture" hover-mode="false"><!----><!----><picture image-mode="" class="beae-pjqi beae-image-primary"><!----><img src="https://cdn.shopify.com/s/files/1/0953/0526/9572/files/f663b6787033f82d9bac4bae973f322cbf4af400.png?v=1769442881" alt="f663b6787033f82d9bac4bae973f322cbf4af400" width="512" height="512" fetchpriority="high" loading="lazy"></picture><!----></div><script type="text/javascript">window.BEAEARGS['beae-3ak8n9jcblock-imageloop-1'] = {
+    "id": "beae-3ak8n9jc",
+    "mode": {"value": "live"},
+    "autoHover":false
+  };</script><!----></div><!----><!----><!----><div class="beae-78b7l2cr beae-block beae-core beae-unique-pcigpw8j" data-id="beae-78b7l2cr" data-loop-index="1" data-uniqueid="pcigpw8j"><!----><div class="beae-block beae-x-text beae-typo-p1" data-autolayout="beae-78b7l2cr">{{ 'sections.beae-d1q234as.be1342090291_html' | t }}</div><!----><!----></div><!----><!----></div><div data-loop-index="2" class="beae-list-item beae-mj1cj63n"><!----><!----><div class="beae-3ak8n9jc beae-block beae-core beae-unique-qp5nab1m" data-id="beae-3ak8n9jc" data-loop-index="2" data-uniqueid="qp5nab1m""><!---->{% assign beae_image_pr = images['f663b6787033f82d9bac4bae973f322cbf4af400.png'].alt %}
+        
+        
+        <!----><div class="beae-block beae-x-image beae-container-image beae-image-content-position beae-image-picture" hover-mode="false"><!----><!----><picture image-mode="" class="beae-dbjp beae-image-primary"><!----><img src="https://cdn.shopify.com/s/files/1/0953/0526/9572/files/f663b6787033f82d9bac4bae973f322cbf4af400.png?v=1769442881" alt="f663b6787033f82d9bac4bae973f322cbf4af400" width="512" height="512" fetchpriority="high" loading="lazy"></picture><!----></div><script type="text/javascript">window.BEAEARGS['beae-3ak8n9jcblock-imageloop-2'] = {
+    "id": "beae-3ak8n9jc",
+    "mode": {"value": "live"},
+    "autoHover":false
+  };</script><!----></div><!----><!----><!----><div class="beae-78b7l2cr beae-block beae-core beae-unique-b5ynqfs0" data-id="beae-78b7l2cr" data-loop-index="2" data-uniqueid="b5ynqfs0"><!----><div class="beae-block beae-x-text beae-typo-p1" data-autolayout="beae-78b7l2cr">{{ 'sections.beae-d1q234as.be418187148_html' | t }}</div><!----><!----></div><!----><!----></div><div data-loop-index="3" class="beae-list-item beae-us8tiy5z"><!----><!----><div class="beae-3ak8n9jc beae-block beae-core beae-unique-f88w13w5" data-id="beae-3ak8n9jc" data-loop-index="3" data-uniqueid="f88w13w5""><!---->{% assign beae_image_pr = images['f663b6787033f82d9bac4bae973f322cbf4af400.png'].alt %}
+        
+        
+        <!----><div class="beae-block beae-x-image beae-container-image beae-image-content-position beae-image-picture" hover-mode="false"><!----><!----><picture image-mode="" class="beae-qr88d beae-image-primary"><!----><img src="https://cdn.shopify.com/s/files/1/0953/0526/9572/files/f663b6787033f82d9bac4bae973f322cbf4af400.png?v=1769442881" alt="f663b6787033f82d9bac4bae973f322cbf4af400" width="512" height="512" fetchpriority="high" loading="lazy"></picture><!----></div><script type="text/javascript">window.BEAEARGS['beae-3ak8n9jcblock-imageloop-3'] = {
+    "id": "beae-3ak8n9jc",
+    "mode": {"value": "live"},
+    "autoHover":false
+  };</script><!----></div><!----><!----><!----><div class="beae-78b7l2cr beae-block beae-core beae-unique-zf6j3gbq" data-id="beae-78b7l2cr" data-loop-index="3" data-uniqueid="zf6j3gbq"><!----><div class="beae-block beae-x-text beae-typo-p1" data-autolayout="beae-78b7l2cr">{{ 'sections.beae-d1q234as.be302870884_html' | t }}</div><!----><!----></div><!----><!----></div><div data-loop-index="4" class="beae-list-item beae-y8gktvt4"><!----><!----><div class="beae-3ak8n9jc beae-block beae-core beae-unique-plp8ltwz" data-id="beae-3ak8n9jc" data-loop-index="4" data-uniqueid="plp8ltwz""><!---->{% assign beae_image_pr = images['f663b6787033f82d9bac4bae973f322cbf4af400.png'].alt %}
+        
+        
+        <!----><div class="beae-block beae-x-image beae-container-image beae-image-content-position beae-image-picture" hover-mode="false"><!----><!----><picture image-mode="" class="beae-fiwqg beae-image-primary"><!----><img src="https://cdn.shopify.com/s/files/1/0953/0526/9572/files/f663b6787033f82d9bac4bae973f322cbf4af400.png?v=1769442881" alt="f663b6787033f82d9bac4bae973f322cbf4af400" width="512" height="512" fetchpriority="high" loading="lazy"></picture><!----></div><script type="text/javascript">window.BEAEARGS['beae-3ak8n9jcblock-imageloop-4'] = {
+    "id": "beae-3ak8n9jc",
+    "mode": {"value": "live"},
+    "autoHover":false
+  };</script><!----></div><!----><!----><!----><div class="beae-78b7l2cr beae-block beae-core beae-unique-ly5rhh5e" data-id="beae-78b7l2cr" data-loop-index="4" data-uniqueid="ly5rhh5e"><!----><div class="beae-block beae-x-text beae-typo-p1" data-autolayout="beae-78b7l2cr">{{ 'sections.beae-d1q234as.be1704835452_html' | t }}</div><!----><!----></div><!----><!----></div><div data-loop-index="5" class="beae-list-item beae-fvb2rl9i"><!----><!----><div class="beae-3ak8n9jc beae-block beae-core beae-unique-t8v99dqo" data-id="beae-3ak8n9jc" data-loop-index="5" data-uniqueid="t8v99dqo""><!---->{% assign beae_image_pr = images['f663b6787033f82d9bac4bae973f322cbf4af400.png'].alt %}
+        
+        
+        <!----><div class="beae-block beae-x-image beae-container-image beae-image-content-position beae-image-picture" hover-mode="false"><!----><!----><picture image-mode="" class="beae-1y5he beae-image-primary"><!----><img src="https://cdn.shopify.com/s/files/1/0953/0526/9572/files/f663b6787033f82d9bac4bae973f322cbf4af400.png?v=1769442881" alt="f663b6787033f82d9bac4bae973f322cbf4af400" width="512" height="512" fetchpriority="high" loading="lazy"></picture><!----></div><script type="text/javascript">window.BEAEARGS['beae-3ak8n9jcblock-imageloop-5'] = {
+    "id": "beae-3ak8n9jc",
+    "mode": {"value": "live"},
+    "autoHover":false
+  };</script><!----></div><!----><!----><!----><div class="beae-78b7l2cr beae-block beae-core beae-unique-hmy1l446" data-id="beae-78b7l2cr" data-loop-index="5" data-uniqueid="hmy1l446"><!----><div class="beae-block beae-x-text beae-typo-p1" data-autolayout="beae-78b7l2cr">{{ 'sections.beae-d1q234as.be618377071_html' | t }}</div><!----><!----></div><!----><!----></div></div><div class="beae-slider-controls"><div class="beae-slider-controls-wrp"><div class="beae-slider-indicator"><div class="beae-slider-progress"></div></div><div class="beae-slider-nav-left"><button aria-label="button" type="button"><svg xmlns="http: //www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg></button></div><div class="beae-slider-pagination-wrp"></div><div class="beae-slider-nav-right"><button aria-label="button" type="button"><svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg></button></div></div></div></div><script type="text/javascript">window.BEAEARGS['beae-fhg0f2gfsection-slide-show'] = {
+    "id": "beae-fhg0f2gf",
+    "mode": {"value": "live"},
+    "layout":"grid","layoutMobile":"grid","effect":"slide","isLoop":true,"autoPlay":false,"autoPlayDelay":5,"itemsPerSlide":1,"itemsPerSlideMobile":1,"itemsGap":"20px","itemsGapMobile":"14px","paginationImage":false,"paginationImageMobile":false,"typeScroll":"default","numItemsScroll":1,"showNavigation":true,"showPagination":true,"showProgress":true,"hookSliderInit":"","hookBeforeSlideChange":"","hookAfterSlideChange":"","noRunJs":false,"itemGap":0,"itemGapMobile":0
+  };</script><!----></div><!----><!----><!----></div><!----><!----><!----></div><!----><!----><!----><div class="beae-amwzwotl beae-block beae-core beae-animation beae-unique-zetf8gzp beae-flex-wrapper" data-id="beae-amwzwotl" data-uniqueid="zetf8gzp"><!----><!----><!----><div class="beae-cnl5l9sb beae-block beae-core beae-animation beae-unique-7nne0q2z" data-id="beae-cnl5l9sb" data-uniqueid="7nne0q2z""><!---->{% assign beae_image_pr = images['Line_4.png'].alt %}
+        
+        
+        <!----><div class="beae-block beae-x-image beae-container-image beae-image-content-position beae-image-picture" hover-mode="false"><!----><!----><picture image-mode="" class="beae-sp4om beae-image-primary"><!----><img src="https://cdn.shopify.com/s/files/1/0953/0526/9572/files/Line_4.png?v=1769442493" alt="Line_4" width="9" height="689" fetchpriority="high" loading="lazy"></picture><!----></div><script type="text/javascript">window.BEAEARGS['beae-cnl5l9sbblock-image'] = {
+    "id": "beae-cnl5l9sb",
+    "mode": {"value": "live"},
+    "autoHover":false
+  };</script><!----></div><!----><!----><!----><div class="beae-167lvmq2 beae-block beae-core beae-animation beae-unique-q4uvnbl4 beae-flex-wrapper" data-id="beae-167lvmq2" data-uniqueid="q4uvnbl4"><!----><!----><!----><div class="beae-p88t66po beae-block beae-core beae-animation beae-unique-iebj79ex" data-id="beae-p88t66po" data-uniqueid="iebj79ex""><!---->{% assign beae_image_pr = images['Frame_1948756800.png'].alt %}
+        
+        
+        <!----><div class="beae-block beae-x-image beae-container-image beae-image-content-position beae-image-picture" hover-mode="false"><!----><!----><picture image-mode="" class="beae-uqi1k beae-image-primary"><!----><img src="https://cdn.shopify.com/s/files/1/0953/0526/9572/files/Frame_1948756800.png?v=1769443336" alt="Frame_1948756800" width="150" height="150" fetchpriority="high" loading="lazy"></picture><!----></div><script type="text/javascript">window.BEAEARGS['beae-p88t66poblock-image'] = {
+    "id": "beae-p88t66po",
+    "mode": {"value": "live"},
+    "autoHover":false
+  };</script><!----></div><!----><!----><!----></div><!----><!----><!----></div><!----><!----><!----><div class="beae-xrg0p4gx beae-block beae-core beae-animation beae-unique-9ozjeycx beae-flex-wrapper" data-id="beae-xrg0p4gx" data-uniqueid="9ozjeycx"><!----><!----><!----><div class="beae-3dkidgew beae-block beae-core beae-animation beae-unique-lguacamb" data-id="beae-3dkidgew" data-uniqueid="lguacamb""><!---->{% assign beae_image_pr = images['07940f575634bb4735c6ae9ea0f92165a7bbe89f.jpg'].alt %}
+        
+        
+        <!----><div class="beae-block beae-x-image beae-container-image beae-image-content-position beae-image-picture" hover-mode="false"><!----><!----><picture image-mode="" class="beae-dduh beae-image-primary"><!----><img src="https://cdn.shopify.com/s/files/1/0953/0526/9572/files/07940f575634bb4735c6ae9ea0f92165a7bbe89f.jpg?v=1769443456" alt="07940f575634bb4735c6ae9ea0f92165a7bbe89f" width="675" height="1200" fetchpriority="high" loading="lazy"></picture><!----></div><script type="text/javascript">window.BEAEARGS['beae-3dkidgewblock-image'] = {
+    "id": "beae-3dkidgew",
+    "mode": {"value": "live"},
+    "autoHover":false
+  };</script><!----></div><!----><!----><!----><div class="beae-vfyixce5 beae-block beae-core beae-animation beae-unique-vyxn8c79" data-id="beae-vfyixce5" data-uniqueid="vyxn8c79"><!----><div class="beae-block beae-x-text beae-typo-p1" data-autolayout="beae-vfyixce5">{{ 'sections.beae-d1q234as.be1543718019_html' | t }}</div><!----><!----></div><!----><!----><!----><div class="beae-82xndlqp beae-block beae-core beae-animation beae-unique-oew9wvz3 beae-flex-wrapper" data-id="beae-82xndlqp" data-uniqueid="oew9wvz3"><!----><!----><!----><div class="beae-ykotc2m8 beae-block beae-core beae-animation beae-unique-we3f4kb3" data-id="beae-ykotc2m8" data-uniqueid="we3f4kb3""><!----><style type="text/css"></style><div class="beae-slider-wrapper beae-slider slider-beae-ykotc2m8 items-per-1" data-draggable="true" data-desktop-layout="grid" data-mobile-layout="grid" data-effect="slide" data-pagination="true" data-navigation="true" style="--items-per: 1; --items-per-mobile: 1; --items-gap: 20px; --items-gap-mobile: 14px; --autoplay-delay: 5s;"><div class="beae-slider-content beae-slider-items"><div data-loop-index="0" class="beae-list-item beae-p79qzbjf"><!----><!----><div class="beae-kbz2td8e beae-block beae-core beae-unique-h9dyjkgb" data-id="beae-kbz2td8e" data-loop-index="0" data-uniqueid="h9dyjkgb""><!---->{% assign beae_image_pr = images['60527f2d8c9f204444f04d5efc2263ca3306fc4d.png'].alt %}
+        
+        
+        <!----><div class="beae-block beae-x-image beae-container-image beae-image-content-position beae-image-picture" hover-mode="false"><!----><!----><picture image-mode="" class="beae-8k3jg beae-image-primary"><!----><img src="https://cdn.shopify.com/s/files/1/0953/0526/9572/files/60527f2d8c9f204444f04d5efc2263ca3306fc4d.png?v=1769441664" alt="60527f2d8c9f204444f04d5efc2263ca3306fc4d" width="360" height="360" fetchpriority="high" loading="lazy"></picture><!----></div><script type="text/javascript">window.BEAEARGS['beae-kbz2td8eblock-imageloop-0'] = {
+    "id": "beae-kbz2td8e",
+    "mode": {"value": "live"},
+    "autoHover":false
+  };</script><!----></div><!----><!----><!----><div class="beae-vejcg8zu beae-block beae-core beae-unique-l96goil2" data-id="beae-vejcg8zu" data-loop-index="0" data-uniqueid="l96goil2"><!----><div class="beae-block beae-x-text beae-typo-p1" data-autolayout="beae-vejcg8zu">{{ 'sections.beae-d1q234as.be1288752294_html' | t }}</div><!----><!----></div><!----><!----></div><div data-loop-index="1" class="beae-list-item beae-wqrk4zsf"><!----><!----><div class="beae-kbz2td8e beae-block beae-core beae-unique-im1vkvyw" data-id="beae-kbz2td8e" data-loop-index="1" data-uniqueid="im1vkvyw""><!---->{% assign beae_image_pr = images['60527f2d8c9f204444f04d5efc2263ca3306fc4d.png'].alt %}
+        
+        
+        <!----><div class="beae-block beae-x-image beae-container-image beae-image-content-position beae-image-picture" hover-mode="false"><!----><!----><picture image-mode="" class="beae-yz7dg beae-image-primary"><!----><img src="https://cdn.shopify.com/s/files/1/0953/0526/9572/files/60527f2d8c9f204444f04d5efc2263ca3306fc4d.png?v=1769441664" alt="60527f2d8c9f204444f04d5efc2263ca3306fc4d" width="360" height="360" fetchpriority="high" loading="lazy"></picture><!----></div><script type="text/javascript">window.BEAEARGS['beae-kbz2td8eblock-imageloop-1'] = {
+    "id": "beae-kbz2td8e",
+    "mode": {"value": "live"},
+    "autoHover":false
+  };</script><!----></div><!----><!----><!----><div class="beae-vejcg8zu beae-block beae-core beae-unique-05cpj7q8" data-id="beae-vejcg8zu" data-loop-index="1" data-uniqueid="05cpj7q8"><!----><div class="beae-block beae-x-text beae-typo-p1" data-autolayout="beae-vejcg8zu">{{ 'sections.beae-d1q234as.be16422469_html' | t }}</div><!----><!----></div><!----><!----></div><div data-loop-index="2" class="beae-list-item beae-igbg7zpn"><!----><!----><div class="beae-kbz2td8e beae-block beae-core beae-unique-gkqfr4sk" data-id="beae-kbz2td8e" data-loop-index="2" data-uniqueid="gkqfr4sk""><!---->{% assign beae_image_pr = images['60527f2d8c9f204444f04d5efc2263ca3306fc4d.png'].alt %}
+        
+        
+        <!----><div class="beae-block beae-x-image beae-container-image beae-image-content-position beae-image-picture" hover-mode="false"><!----><!----><picture image-mode="" class="beae-7msj5 beae-image-primary"><!----><img src="https://cdn.shopify.com/s/files/1/0953/0526/9572/files/60527f2d8c9f204444f04d5efc2263ca3306fc4d.png?v=1769441664" alt="60527f2d8c9f204444f04d5efc2263ca3306fc4d" width="360" height="360" fetchpriority="high" loading="lazy"></picture><!----></div><script type="text/javascript">window.BEAEARGS['beae-kbz2td8eblock-imageloop-2'] = {
+    "id": "beae-kbz2td8e",
+    "mode": {"value": "live"},
+    "autoHover":false
+  };</script><!----></div><!----><!----><!----><div class="beae-vejcg8zu beae-block beae-core beae-unique-tvtizbjh" data-id="beae-vejcg8zu" data-loop-index="2" data-uniqueid="tvtizbjh"><!----><div class="beae-block beae-x-text beae-typo-p1" data-autolayout="beae-vejcg8zu">{{ 'sections.beae-d1q234as.be791788705_html' | t }}</div><!----><!----></div><!----><!----></div><div data-loop-index="3" class="beae-list-item beae-674w7xob"><!----><!----><div class="beae-kbz2td8e beae-block beae-core beae-unique-5jzr0440" data-id="beae-kbz2td8e" data-loop-index="3" data-uniqueid="5jzr0440""><!---->{% assign beae_image_pr = images['60527f2d8c9f204444f04d5efc2263ca3306fc4d.png'].alt %}
+        
+        
+        <!----><div class="beae-block beae-x-image beae-container-image beae-image-content-position beae-image-picture" hover-mode="false"><!----><!----><picture image-mode="" class="beae-ke1q beae-image-primary"><!----><img src="https://cdn.shopify.com/s/files/1/0953/0526/9572/files/60527f2d8c9f204444f04d5efc2263ca3306fc4d.png?v=1769441664" alt="60527f2d8c9f204444f04d5efc2263ca3306fc4d" width="360" height="360" fetchpriority="high" loading="lazy"></picture><!----></div><script type="text/javascript">window.BEAEARGS['beae-kbz2td8eblock-imageloop-3'] = {
+    "id": "beae-kbz2td8e",
+    "mode": {"value": "live"},
+    "autoHover":false
+  };</script><!----></div><!----><!----><!----><div class="beae-vejcg8zu beae-block beae-core beae-unique-syd45ols" data-id="beae-vejcg8zu" data-loop-index="3" data-uniqueid="syd45ols"><!----><div class="beae-block beae-x-text beae-typo-p1" data-autolayout="beae-vejcg8zu">{{ 'sections.beae-d1q234as.be532887541_html' | t }}</div><!----><!----></div><!----><!----></div><div data-loop-index="4" class="beae-list-item beae-0k9vkhut"><!----><!----><div class="beae-kbz2td8e beae-block beae-core beae-unique-yjaigyoq" data-id="beae-kbz2td8e" data-loop-index="4" data-uniqueid="yjaigyoq""><!---->{% assign beae_image_pr = images['60527f2d8c9f204444f04d5efc2263ca3306fc4d.png'].alt %}
+        
+        
+        <!----><div class="beae-block beae-x-image beae-container-image beae-image-content-position beae-image-picture" hover-mode="false"><!----><!----><picture image-mode="" class="beae-8p9hd beae-image-primary"><!----><img src="https://cdn.shopify.com/s/files/1/0953/0526/9572/files/60527f2d8c9f204444f04d5efc2263ca3306fc4d.png?v=1769441664" alt="60527f2d8c9f204444f04d5efc2263ca3306fc4d" width="360" height="360" fetchpriority="high" loading="lazy"></picture><!----></div><script type="text/javascript">window.BEAEARGS['beae-kbz2td8eblock-imageloop-4'] = {
+    "id": "beae-kbz2td8e",
+    "mode": {"value": "live"},
+    "autoHover":false
+  };</script><!----></div><!----><!----><!----><div class="beae-vejcg8zu beae-block beae-core beae-unique-4x70x4wc" data-id="beae-vejcg8zu" data-loop-index="4" data-uniqueid="4x70x4wc"><!----><div class="beae-block beae-x-text beae-typo-p1" data-autolayout="beae-vejcg8zu">{{ 'sections.beae-d1q234as.be1732701304_html' | t }}</div><!----><!----></div><!----><!----></div><div data-loop-index="5" class="beae-list-item beae-99szey3r"><!----><!----><div class="beae-kbz2td8e beae-block beae-core beae-unique-9ojvlc7h" data-id="beae-kbz2td8e" data-loop-index="5" data-uniqueid="9ojvlc7h""><!---->{% assign beae_image_pr = images['60527f2d8c9f204444f04d5efc2263ca3306fc4d.png'].alt %}
+        
+        
+        <!----><div class="beae-block beae-x-image beae-container-image beae-image-content-position beae-image-picture" hover-mode="false"><!----><!----><picture image-mode="" class="beae-ji9qe beae-image-primary"><!----><img src="https://cdn.shopify.com/s/files/1/0953/0526/9572/files/60527f2d8c9f204444f04d5efc2263ca3306fc4d.png?v=1769441664" alt="60527f2d8c9f204444f04d5efc2263ca3306fc4d" width="360" height="360" fetchpriority="high" loading="lazy"></picture><!----></div><script type="text/javascript">window.BEAEARGS['beae-kbz2td8eblock-imageloop-5'] = {
+    "id": "beae-kbz2td8e",
+    "mode": {"value": "live"},
+    "autoHover":false
+  };</script><!----></div><!----><!----><!----><div class="beae-vejcg8zu beae-block beae-core beae-unique-2o10s1c5" data-id="beae-vejcg8zu" data-loop-index="5" data-uniqueid="2o10s1c5"><!----><div class="beae-block beae-x-text beae-typo-p1" data-autolayout="beae-vejcg8zu">{{ 'sections.beae-d1q234as.be926031738_html' | t }}</div><!----><!----></div><!----><!----></div></div><div class="beae-slider-controls"><div class="beae-slider-controls-wrp"><div class="beae-slider-indicator"><div class="beae-slider-progress"></div></div><div class="beae-slider-nav-left"><button aria-label="button" type="button"><svg xmlns="http: //www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg></button></div><div class="beae-slider-pagination-wrp"></div><div class="beae-slider-nav-right"><button aria-label="button" type="button"><svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg></button></div></div></div></div><script type="text/javascript">window.BEAEARGS['beae-ykotc2m8section-slide-show'] = {
+    "id": "beae-ykotc2m8",
+    "mode": {"value": "live"},
+    "layout":"grid","layoutMobile":"grid","effect":"slide","isLoop":true,"autoPlay":false,"autoPlayDelay":5,"itemsPerSlide":1,"itemsPerSlideMobile":1,"itemsGap":"20px","itemsGapMobile":"14px","paginationImage":false,"paginationImageMobile":false,"typeScroll":"default","numItemsScroll":1,"showNavigation":true,"showPagination":true,"showProgress":true,"hookSliderInit":"","hookBeforeSlideChange":"","hookAfterSlideChange":"","noRunJs":false,"itemGap":0,"itemGapMobile":0
+  };</script><!----></div><!----><!----><!----></div><!----><!----><!----></div><!----><!----><!----></div><!----><!----><!----><div class="beae-mkny2wvc beae-block beae-core beae-animation beae-unique-tpkkic60 beae-flexbox-core beae-x-button" data-id="beae-mkny2wvc" data-uniqueid="tpkkic60"><!----><a href="#" class="beae-btn-pr beae-button-js"><span class="beae-btn-txt">{{ 'sections.beae-d1q234as.be1427065566_html' | t }} <!----></span></a><!----><script type="text/javascript">window.BEAEARGS['beae-mkny2wvcbutton-js'] = {
+    "id": "beae-mkny2wvc",
+    "mode": {"value": "live"},
+    "id":"beae-mkny2wvc","pageContent":"","extendOptions":"{}","type":"pages"
+  };</script><!----></div><!----><!----></div></div></div><!----><!----><!----><!----><!----><!----></section><!----><script type="text/javascript">window.BEAEARGS['beae-gy2s3fi4section-js'] = {
+    "id": "beae-gy2s3fi4",
+    "mode": {"value": "live"},
+    "optionsVideo":{},"optionsVideoMobile":false
+  };</script><!----><section id="" data-sectionid="beae-e98sio4z" data-width="1470" data-margin="30px" data-margin-mobile="15px" data-type="flexContainer" class="beae-typo-p1 beae-e98sio4z section-beae-e98sio4z beae-section beae-core"><!----><!----><div class="beae-flexbox beae-typo-p1" style="padding: 0px;"><div class="beae__section--container beae-flexbox-container" style="max-width: var(--beae-page-width, 1470px);"><!----><div class="beae-flexbox-core beae-x-flex-section grid-container-width"><!----><div class="beae-oho6nd0c beae-block beae-core beae-animation beae-unique-46fo736n" data-id="beae-oho6nd0c" data-uniqueid="46fo736n"><!----><div class="beae-block beae-x-text beae-typo-p1" data-autolayout="beae-oho6nd0c">{{ 'sections.beae-d1q234as.be1080928734_html' | t }}</div><!----><!----></div><!----><!----><!----><div class="beae-teakxvm3 beae-block beae-core beae-animation beae-unique-w7ldlnoi" data-id="beae-teakxvm3" data-uniqueid="w7ldlnoi""><!----><style type="text/css"></style><div class="beae-slider-wrapper beae-slider slider-beae-teakxvm3 items-per-3" data-draggable="true" data-desktop-layout="slider" data-mobile-layout="slider" data-effect="slide" data-pagination="false" data-navigation="true" style="--items-per: 3; --items-per-mobile: 1; --items-gap: 20px; --items-gap-mobile: 20px; --autoplay-delay: 5s;"><div class="beae-slider-content beae-slider-items"><div data-loop-index="0" class="beae-list-item beae-g1kh8whl"><!----><!----><div class="beae-k1otd9bb beae-block beae-core beae-unique-f2nxnv4e" data-id="beae-k1otd9bb" data-loop-index="0" data-uniqueid="f2nxnv4e""><!---->{% assign beae_image_pr = images['Frame_1948756609.png'].alt %}
+        
+        
+        <!----><div class="beae-block beae-x-image beae-container-image beae-image-content-position beae-image-picture" hover-mode="false"><!----><!----><picture image-mode="" class="beae-krdn beae-image-primary"><!----><img src="https://cdn.shopify.com/s/files/1/0953/0526/9572/files/Frame_1948756609.png?v=1769444232" alt="Frame_1948756609" width="136" height="24" fetchpriority="high" loading="lazy"></picture><!----></div><script type="text/javascript">window.BEAEARGS['beae-k1otd9bbblock-imageloop-0'] = {
+    "id": "beae-k1otd9bb",
+    "mode": {"value": "live"},
+    "autoHover":false
+  };</script><!----></div><!----><!----><!----><div class="beae-p7lwe4jn beae-block beae-core beae-unique-vdi2ny01" data-id="beae-p7lwe4jn" data-loop-index="0" data-uniqueid="vdi2ny01"><!----><div class="beae-block beae-x-text beae-typo-p1" data-autolayout="beae-p7lwe4jn">{{ 'sections.beae-d1q234as.be885307133_html' | t }}</div><!----><!----></div><!----><!----><!----><div class="beae-ie68o07j beae-block beae-core beae-unique-fr1y9r24" data-id="beae-ie68o07j" data-loop-index="0" data-uniqueid="fr1y9r24"><!----><div class="beae-block beae-x-text beae-typo-p1" data-autolayout="beae-ie68o07j">{{ 'sections.beae-d1q234as.be556824465_html' | t }}</div><!----><!----></div><!----><!----><!----><div class="beae-17xoo01z beae-block beae-core beae-unique-3u3axyp2" data-id="beae-17xoo01z" data-loop-index="0" data-uniqueid="3u3axyp2"><!----><div class="beae-block beae-x-text beae-typo-p1" data-autolayout="beae-17xoo01z">{{ 'sections.beae-d1q234as.be1299320078_html' | t }}</div><!----><!----></div><!----><!----><!----><div class="beae-3d6wfn8y beae-block beae-core beae-unique-800i391u beae-flex-wrapper" data-id="beae-3d6wfn8y" data-loop-index="0" data-uniqueid="800i391u"><!----><!----><!----><div class="beae-vo9kucrv beae-block beae-core beae-unique-k05ww4e7" data-id="beae-vo9kucrv" data-loop-index="0" data-uniqueid="k05ww4e7""><!---->{% assign beae_image_pr = images['Vector_1.png'].alt %}
+        
+        
+        <!----><div class="beae-block beae-x-image beae-container-image beae-image-content-position beae-image-picture" hover-mode="false"><!----><!----><picture image-mode="" class="beae-8oy5 beae-image-primary"><!----><img src="https://cdn.shopify.com/s/files/1/0953/0526/9572/files/Vector_1.png?v=1769444728" alt="Vector_1" width="18" height="18" fetchpriority="high" loading="lazy"></picture><!----></div><script type="text/javascript">window.BEAEARGS['beae-vo9kucrvblock-imageloop-0'] = {
+    "id": "beae-vo9kucrv",
+    "mode": {"value": "live"},
+    "autoHover":false
+  };</script><!----></div><!----><!----><!----><div class="beae-lxaa0dk6 beae-block beae-core beae-unique-5f5362s0" data-id="beae-lxaa0dk6" data-loop-index="0" data-uniqueid="5f5362s0"><!----><div class="beae-block beae-x-text beae-typo-p1" data-autolayout="beae-lxaa0dk6">{{ 'sections.beae-d1q234as.be1161277303_html' | t }}</div><!----><!----></div><!----><!----><!----></div><!----><!----></div><div data-loop-index="1" class="beae-list-item beae-kh5batk9"><!----><!----><div class="beae-k1otd9bb beae-block beae-core beae-unique-jz3tfjq1" data-id="beae-k1otd9bb" data-loop-index="1" data-uniqueid="jz3tfjq1""><!---->{% assign beae_image_pr = images['Frame_1948756609.png'].alt %}
+        
+        
+        <!----><div class="beae-block beae-x-image beae-container-image beae-image-content-position beae-image-picture" hover-mode="false"><!----><!----><picture image-mode="" class="beae-gub2q beae-image-primary"><!----><img src="https://cdn.shopify.com/s/files/1/0953/0526/9572/files/Frame_1948756609.png?v=1769444232" alt="Frame_1948756609" width="136" height="24" fetchpriority="high" loading="lazy"></picture><!----></div><script type="text/javascript">window.BEAEARGS['beae-k1otd9bbblock-imageloop-1'] = {
+    "id": "beae-k1otd9bb",
+    "mode": {"value": "live"},
+    "autoHover":false
+  };</script><!----></div><!----><!----><!----><div class="beae-p7lwe4jn beae-block beae-core beae-unique-68e17xyc" data-id="beae-p7lwe4jn" data-loop-index="1" data-uniqueid="68e17xyc"><!----><div class="beae-block beae-x-text beae-typo-p1" data-autolayout="beae-p7lwe4jn">{{ 'sections.beae-d1q234as.be1230648783_html' | t }}</div><!----><!----></div><!----><!----><!----><div class="beae-ie68o07j beae-block beae-core beae-unique-lx13gxq3" data-id="beae-ie68o07j" data-loop-index="1" data-uniqueid="lx13gxq3"><!----><div class="beae-block beae-x-text beae-typo-p1" data-autolayout="beae-ie68o07j">{{ 'sections.beae-d1q234as.be836708759_html' | t }}</div><!----><!----></div><!----><!----><!----><div class="beae-17xoo01z beae-block beae-core beae-unique-yrkblm8h" data-id="beae-17xoo01z" data-loop-index="1" data-uniqueid="yrkblm8h"><!----><div class="beae-block beae-x-text beae-typo-p1" data-autolayout="beae-17xoo01z">{{ 'sections.beae-d1q234as.be196510069_html' | t }}</div><!----><!----></div><!----><!----><!----><div class="beae-3d6wfn8y beae-block beae-core beae-unique-bpubp3x8 beae-flex-wrapper" data-id="beae-3d6wfn8y" data-loop-index="1" data-uniqueid="bpubp3x8"><!----><!----><!----><div class="beae-vo9kucrv beae-block beae-core beae-unique-6mqy3ggt" data-id="beae-vo9kucrv" data-loop-index="1" data-uniqueid="6mqy3ggt""><!---->{% assign beae_image_pr = images['Vector_1.png'].alt %}
+        
+        
+        <!----><div class="beae-block beae-x-image beae-container-image beae-image-content-position beae-image-picture" hover-mode="false"><!----><!----><picture image-mode="" class="beae-bdsx beae-image-primary"><!----><img src="https://cdn.shopify.com/s/files/1/0953/0526/9572/files/Vector_1.png?v=1769444728" alt="Vector_1" width="18" height="18" fetchpriority="high" loading="lazy"></picture><!----></div><script type="text/javascript">window.BEAEARGS['beae-vo9kucrvblock-imageloop-1'] = {
+    "id": "beae-vo9kucrv",
+    "mode": {"value": "live"},
+    "autoHover":false
+  };</script><!----></div><!----><!----><!----><div class="beae-lxaa0dk6 beae-block beae-core beae-unique-xbz5xpod" data-id="beae-lxaa0dk6" data-loop-index="1" data-uniqueid="xbz5xpod"><!----><div class="beae-block beae-x-text beae-typo-p1" data-autolayout="beae-lxaa0dk6">{{ 'sections.beae-d1q234as.be1161277303_html' | t }}</div><!----><!----></div><!----><!----><!----></div><!----><!----></div><div data-loop-index="2" class="beae-list-item beae-9fsbefvg"><!----><!----><div class="beae-k1otd9bb beae-block beae-core beae-unique-u7r13yro" data-id="beae-k1otd9bb" data-loop-index="2" data-uniqueid="u7r13yro""><!---->{% assign beae_image_pr = images['Frame_1948756609.png'].alt %}
+        
+        
+        <!----><div class="beae-block beae-x-image beae-container-image beae-image-content-position beae-image-picture" hover-mode="false"><!----><!----><picture image-mode="" class="beae-d4dsp beae-image-primary"><!----><img src="https://cdn.shopify.com/s/files/1/0953/0526/9572/files/Frame_1948756609.png?v=1769444232" alt="Frame_1948756609" width="136" height="24" fetchpriority="high" loading="lazy"></picture><!----></div><script type="text/javascript">window.BEAEARGS['beae-k1otd9bbblock-imageloop-2'] = {
+    "id": "beae-k1otd9bb",
+    "mode": {"value": "live"},
+    "autoHover":false
+  };</script><!----></div><!----><!----><!----><div class="beae-p7lwe4jn beae-block beae-core beae-unique-4xadrlqy" data-id="beae-p7lwe4jn" data-loop-index="2" data-uniqueid="4xadrlqy"><!----><div class="beae-block beae-x-text beae-typo-p1" data-autolayout="beae-p7lwe4jn">{{ 'sections.beae-d1q234as.be1815537821_html' | t }}</div><!----><!----></div><!----><!----><!----><div class="beae-ie68o07j beae-block beae-core beae-unique-hem3p9gd" data-id="beae-ie68o07j" data-loop-index="2" data-uniqueid="hem3p9gd"><!----><div class="beae-block beae-x-text beae-typo-p1" data-autolayout="beae-ie68o07j">{{ 'sections.beae-d1q234as.be1203079997_html' | t }}</div><!----><!----></div><!----><!----><!----><div class="beae-17xoo01z beae-block beae-core beae-unique-y2ho6xkm" data-id="beae-17xoo01z" data-loop-index="2" data-uniqueid="y2ho6xkm"><!----><div class="beae-block beae-x-text beae-typo-p1" data-autolayout="beae-17xoo01z">{{ 'sections.beae-d1q234as.be515976124_html' | t }}</div><!----><!----></div><!----><!----><!----><div class="beae-3d6wfn8y beae-block beae-core beae-unique-hd37knzu beae-flex-wrapper" data-id="beae-3d6wfn8y" data-loop-index="2" data-uniqueid="hd37knzu"><!----><!----><!----><div class="beae-vo9kucrv beae-block beae-core beae-unique-rerkv235" data-id="beae-vo9kucrv" data-loop-index="2" data-uniqueid="rerkv235""><!---->{% assign beae_image_pr = images['Vector_1.png'].alt %}
+        
+        
+        <!----><div class="beae-block beae-x-image beae-container-image beae-image-content-position beae-image-picture" hover-mode="false"><!----><!----><picture image-mode="" class="beae-st8jd beae-image-primary"><!----><img src="https://cdn.shopify.com/s/files/1/0953/0526/9572/files/Vector_1.png?v=1769444728" alt="Vector_1" width="18" height="18" fetchpriority="high" loading="lazy"></picture><!----></div><script type="text/javascript">window.BEAEARGS['beae-vo9kucrvblock-imageloop-2'] = {
+    "id": "beae-vo9kucrv",
+    "mode": {"value": "live"},
+    "autoHover":false
+  };</script><!----></div><!----><!----><!----><div class="beae-lxaa0dk6 beae-block beae-core beae-unique-k2z0ibe3" data-id="beae-lxaa0dk6" data-loop-index="2" data-uniqueid="k2z0ibe3"><!----><div class="beae-block beae-x-text beae-typo-p1" data-autolayout="beae-lxaa0dk6">{{ 'sections.beae-d1q234as.be1161277303_html' | t }}</div><!----><!----></div><!----><!----><!----></div><!----><!----></div></div><div class="beae-slider-controls"><div class="beae-slider-controls-wrp"><!----><div class="beae-slider-nav-left"><button aria-label="button" type="button"><svg xmlns="http: //www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg></button></div><!----><div class="beae-slider-nav-right"><button aria-label="button" type="button"><svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg></button></div></div></div></div><script type="text/javascript">window.BEAEARGS['beae-teakxvm3section-slide-show'] = {
+    "id": "beae-teakxvm3",
+    "mode": {"value": "live"},
+    "layout":"slider","layoutMobile":"slider","effect":"slide","isLoop":true,"autoPlay":false,"autoPlayDelay":5,"itemsPerSlide":3,"itemsPerSlideMobile":1,"itemsGap":"20px","itemsGapMobile":"20px","paginationImage":false,"paginationImageMobile":false,"typeScroll":"default","numItemsScroll":1,"showNavigation":true,"showPagination":false,"showProgress":false,"hookSliderInit":"","hookBeforeSlideChange":"","hookAfterSlideChange":"","noRunJs":false
+  };</script><!----></div><!----><!----></div></div></div><!----><!----><!----><!----><!----><!----></section><!----><script type="text/javascript">window.BEAEARGS['beae-e98sio4zsection-js'] = {
+    "id": "beae-e98sio4z",
+    "mode": {"value": "live"},
+    "optionsVideo":false,"optionsVideoMobile":false
+  };</script>
+<script type="text/javascript">
+  (() => {
+    let testText = document.createElement('div');
+    testText.innerHTML = 'test';
+    testText.style.fontSize = '100px';
+    document.body.appendChild(testText);
+    let realFontSize = parseFloat(window.getComputedStyle(testText).getPropertyValue('font-size').replace('px', ''));
+    testText.style.zoom = '50%';
+    let detectDesktopRequestMode = window.getComputedStyle(testText).getPropertyValue('font-size') !== '100px';
+    document.body.removeChild(testText);
+    
+    document.body.style.setProperty('--font-size-ratio', (realFontSize / 100).toString());
+
+    function getTextNodesIn(elem) {
+      let textNodes = [];
+      if (elem) {
+        for (var nodes = elem.childNodes, i = nodes.length; i--;) {
+          let node = nodes[i], nodeType = node.nodeType;
+          if (nodeType == 1 || nodeType == 9 || nodeType == 11) {
+            textNodes = textNodes.concat(getTextNodesIn(node));
+          }
+        }
+      }
+      return textNodes;
+    }
+
+    let scaleFitGridBlock = () => {
+
+      document.querySelectorAll('.beae-section.beae-core').forEach((sec) => {
+        let container = sec.querySelector(".beae__section--container");
+        if (!container) { return; };
+        let winWidth = document.documentElement.offsetWidth;
+        if (winWidth >= 768) {
+          sec.querySelectorAll('.beae__section--container').forEach(container => {
+            container.parentNode.style.setProperty("--container-width", container.closest('.grid-container-width') ? container.closest('.grid-container-width').parentNode.offsetWidth+'px' : container.offsetWidth+'px');
+          });
+        }
+      });
+
+      document.querySelectorAll('.beae-grid-block').forEach(block => {
+       let child = block.querySelector('.beae-block.beae-core > *'),
+           zoom = 0,
+           count = 0;
+        child.style.zoom = '';
+        child.style.lineHeight = '';
+        while(child.offsetHeight > block.offsetHeight && count < 14 && (zoom === 0 || block.offsetHeight < (child.offsetHeight*zoom))) {
+            zoom = (block.offsetHeight+block.offsetWidth)/(child.offsetHeight+child.offsetWidth);
+            child.style.zoom = zoom < 1 ? Math.floor(zoom*100)+'%' : '';
+            child.style.lineHeight = '2.4rem';
+            count++;
+        }
+      });
+    };
+
+    scaleFitGridBlock();
+    let timmer = 0;
+    window.addEventListener('resize', () => {
+      clearTimeout(timmer);
+      timmer = setTimeout(scaleFitGridBlock, 150);
+    });
+    window.addEventListener('load', scaleFitGridBlock);
+    
+    if (document.getElementById('beae-exported-page-css')) {
+      document.getElementById('beae-exported-page-css').addEventListener('load', scaleFitGridBlock);
+    }
+
+  })();
+</script>
+</div></div>{% if section_id == section.id %}{% endif%}
+<script id="beae-exported-page-js" src="{{'beae-697a61a88ef01f4bff08b235.js'  | asset_url }}" defer></script>
+
+{% schema %}
+{
+    "name": "BEAE BUILDER APP",
+    "locales": {
+        "en": {
+            "be76480_html": "N\/A",
+            "be427520332_html": "Save { sale }",
+            "be1538363906_html": "Sold Out",
+            "be1066872809_html": "Save {{ sale }}%",
+            "be2569319_html": "Sale",
+            "be1203385433_html": "Pickup available at {{ location_name }}",
+            "be1121680012_html": "Pickup currently unavailable at {{ location_name }}",
+            "be1358949576_html": "View store info",
+            "be260978430_html": "Check availability at other stores",
+            "be1316440194_html": "{{ pickup_icon }} Pickup available, {{ pick_up_time }}",
+            "be1961221788_html": "{{ unavailable_icon }} Pickup currently unavailable at {{ location_name }}",
+            "be430210269_html": "Tax included. ",
+            "be198651612937_html": "Shipping<\/a>  calculated at checkout.",
+            "be2255103_html": "Home",
+            "be77694213_html": "Untitled",
+            "be978022322_html": "From {{ price_min }}",
+            "be1950827197_html": "{{ price_normal }}",
+            "be1246874510_html": "Parlez vrai. Rapprochez vos c\u0153urs. Apaisez vos \u00e2mes.",
+            "be405293365_html": "Wuddayah : le jeu de conversation qui aide les couples musulmans \u00e0 se red\u00e9couvrir et \u00e0 se rapprocher d'Allah ensemble.",
+            "be424550659_html": "Questions class\u00e9es en 3 niveaux de profondeur. De questions l\u00e9g\u00e8res aux conversations les plus profondes.",
+            "be1839233980_html": "Cartes de d\u00e9fi surprises pour ajouter du fun et de la l\u00e9g\u00e8ret\u00e9",
+            "be496980800_html": "Communicaition et complicit\u00e9 retrouv\u00e9e.",
+            "be2082491438_html": "Un design profond\u00e9ment romantique, id\u00e9al \u00e0 offrir.",
+            "be205077255_html": "Sujets de conversation vari\u00e9s : spiritualit\u00e9, tabous, projets, r\u00eaves, conflits et r\u00e9solution, pratique religieuse, finances,..",
+            "be325169237_html": "COMMANDER MAINTENANT",
+            "be1400694144_html": "&nbsp;Livraison gratuite 4j",
+            "be1653135791_html": "Valid\u00e9 par une th\u00e9rapeute de couple musulmane.",
+            "be1747850634_html": "Lettre premium personnalisable offerte.",
+            "be68916198_html": "Vous partagez un lit, mais plus toujours vos c\u0153urs.",
+            "be318314767_html": "Vous voulez parlez en profondeur, mais..",
+            "be23854039_html": "Vous ne savez pas par o\u00f9 commencer.",
+            "be821750422_html": "Les t\u00e9l\u00e9phones sont omipr\u00e9sents.",
+            "be1763019430_html": "Vous avez peur de cr\u00e9er des tensions",
+            "be404154355_html": "Certains sujets semblent trop g\u00eanants ou tabous",
+            "be398833027_html": "Vous manquez de temps, d'inspiration, d'\u00e9nergie",
+            "be1323249553119_html": "R\u00e9sultat ?\r<div>Les non-dits s'accumulent. La complicit\u00e9 s'\u00e9teint. Et Allah n'est plus au centre de votre couple.<\/div>",
+            "be474359551_html": "JE VEUX CHANGER \u00c7A",
+            "be786942423_html": "VERS UN COUPLE PLUS COMPLICE ET APAIS\u00c9",
+            "be777819605_html": "AVANT WUDDAYAH",
+            "be1629103330_html": "Apprentissage par le jeu",
+            "be1342090291_html": "Prononciation naturelle (4 &nbsp;r\u00e9citateurs)",
+            "be418187148_html": "L'enfant devient autonome",
+            "be302870884_html": "Parfait pour tous",
+            "be1704835452_html": "Audio + visuel interactif&nbsp;",
+            "be618377071_html": "M\u00e9morisation rapide (3 sem.)",
+            "be1543718019_html": "AVEC L\u2019EXEPRIENCE WUDDAYAH",
+            "be1288752294_html": "Apprentissage par contrainte",
+            "be16422469_html": "Prononciation difficile &nbsp;(lecture seule)",
+            "be791788705_html": "L'enfant d\u00e9pend de vous",
+            "be532887541_html": "Pas adapt\u00e9 aux non-arabophones",
+            "be1732701304_html": "Support papier classique",
+            "be926031738_html": "M\u00e9morisation lente (3+ mois)",
+            "be1427065566_html": "S\u2019OFFRIR CE CHANGEMENT",
+            "be1080928734_html": "Ils ont v\u00e9cu l\u2019exp\u00e9rience Wuddayah",
+            "be885307133_html": "APPRENTISSAGE LUDIQUE",
+            "be556824465_html": "\"Ma fille de 3 ans pense que c'est un jeu. Elle \u00e9coute en  boucle et r\u00e9cite d\u00e9j\u00e0  Al-Fatiha !\"",
+            "be1299320078_html": "\u2014 Amina, maman de 2 enfants",
+            "be1161277303_html": "Acheteur v\u00e9rifi\u00e9",
+            "be1230648783_html": "PRONONCIATION PARFAITE",
+            "be836708759_html": "\"Je ne parle pas arabe. Gr\u00e2ce aux r\u00e9citateurs, mon fils prononce parfaitement chaque verset.\"",
+            "be196510069_html": "&nbsp;\u2014 Khadija, convertie",
+            "be1815537821_html": "AUTONOMIE DE L'ENFANT",
+            "be1203079997_html": "&nbsp;\"Il prend son livre tout seul  le matin. Quel bonheur de le voir grandir ainsi !\"",
+            "be515976124_html": "\u2014 Fatima, maman de 4 enfants"
+        }
+    },
+    "settings": [
+        {
+            "type": "header",
+            "content": "The section was generated by BEAE BUILDER",
+            "info": "\n                        Beae is a flexible page builder app on Shopify AppStore.\n                        It provides 100+ Shopify Elements and pre-built templates library, \n                        so you can build unlimited pages that you can imagine with it.\n                    "
+        },
+        {
+            "type": "header",
+            "content": "[EDIT WITH BEAE APP \u2192](https:\/\/beae-anhnguyen.myshopify.com\/admin\/apps\/beae-flexible-page-builder\/next\/editor-v3\/page\/697a61a88ef01f4bff08b235)",
+            "info": "(*You must install the app to start editing this section [Learn more](https:\/\/docs.beae.com\/en\/article\/quick-start-guide-dkoesy\/))"
+        }
+    ],
+    "blocks": [
+        {
+            "type": "@app"
+        }
+    ]
+}
+{% endschema %}
