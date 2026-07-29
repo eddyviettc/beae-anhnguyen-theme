@@ -3,11 +3,6 @@
   assign autoplay_interval = section.settings.autoplay_interval | times: 1000
 %}
 
-<link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
->
-
 <section
   id="LuxuryHero-{{ section.id }}"
   class="luxury-hero"
@@ -20,6 +15,7 @@
   style="
     --luxury-hero-overlay: {{ section.settings.overlay_opacity | divided_by: 100.0 }};
     --luxury-hero-transition: {{ section.settings.transition_duration }}ms;
+    --luxury-hero-zoom-duration: {{ autoplay_interval }}ms;
   "
 >
   <div class="luxury-hero__slider swiper">
@@ -30,32 +26,41 @@
           data-block-id="{{ block.id }}"
           role="group"
           aria-label="Slide {{ forloop.index }} of {{ forloop.length }}"
+          style="--luxury-slide-background: {{ block.settings.background_color | default: '#9baa83' }};"
           {{ block.shopify_attributes }}
         >
           <div class="luxury-hero__media">
             {% if block.settings.image != blank %}
-              {% if forloop.first %}
-                {{
-                  block.settings.image
-                  | image_url: width: 3840
-                  | image_tag:
-                    widths: '750, 1100, 1500, 2000, 2500, 3000, 3840',
-                    sizes: '100vw',
-                    class: 'luxury-hero__image',
-                    loading: 'eager',
-                    fetchpriority: 'high'
-                }}
-              {% else %}
-                {{
-                  block.settings.image
-                  | image_url: width: 3840
-                  | image_tag:
-                    widths: '750, 1100, 1500, 2000, 2500, 3000, 3840',
-                    sizes: '100vw',
-                    class: 'luxury-hero__image',
-                    loading: 'lazy'
-                }}
-              {% endif %}
+              <picture class="luxury-hero__picture">
+                {% if block.settings.mobile_image != blank %}
+                  <source
+                    media="(max-width: 749px)"
+                    srcset="{{ block.settings.mobile_image | image_url: width: 1920 }}"
+                  >
+                {% endif %}
+                {% if forloop.first %}
+                  {{
+                    block.settings.image
+                    | image_url: width: 3840
+                    | image_tag:
+                      widths: '750, 1100, 1500, 2000, 2500, 3000, 3840',
+                      sizes: '100vw',
+                      class: 'luxury-hero__image',
+                      loading: 'eager',
+                      fetchpriority: 'high'
+                  }}
+                {% else %}
+                  {{
+                    block.settings.image
+                    | image_url: width: 3840
+                    | image_tag:
+                      widths: '750, 1100, 1500, 2000, 2500, 3000, 3840',
+                      sizes: '100vw',
+                      class: 'luxury-hero__image',
+                      loading: 'lazy'
+                  }}
+                {% endif %}
+              </picture>
             {% else %}
               {{ 'lifestyle-1' | placeholder_svg_tag: 'luxury-hero__image luxury-hero__placeholder' }}
             {% endif %}
@@ -64,12 +69,12 @@
           <div class="luxury-hero__shade"></div>
 
           <div class="luxury-hero__content">
-            {% if block.settings.heading != blank %}
-              <h2 class="luxury-hero__heading">{{ block.settings.heading }}</h2>
-            {% endif %}
-
             {% if block.settings.text != blank %}
               <div class="luxury-hero__text rte">{{ block.settings.text }}</div>
+            {% endif %}
+
+            {% if block.settings.heading != blank %}
+              <h2 class="luxury-hero__heading">{{ block.settings.heading }}</h2>
             {% endif %}
 
             {% if block.settings.button_label != blank %}
@@ -130,9 +135,24 @@
 
 {% style %}
   #shopify-section-{{ section.id }} {
+    position: sticky;
+    top: 0;
+    z-index: 0;
     margin: 0;
     padding: 0;
     max-width: none;
+  }
+
+  #shopify-section-{{ section.id }} ~ .shopify-section {
+    position: relative;
+    z-index: 2;
+  }
+
+  #shopify-section-{{ section.id }} + .shopify-section {
+    margin-top: -3.4rem;
+    overflow: clip;
+    background: rgb(var(--color-background));
+    border-radius: 2rem 2rem 0 0;
   }
 
   #LuxuryHero-{{ section.id }} {
@@ -156,19 +176,46 @@
     height: 100%;
   }
 
+  #LuxuryHero-{{ section.id }} .luxury-hero__slider.swiper {
+    position: relative;
+    z-index: 1;
+    display: block;
+    overflow: hidden;
+  }
+
   #LuxuryHero-{{ section.id }} .swiper-wrapper {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    box-sizing: content-box;
+    transition-property: transform;
     transition-timing-function: cubic-bezier(.77, 0, .18, 1) !important;
   }
 
   #LuxuryHero-{{ section.id }} .luxury-hero__slide {
     position: relative;
+    display: block;
+    flex-shrink: 0;
     overflow: hidden;
     opacity: 0;
     transition: opacity var(--luxury-hero-transition) cubic-bezier(.77, 0, .18, 1);
   }
 
+  #LuxuryHero-{{ section.id }} .swiper-fade .luxury-hero__slide {
+    pointer-events: none;
+    transition-property: opacity;
+  }
+
   #LuxuryHero-{{ section.id }} .luxury-hero__slide.swiper-slide-active {
     opacity: 1;
+    pointer-events: auto;
+  }
+
+  #LuxuryHero-{{ section.id }} .swiper-notification {
+    position: absolute;
+    z-index: -1000;
+    opacity: 0;
+    pointer-events: none;
   }
 
   #LuxuryHero-{{ section.id }} .luxury-hero__media,
@@ -178,7 +225,22 @@
   }
 
   #LuxuryHero-{{ section.id }} .luxury-hero__media {
-    background: #9baa83;
+    background: var(--luxury-slide-background, #9baa83);
+    transform: scale(1.1);
+    transform-origin: center;
+    transition: transform 0s linear var(--luxury-hero-transition);
+    will-change: transform;
+  }
+
+  #LuxuryHero-{{ section.id }} .luxury-hero__slide.swiper-slide-active .luxury-hero__media {
+    transform: scale(1);
+    transition: transform var(--luxury-hero-zoom-duration) cubic-bezier(.2, .72, .24, 1);
+  }
+
+  #LuxuryHero-{{ section.id }} .luxury-hero__picture {
+    display: block;
+    width: 100%;
+    height: 100%;
   }
 
   #LuxuryHero-{{ section.id }} .luxury-hero__image {
@@ -210,6 +272,36 @@
     width: min(46rem, calc(100vw - 4rem));
   }
 
+  #LuxuryHero-{{ section.id }} .luxury-hero__content > .luxury-hero__text,
+  #LuxuryHero-{{ section.id }} .luxury-hero__content > .luxury-hero__heading,
+  #LuxuryHero-{{ section.id }} .luxury-hero__content > .luxury-hero__button {
+    opacity: 0;
+    transform: translate3d(0, 2.5rem, 0);
+  }
+
+  #LuxuryHero-{{ section.id }} .luxury-hero__slide.swiper-slide-active .luxury-hero__text {
+    animation: luxury-hero-fade-up-{{ section.id }} .7s cubic-bezier(.22, .61, .36, 1) .05s both;
+  }
+
+  #LuxuryHero-{{ section.id }} .luxury-hero__slide.swiper-slide-active .luxury-hero__heading {
+    animation: luxury-hero-fade-up-{{ section.id }} .7s cubic-bezier(.22, .61, .36, 1) .15s both;
+  }
+
+  #LuxuryHero-{{ section.id }} .luxury-hero__slide.swiper-slide-active .luxury-hero__button {
+    animation: luxury-hero-fade-up-{{ section.id }} .7s cubic-bezier(.22, .61, .36, 1) .25s both;
+  }
+
+  @keyframes luxury-hero-fade-up-{{ section.id }} {
+    from {
+      opacity: 0;
+      transform: translate3d(0, 2.5rem, 0);
+    }
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
   #LuxuryHero-{{ section.id }} .luxury-hero__heading {
     max-width: 10ch;
     margin: 0;
@@ -224,10 +316,13 @@
 
   #LuxuryHero-{{ section.id }} .luxury-hero__text {
     max-width: 38rem;
-    margin-top: 1.8rem;
+    margin: 0 0 1.8rem;
     color: rgba(255, 255, 255, .9);
     font-size: clamp(1.4rem, 1.15vw, 1.7rem);
+    font-weight: 700;
     line-height: 1.5;
+    letter-spacing: .035em;
+    text-transform: uppercase;
   }
 
   #LuxuryHero-{{ section.id }} .luxury-hero__text > * {
@@ -532,6 +627,19 @@
       transition-duration: 0ms !important;
     }
 
+    #LuxuryHero-{{ section.id }} .luxury-hero__media {
+      transform: none !important;
+      transition: none !important;
+    }
+
+    #LuxuryHero-{{ section.id }} .luxury-hero__content > .luxury-hero__text,
+    #LuxuryHero-{{ section.id }} .luxury-hero__content > .luxury-hero__heading,
+    #LuxuryHero-{{ section.id }} .luxury-hero__content > .luxury-hero__button {
+      opacity: 1;
+      transform: none;
+      animation: none !important;
+    }
+
     #LuxuryHero-{{ section.id }} .luxury-hero__progress-fill {
       transform: scaleX(1) !important;
     }
@@ -607,7 +715,11 @@
       };
 
       const swiper = new window.Swiper(sliderElement, {
-        direction: 'vertical',
+        direction: 'horizontal',
+        effect: 'fade',
+        fadeEffect: {
+          crossFade: true
+        },
         speed: transitionDuration,
         loop: slides.length > 1,
         allowTouchMove: slides.length > 1,
@@ -744,7 +856,18 @@
         {
           "type": "image_picker",
           "id": "image",
-          "label": "Image"
+          "label": "Desktop image"
+        },
+        {
+          "type": "image_picker",
+          "id": "mobile_image",
+          "label": "Mobile image"
+        },
+        {
+          "type": "color",
+          "id": "background_color",
+          "label": "Background color",
+          "default": "#9baa83"
         },
         {
           "type": "text",
@@ -756,7 +879,7 @@
           "type": "richtext",
           "id": "text",
           "label": "Text",
-          "default": "<p>Discover elevated essentials created for beautifully simple everyday moments.</p>"
+          "default": "<p>New Campaign</p>"
         },
         {
           "type": "text",
@@ -777,10 +900,20 @@
       "name": "Luxury hero slider",
       "blocks": [
         {
-          "type": "slide"
+          "type": "slide",
+          "settings": {
+            "heading": "Softness in Comfort",
+            "text": "<p>New Campaign</p>",
+            "background_color": "#9baa83"
+          }
         },
         {
-          "type": "slide"
+          "type": "slide",
+          "settings": {
+            "heading": "Wrapped in Warmth",
+            "text": "<p>Little Moments</p>",
+            "background_color": "#bc8d78"
+          }
         }
       ]
     }
