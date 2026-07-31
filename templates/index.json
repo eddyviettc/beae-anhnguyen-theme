@@ -49,13 +49,12 @@
       ],
       "name": "Luxury hero slider",
       "settings": {
-        "heading_font": "bricolage_grotesque_n7",
-        "overlay_opacity": 10,
+        "overlay_opacity": 20,
         "autoplay": true,
         "autoplay_interval": 6,
         "show_navigation": true,
         "content_position": "adaptive",
-        "transition_duration": 300
+        "transition_duration": 1200
       }
     },
     "collection_list_GLp9Dq": {
