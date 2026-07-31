@@ -36,7 +36,7 @@
             "image": "shopify://shop_images/slide-2-v2.webp",
             "mobile_image": "shopify://shop_images/slide-2-v2--mb.webp",
             "background_color": "#9baa83",
-            "heading": "Softness in Comfort",
+            "heading": "Warm in Closet",
             "text": "<p>New Campaign</p>",
             "button_label": "Shop collection",
             "button_link": ""
@@ -49,6 +49,7 @@
       ],
       "name": "Luxury hero slider",
       "settings": {
+        "heading_font": "bricolage_grotesque_n7",
         "overlay_opacity": 20,
         "autoplay": true,
         "autoplay_interval": 6,
