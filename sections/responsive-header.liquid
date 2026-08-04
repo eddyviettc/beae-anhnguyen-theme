@@ -233,52 +233,194 @@
       min-height: 4.4rem;
     }
 
-    .menu-drawer {
-      top: calc(100% + 0.8rem);
-      left: 0.8rem;
-      width: calc(100vw - 1.6rem);
-      height: calc(100dvh - var(--header-bottom-position, 6.8rem) - 1.6rem);
-      max-height: calc(100dvh - var(--header-bottom-position, 6.8rem) - 1.6rem);
-      border: 0.1rem solid rgba(var(--color-foreground), 0.12);
-      border-radius: var(--header-drawer-radius, 1.6rem);
-      box-shadow: 0 1.6rem 4rem rgba(0, 0, 0, 0.16);
+    .section-header.menu-open {
+      z-index: 100;
+    }
+
+    .menu-drawer-container > .menu-drawer {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      width: 100vw;
+      height: 100dvh;
+      max-height: 100dvh;
+      padding: 0;
+      border: 0;
+      border-radius: 0;
+      background: #fff !important;
+      color: #202326;
+      box-shadow: 0 1.6rem 4rem rgba(0, 0, 0, 0.18);
       overscroll-behavior: contain;
+    }
+
+    .menu-drawer-container > summary::before,
+    .menu-drawer-container > details[open] > summary::before {
+      display: none;
+      content: none;
+    }
+
+    header-drawer .menu-drawer-container > details[open].menu-opening > .menu-drawer,
+    header-drawer .menu-drawer-container > details[open] > .menu-drawer {
+      transform: translateX(0);
+      visibility: visible;
+      opacity: 1;
     }
 
     .menu-drawer,
-    .menu-drawer__submenu {
+    .menu-drawer__submenu,
+    .menu-drawer__header,
+    .menu-drawer__menu-item,
+    .menu-drawer__close-button {
       transition-duration: var(--header-drawer-duration);
     }
 
+    .menu-drawer__inner-container {
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+      background: #fff;
+    }
+
+    .menu-drawer__header {
+      display: flex;
+      flex: 0 0 auto;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 9.2rem;
+      padding: 0 2.4rem;
+      color: #202326;
+      background: #fff;
+      border-bottom: 0.1rem solid #e6e7e8;
+    }
+
+    .menu-drawer__logo {
+      display: inline-flex;
+      align-items: center;
+      min-width: 0;
+      color: inherit;
+    }
+
+    .menu-drawer__logo .header__heading-logo-wrapper {
+      display: block;
+      width: min(17rem, 52vw);
+    }
+
+    .menu-drawer__logo .header__heading-logo {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .menu-drawer__logo .h2 {
+      margin: 0;
+      color: inherit;
+      font-size: 2.7rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      line-height: 1;
+    }
+
+    .menu-drawer__root-close {
+      display: grid;
+      flex: 0 0 4.8rem;
+      width: 4.8rem;
+      height: 4.8rem;
+      padding: 0;
+      place-items: center;
+      color: inherit;
+      background: transparent;
+      border: 0;
+      cursor: pointer;
+    }
+
+    .menu-drawer__root-close .icon {
+      width: 2.6rem;
+      height: 2.6rem;
+    }
+
     .menu-drawer__navigation-container {
+      flex: 1 1 auto;
+      min-height: 0;
       overflow: hidden;
       overscroll-behavior: contain;
+      background: #fff;
     }
 
     .menu-drawer__navigation {
       min-height: 0;
-      padding: 1.2rem 0 2rem;
+      padding: 3.2rem 2.4rem 1.6rem;
       overflow-y: auto;
       overscroll-behavior: contain;
       -webkit-overflow-scrolling: touch;
     }
 
+    .menu-drawer__menu {
+      margin: 0;
+      padding: 0;
+    }
+
+    .menu-drawer__menu > li {
+      margin: 0;
+      border-bottom: 0.1rem solid #e3e4e5;
+    }
+
+    .menu-drawer__menu-item,
     .menu-drawer__menu-item--has-children {
-      padding: 0 1.2rem 0 2rem;
-      font-size: 1.8rem;
+      min-height: 8rem;
+      padding: 0;
+      color: #202326;
+      background: transparent;
+      font-family: var(--font-body-family);
+      font-size: 2.1rem;
+      font-style: normal;
+      font-weight: 400;
+      letter-spacing: -0.01em;
+      line-height: 1.15;
+    }
+
+    .menu-drawer__menu-item:hover,
+    .menu-drawer__menu-item:focus,
+    .menu-drawer__menu-item--active,
+    .menu-drawer__menu-item--active:hover {
+      color: #202326;
+      background: #f7f7f6;
+    }
+
+    .menu-drawer__menu-item--has-children {
+      display: flex;
+      align-items: stretch;
+      justify-content: space-between;
+      list-style: none;
     }
 
     .menu-drawer__menu-link,
     .menu-drawer__menu-item {
-      min-height: 5.6rem;
-      padding-top: 0;
-      padding-bottom: 0;
-      font-size: 1.8rem;
+      min-height: 8rem;
+      padding: 0;
+    }
+
+    .menu-drawer__menu-link {
+      display: flex;
+      flex: 1 1 auto;
+      align-items: center;
+      min-width: 0;
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .menu-drawer__menu-link--parent {
+      padding: 0 0.4rem;
     }
 
     .menu-drawer__submenu {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      width: 100%;
+      height: 100%;
       border: 0;
-      border-radius: var(--header-drawer-radius, 1.6rem);
+      border-radius: 0;
+      background: #fff !important;
       overscroll-behavior: contain;
     }
 
@@ -289,31 +431,132 @@
       -webkit-overflow-scrolling: touch;
     }
 
+    header-drawer .menu-drawer__menu details.menu-opening > .menu-drawer__submenu {
+      transform: translateX(0);
+      visibility: visible;
+    }
+
+    .menu-drawer__submenu-toggle {
+      display: grid;
+      flex: 0 0 4.8rem;
+      width: 4.8rem;
+      min-height: 8rem;
+      padding: 0;
+      place-items: center;
+      color: inherit;
+    }
+
+    .menu-drawer__submenu-toggle .icon-caret {
+      width: 1.2rem;
+      height: 0.8rem;
+      transform: rotate(-90deg);
+    }
+
+    .menu-drawer__submenu-header {
+      min-height: 8.8rem;
+      padding: 0 2.4rem;
+      color: #202326;
+      background: #fff;
+      border-bottom: 0.1rem solid #e6e7e8;
+    }
+
+    .menu-drawer__submenu-header .menu-drawer__close-button {
+      min-height: 8.8rem;
+      margin: 0;
+      padding: 0;
+      color: inherit;
+      font-size: 1.8rem;
+    }
+
+    .menu-drawer__submenu-header .menu-drawer__close-button .icon-caret {
+      width: 1.2rem;
+      height: 0.8rem;
+      margin-right: 1.4rem;
+      transform: rotate(90deg);
+    }
+
     .menu-drawer__utility-links {
       flex-shrink: 0;
-      padding: 1.6rem 2rem calc(1.6rem + env(safe-area-inset-bottom));
-      border-top: 0.1rem solid rgba(var(--color-foreground), 0.1);
+      display: flex;
+      flex-direction: column;
+      gap: 1.4rem;
+      padding: 1.8rem 2.4rem calc(1.8rem + env(safe-area-inset-bottom));
+      color: #202326;
+      background: #fff;
+      border-top: 0.1rem solid #e6e7e8;
+    }
+
+    .menu-drawer__localization {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 1.4rem;
+      min-height: 5.2rem;
+      padding-bottom: 1.4rem;
+      border-bottom: 0.1rem solid #e6e7e8;
+    }
+
+    .menu-drawer__localization localization-form {
+      flex: 0 1 auto;
+      min-width: 0;
+    }
+
+    .menu-drawer__localization .localization-form {
+      padding: 0;
+    }
+
+    .menu-drawer__localization .localization-form__select {
+      min-width: 0;
+      min-height: 4rem;
+      margin: 0;
+      padding: 0 2.2rem 0 0;
+      color: #202326;
+      background: transparent;
+      font-size: 1.6rem;
+      letter-spacing: 0;
+      line-height: 1.2;
+    }
+
+    .menu-drawer__localization .localization-form__select .icon-caret {
+      right: 0;
+      width: 1rem;
+      height: 0.6rem;
     }
 
     .menu-drawer .list-social__link {
-      min-width: 4.4rem;
-      min-height: 4.4rem;
+      display: grid;
+      width: 5.2rem;
+      height: 5.2rem;
+      min-width: 5.2rem;
+      min-height: 5.2rem;
+      padding: 1.4rem;
+      place-items: center;
+      color: #202326;
+      background: #f0f2f3;
+      border-radius: 50%;
     }
 
-    .menu-drawer-container > summary::before {
-      top: 100%;
-      left: 0;
-      width: 100vw;
-      height: calc(100dvh - var(--header-bottom-position, 6.8rem));
-      background: rgba(0, 0, 0, 0.42);
-      backdrop-filter: blur(0.2rem);
-      transition-duration: var(--header-drawer-duration);
+    .menu-drawer .list-social__link:hover,
+    .menu-drawer .list-social__link:focus-visible {
+      color: #202326;
+      background: #e5e7e8;
     }
 
-    .menu-drawer-container > details[open] > .menu-drawer,
-    .menu-drawer-container > details[open].menu-opening > .menu-drawer {
-      transform: translateX(0);
-      visibility: visible;
+    .menu-drawer .list-social {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      margin: 0;
+      padding: 0;
+      justify-content: flex-start;
+    }
+
+    .menu-drawer .list-social:empty {
+      display: none;
+    }
+
+    .menu-drawer__navigation-container > .menu-drawer__navigation {
+      scrollbar-width: thin;
     }
   }
 
@@ -636,6 +879,16 @@
           </summary>
           <div id="menu-drawer" class="gradient menu-drawer motion-reduce" tabindex="-1" role="dialog" aria-modal="true" aria-label="{{ 'sections.header.menu' | t }}">
             <div class="menu-drawer__inner-container">
+              <div class="menu-drawer__header">
+                <a href="{{ routes.root_url }}" class="menu-drawer__logo link link--text focus-inset" aria-label="{{ shop.name | escape }}">
+                  {% render 'header-logo' %}
+                </a>
+                <button type="button" class="menu-drawer__root-close link focus-inset" data-header-drawer-close aria-label="{{ 'accessibility.close' | t }}">
+                  <svg class="icon icon-close" aria-hidden="true" focusable="false">
+                    <use href="#icon-close"></use>
+                  </svg>
+                </button>
+              </div>
               <div class="menu-drawer__navigation-container">
                 <nav class="menu-drawer__navigation">
                   {% render 'header-menu-drawer', links: section.settings.menu.links, section_id: section.id, level: 0 %}
@@ -1333,6 +1586,17 @@
   document.querySelectorAll('header-drawer').forEach((drawer) => {
     if (drawer.dataset.headerEnhanced === 'true') return;
     drawer.dataset.headerEnhanced = 'true';
+    drawer.querySelectorAll('[data-header-drawer-close]').forEach((closeButton) => {
+      closeButton.addEventListener('click', (event) => {
+        const mainDetails = drawer.querySelector(':scope > details');
+        const summary = mainDetails?.querySelector(':scope > summary');
+        if (mainDetails && summary) {
+          event.preventDefault();
+          drawer.closeMenuDrawer(event, summary);
+        }
+      });
+    });
+
     drawer.querySelectorAll('.menu-drawer__submenu-close-all').forEach((closeButton) => {
       closeButton.addEventListener('click', (event) => {
         const headerDrawer = event.currentTarget.closest('header-drawer');
