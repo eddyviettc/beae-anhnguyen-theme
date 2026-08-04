@@ -16,7 +16,7 @@
             class="menu-drawer__menu-item menu-drawer__menu-item--has-children{% if link.child_active %} menu-drawer__menu-item--active{% endif %}"
             aria-label="{{ 'sections.header.open_menu' | t: name: link.title | escape }}"
           >
-            <span class="menu-drawer__menu-link menu-drawer__menu-link--parent">
+            <span class="menu-drawer__menu-label menu-drawer__menu-link--parent">
               {{ link.title | escape }}
             </span>
             <span
