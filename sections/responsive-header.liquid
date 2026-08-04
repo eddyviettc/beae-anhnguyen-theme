@@ -250,6 +250,10 @@
       background: #fff !important;
       color: #202326;
       box-shadow: 0 1.6rem 4rem rgba(0, 0, 0, 0.18);
+      transform: translateX(-100%);
+      visibility: hidden;
+      opacity: 0;
+      pointer-events: none;
       overscroll-behavior: contain;
     }
 
@@ -264,6 +268,7 @@
       transform: translateX(0);
       visibility: visible;
       opacity: 1;
+      pointer-events: auto;
     }
 
     .menu-drawer,
@@ -448,6 +453,8 @@
       border: 0;
       border-radius: 0;
       background: #fff !important;
+      transform: translateX(100%);
+      visibility: hidden;
       overscroll-behavior: contain;
     }
 
