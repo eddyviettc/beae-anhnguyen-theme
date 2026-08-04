@@ -108,6 +108,11 @@
     position: relative;
     display: flex;
     align-items: center;
+    list-style: none;
+  }
+
+  .menu-drawer__menu-item--has-children::-webkit-details-marker {
+    display: none;
   }
 
   .menu-drawer__menu-link {
@@ -214,6 +219,11 @@
       overscroll-behavior: contain;
     }
 
+    .menu-drawer,
+    .menu-drawer__submenu {
+      transition-duration: var(--header-drawer-duration);
+    }
+
     .menu-drawer__navigation-container {
       overflow: hidden;
       overscroll-behavior: contain;
@@ -271,6 +281,7 @@
       height: calc(100dvh - var(--header-bottom-position, 6.8rem));
       background: rgba(0, 0, 0, 0.42);
       backdrop-filter: blur(0.2rem);
+      transition-duration: var(--header-drawer-duration);
     }
 
     .menu-drawer-container > details[open] > .menu-drawer,
@@ -1241,6 +1252,17 @@
 
   enhanceHeaderMenus();
   document.addEventListener('shopify:section:load', enhanceHeaderMenus);
+
+  const enhanceHeaderDrawerLinks = () => {
+    document.querySelectorAll('header-drawer .menu-drawer__menu-link').forEach((link) => {
+      if (link.dataset.navigationEnhanced === 'true') return;
+      link.dataset.navigationEnhanced = 'true';
+      link.addEventListener('click', (event) => event.stopPropagation());
+    });
+  };
+
+  enhanceHeaderDrawerLinks();
+  document.addEventListener('shopify:section:load', enhanceHeaderDrawerLinks);
 
   document.querySelectorAll('header-drawer').forEach((drawer) => {
     if (drawer.dataset.headerEnhanced === 'true') return;
