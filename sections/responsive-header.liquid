@@ -576,18 +576,23 @@
       padding: 0;
     }
 
-    .menu-drawer__localization .localization-form__select {
+    .menu-drawer .menu-drawer__localization.header__localization .disclosure .localization-form__select {
       min-width: 0;
       min-height: 4.8rem;
       margin: 0;
       padding: 0 2rem 0 0;
-      color: #202326;
+      color: #202326 !important;
       background: transparent;
       font-family: var(--mobile-drawer-font-family);
       font-size: 1.8rem;
       font-weight: 400;
       letter-spacing: 0;
       line-height: 1.2;
+      text-decoration: none;
+    }
+
+    .menu-drawer .menu-drawer__localization.header__localization .disclosure .localization-form__select:hover {
+      color: #202326 !important;
       text-decoration: none;
     }
 
