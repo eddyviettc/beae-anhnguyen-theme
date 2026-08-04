@@ -1614,23 +1614,32 @@
     if (drawer.dataset.headerEnhanced === 'true') return;
     drawer.dataset.headerEnhanced = 'true';
     drawer.querySelectorAll('[data-header-drawer-close]').forEach((closeButton) => {
+      if (closeButton.dataset.drawerCloseEnhanced === 'true') return;
+      closeButton.dataset.drawerCloseEnhanced = 'true';
       closeButton.addEventListener('click', (event) => {
         const mainDetails = drawer.querySelector(':scope > details');
         const summary = mainDetails?.querySelector(':scope > summary');
         if (mainDetails && summary) {
           event.preventDefault();
+          event.stopImmediatePropagation();
           drawer.closeMenuDrawer(event, summary);
         }
-      });
+      }, true);
     });
 
     drawer.querySelectorAll('.menu-drawer__submenu-close-all').forEach((closeButton) => {
+      if (closeButton.dataset.drawerCloseEnhanced === 'true') return;
+      closeButton.dataset.drawerCloseEnhanced = 'true';
       closeButton.addEventListener('click', (event) => {
         const headerDrawer = event.currentTarget.closest('header-drawer');
         const mainDetails = headerDrawer?.querySelector(':scope > details');
         const summary = mainDetails?.querySelector(':scope > summary');
-        if (headerDrawer && mainDetails && summary) headerDrawer.closeMenuDrawer(event, summary);
-      });
+        if (headerDrawer && mainDetails && summary) {
+          event.preventDefault();
+          event.stopImmediatePropagation();
+          headerDrawer.closeMenuDrawer(event, summary);
+        }
+      }, true);
     });
   });
 {% endjavascript %}
