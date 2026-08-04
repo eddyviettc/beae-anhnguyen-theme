@@ -271,6 +271,13 @@
       pointer-events: auto;
     }
 
+    header-drawer > details.menu-drawer-container:not([open]) > .menu-drawer {
+      transform: translateX(-100%) !important;
+      visibility: hidden !important;
+      opacity: 0 !important;
+      pointer-events: none !important;
+    }
+
     .menu-drawer,
     .menu-drawer__submenu,
     .menu-drawer__header,
