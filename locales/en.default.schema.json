@@ -1029,6 +1029,9 @@
         }
       }
     },
+    "responsive_header": {
+      "name": "Responsive header"
+    },
     "header": {
       "name": "Header",
       "settings": {
