@@ -360,7 +360,7 @@
   }
 
   @media screen and (min-width: 991px) {
-    body:has(#MainContent > .shopify-section:first-child [data-luxury-hero]) .section-header:not(.header--scrolled) {
+    body:has(#MainContent [data-luxury-hero]) .section-header:not(.header--scrolled) {
       position: absolute;
       top: var(--header-announcement-height, 0px);
       right: 0;
@@ -369,7 +369,7 @@
       margin: 0;
     }
 
-    body:has(#MainContent > .shopify-section:first-child [data-luxury-hero]) .section-header:not(.header--scrolled) .header-wrapper[data-header-transparent='true'] {
+    body:has(#MainContent [data-luxury-hero]) .section-header:not(.header--scrolled) .header-wrapper[data-header-transparent='true'] {
       color: var(--header-transparent-text);
       background: transparent;
       border-color: transparent;
@@ -378,7 +378,7 @@
   }
 
   @media screen and (max-width: 990px) {
-    body:has(#MainContent > .shopify-section:first-child [data-luxury-hero]) .section-header:not(.header--scrolled) {
+    body:has(#MainContent [data-luxury-hero]) .section-header:not(.header--scrolled) {
       position: absolute;
       top: var(--header-announcement-height, 0px);
       right: 0;
@@ -387,7 +387,7 @@
       margin: 0;
     }
 
-    body:has(#MainContent > .shopify-section:first-child [data-luxury-hero]) .section-header:not(.header--scrolled) .header-wrapper[data-header-transparent='true'] {
+    body:has(#MainContent [data-luxury-hero]) .section-header:not(.header--scrolled) .header-wrapper[data-header-transparent='true'] {
       color: var(--header-transparent-text);
       background: transparent;
       border-color: transparent;
@@ -1085,7 +1085,7 @@
 
     connectedCallback() {
       this.header = this.closest('.section-header') || document.querySelector('.section-header');
-      this.wrapper = this.querySelector('.header-wrapper');
+      this.wrapper = this.matches('.header-wrapper') ? this : this.querySelector('.header-wrapper');
       this.predictiveSearch = this.querySelector('predictive-search');
       this.headerIsAlwaysSticky = true;
       this.headerBounds = {};
@@ -1153,7 +1153,7 @@
       this.hero = null;
       this.heroSection = null;
       if (this.getAttribute('data-page-type') !== 'index' || this.wrapper?.dataset.headerTransparent !== 'true') return;
-      this.hero = document.querySelector('#MainContent > .shopify-section:first-child [data-luxury-hero]');
+      this.hero = document.querySelector('#MainContent [data-luxury-hero]');
       this.heroSection = this.hero?.closest('.shopify-section') || null;
     }
 
