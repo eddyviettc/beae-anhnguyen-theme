@@ -562,6 +562,7 @@
     .section-header.header--mobile-hidden {
       transform: translateY(calc(-100% - 0.8rem));
       pointer-events: none;
+      transition-delay: 140ms;
     }
 
     .section-header.header--hero:not(.header--scrolled) .header__heading-logo--default:not(:only-child),
@@ -579,6 +580,12 @@
       filter: brightness(0) invert(1);
     }
   {% endif %}
+
+  @media (prefers-reduced-motion: reduce) {
+    .section-header.header--mobile-hidden {
+      transition-delay: 0ms !important;
+    }
+  }
 {%- endstyle -%}
 
 <script src="{{ 'details-disclosure.js' | asset_url }}" defer="defer"></script>
@@ -1233,6 +1240,7 @@
       const heroHasEnded = Boolean(this.hero && (this.heroPassed || scrollTop >= Math.max(1, this.heroScrollThreshold)));
       const mobile = this.isMobile.matches;
       const hasHero = Boolean(this.hero);
+      const mobileHideThreshold = hasHero ? Math.max(1, this.heroScrollThreshold) : this.header.offsetHeight;
 
       this.header.classList.toggle('header--hero', hasHero);
 
@@ -1243,15 +1251,17 @@
         this.header.classList.toggle('header--scrolled', hasHero && heroHasEnded);
         this.header.classList.toggle('header--sticky', !hasHero || heroHasEnded);
 
-        if (mobile && !atTop && !this.preventMobileReveal && !force) {
-          if (delta > 4 && scrollTop > this.header.offsetHeight) {
+        if (mobile) {
+          const passedMobileHideThreshold = scrollTop >= mobileHideThreshold;
+          const shouldHideOnDownScroll = !atTop && !this.preventMobileReveal && passedMobileHideThreshold && delta > 0;
+          const shouldRevealOnUpScroll = atTop || (!this.preventMobileReveal && delta < 0) || (force && !passedMobileHideThreshold);
+
+          if (shouldHideOnDownScroll) {
             this.header.classList.add('header--mobile-hidden');
             this.closeOpenMenus();
-          } else if (delta < -4) {
+          } else if (shouldRevealOnUpScroll) {
             this.header.classList.remove('header--mobile-hidden');
           }
-        } else if (atTop || force) {
-          this.header.classList.remove('header--mobile-hidden');
         }
       }
 
