@@ -1107,6 +1107,8 @@
       this.currentScrollTop = 0;
       this.scrollFrame = null;
       this.lastDirectionChange = 0;
+      this.heroObserver = null;
+      this.heroPassed = false;
     }
 
     connectedCallback() {
@@ -1150,6 +1152,7 @@
       window.removeEventListener('scroll', this.onScrollHandler);
       window.removeEventListener('resize', this.onResizeHandler);
       document.removeEventListener('shopify:section:load', this.onSectionLoadHandler);
+      this.heroObserver?.disconnect();
       if (this.scrollFrame) window.cancelAnimationFrame(this.scrollFrame);
     }
 
@@ -1176,11 +1179,27 @@
     }
 
     syncHeroReference() {
+      this.heroObserver?.disconnect();
+      this.heroObserver = null;
+      this.heroPassed = false;
       this.hero = null;
       this.heroSection = null;
       if (this.getAttribute('data-page-type') !== 'index' || this.wrapper?.dataset.headerTransparent !== 'true') return;
       this.hero = document.querySelector('#MainContent [data-luxury-hero]');
       this.heroSection = this.hero?.closest('.shopify-section') || null;
+
+      if (this.heroSection && 'IntersectionObserver' in window) {
+        const headerOffset = Math.round(this.header?.getBoundingClientRect().height || 0);
+        this.heroObserver = new IntersectionObserver((entries) => {
+          const entry = entries[0];
+          this.heroPassed = Boolean(!entry.isIntersecting && entry.boundingClientRect.bottom <= headerOffset);
+          this.updateHeaderState(true);
+        }, {
+          rootMargin: `-${headerOffset}px 0px 0px 0px`,
+          threshold: [0, 0.01],
+        });
+        this.heroObserver.observe(this.heroSection);
+      }
     }
 
     onScroll() {
@@ -1200,7 +1219,7 @@
       const delta = scrollTop - this.currentScrollTop;
       const atTop = scrollTop <= 4;
       const heroEnd = this.heroSection ? this.heroSection.offsetTop + this.heroSection.offsetHeight : 0;
-      const heroHasEnded = Boolean(this.heroSection && scrollTop >= Math.max(0, heroEnd - this.header.offsetHeight));
+      const heroHasEnded = Boolean(this.heroSection && (this.heroPassed || scrollTop >= Math.max(0, heroEnd - this.header.offsetHeight)));
       const mobile = this.isMobile.matches;
       const hasHero = Boolean(this.hero);
 
