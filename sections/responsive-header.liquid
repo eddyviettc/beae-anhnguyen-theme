@@ -30,6 +30,19 @@
 <noscript>{{ 'component-cart-notification.css' | asset_url | stylesheet_tag }}</noscript>
 <noscript>{{ 'component-cart-items.css' | asset_url | stylesheet_tag }}</noscript>
 
+{%- liquid
+  assign mobile_drawer_font = section.settings.mobile_drawer_font
+  assign mobile_drawer_font_medium = mobile_drawer_font | font_modify: 'weight', '500'
+  assign mobile_drawer_font_semibold = mobile_drawer_font | font_modify: 'weight', '600'
+  assign mobile_drawer_font_bold = mobile_drawer_font | font_modify: 'weight', '700'
+-%}
+{%- style -%}
+  {{ mobile_drawer_font | font_face: font_display: 'swap' }}
+  {{ mobile_drawer_font_medium | font_face: font_display: 'swap' }}
+  {{ mobile_drawer_font_semibold | font_face: font_display: 'swap' }}
+  {{ mobile_drawer_font_bold | font_face: font_display: 'swap' }}
+{%- endstyle -%}
+
 <style>
   header-drawer {
     justify-self: start;
@@ -249,6 +262,8 @@
       border-radius: 0;
       background: #fff !important;
       color: #202326;
+      --mobile-drawer-font-family: {{ mobile_drawer_font.family }}, {{ mobile_drawer_font.fallback_families }};
+      font-family: var(--mobile-drawer-font-family);
       box-shadow: 0 1.6rem 4rem rgba(0, 0, 0, 0.18);
       transform: translateX(-100%) !important;
       visibility: hidden !important;
@@ -291,6 +306,7 @@
       flex-direction: column;
       min-height: 100%;
       background: #fff;
+      font-family: var(--mobile-drawer-font-family);
     }
 
     .menu-drawer__header {
@@ -298,7 +314,7 @@
       flex: 0 0 auto;
       align-items: center;
       justify-content: space-between;
-      min-height: 9.2rem;
+      min-height: 9.6rem;
       padding: 0 2.4rem;
       color: #202326;
       background: #fff;
@@ -310,6 +326,7 @@
       align-items: center;
       min-width: 0;
       color: inherit;
+      font-family: var(--mobile-drawer-font-family);
       text-decoration: none;
     }
 
@@ -332,10 +349,14 @@
     .menu-drawer__logo .h2 {
       margin: 0;
       color: inherit;
-      font-size: 2.7rem;
-      font-weight: 600;
-      letter-spacing: 0.02em;
+      font-family: var(--mobile-drawer-font-family);
+      font-size: clamp(2.5rem, 7.4vw, 3.2rem);
+      font-weight: 700;
+      letter-spacing: -0.035em;
       line-height: 1;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
 
     .menu-drawer__root-close {
@@ -384,7 +405,7 @@
 
     .menu-drawer__navigation {
       min-height: 0;
-      padding: 3.2rem 2.4rem 1.6rem;
+      padding: 3.2rem 2.2rem 1.6rem;
       overflow-y: auto;
       overscroll-behavior: contain;
       -webkit-overflow-scrolling: touch;
@@ -406,10 +427,10 @@
       padding: 0;
       color: #202326;
       background: transparent;
-      font-family: var(--font-body-family);
-      font-size: 2.1rem;
+      font-family: var(--mobile-drawer-font-family);
+      font-size: 2rem;
       font-style: normal;
-      font-weight: 400;
+      font-weight: 500;
       letter-spacing: -0.01em;
       line-height: 1.15;
     }
@@ -419,7 +440,8 @@
     .menu-drawer__menu-item--active,
     .menu-drawer__menu-item--active:hover {
       color: #202326;
-      background: #f7f7f6;
+      background: transparent;
+      text-decoration: none;
     }
 
     .menu-drawer__menu-item--has-children {
@@ -527,20 +549,21 @@
       flex-shrink: 0;
       display: flex;
       flex-direction: column;
-      gap: 1.4rem;
-      padding: 1.8rem 2.4rem calc(1.8rem + env(safe-area-inset-bottom));
+      gap: 0;
+      padding: 0;
       color: #202326;
       background: #fff;
+      font-family: var(--mobile-drawer-font-family);
       border-top: 0.1rem solid #e6e7e8;
     }
 
     .menu-drawer__localization {
       display: flex;
       align-items: center;
-      justify-content: flex-start;
-      gap: 1.4rem;
-      min-height: 5.2rem;
-      padding-bottom: 1.4rem;
+      justify-content: center;
+      gap: 2.8rem;
+      min-height: 7.2rem;
+      padding: 0 2.4rem;
       border-bottom: 0.1rem solid #e6e7e8;
     }
 
@@ -555,14 +578,17 @@
 
     .menu-drawer__localization .localization-form__select {
       min-width: 0;
-      min-height: 4rem;
+      min-height: 4.8rem;
       margin: 0;
-      padding: 0 2.2rem 0 0;
+      padding: 0 2rem 0 0;
       color: #202326;
       background: transparent;
-      font-size: 1.6rem;
+      font-family: var(--mobile-drawer-font-family);
+      font-size: 1.8rem;
+      font-weight: 400;
       letter-spacing: 0;
       line-height: 1.2;
+      text-decoration: none;
     }
 
     .menu-drawer__localization .localization-form__select .icon-caret {
@@ -571,23 +597,57 @@
       height: 0.6rem;
     }
 
-    .menu-drawer .list-social__link {
-      display: grid;
-      width: 5.2rem;
-      height: 5.2rem;
-      min-width: 5.2rem;
-      min-height: 5.2rem;
-      padding: 1.4rem;
+    .menu-drawer__localization .localization-form__country-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 1rem;
+      white-space: nowrap;
+    }
+
+    .menu-drawer__localization .localization-form__country-flag {
+      display: inline-grid;
+      width: 2rem;
+      height: 2rem;
       place-items: center;
       color: #202326;
-      background: #f0f2f3;
+      background: #eceeef;
       border-radius: 50%;
+      font-size: 0.8rem;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .menu-drawer__localization .localization-form__country-flag--vietnam {
+      color: #ffeb3b;
+      background: #e60012;
+      font-size: 1rem;
+    }
+
+    .menu-drawer .list-social__link {
+      display: grid;
+      width: 5rem;
+      height: 5rem;
+      min-width: 5rem;
+      min-height: 5rem;
+      padding: 0;
+      place-items: center;
+      color: #202326;
+      background: #f0f1f2;
+      border-radius: 50%;
+      text-decoration: none;
     }
 
     .menu-drawer .list-social__link:hover,
     .menu-drawer .list-social__link:focus-visible {
       color: #202326;
-      background: #e5e7e8;
+      background: #f0f1f2;
+    }
+
+    .menu-drawer .list-social__link .icon,
+    .menu-drawer .list-social__link:hover .icon {
+      width: 2rem;
+      height: 2rem;
+      transform: none;
     }
 
     .menu-drawer .list-social {
@@ -595,8 +655,10 @@
       flex-wrap: wrap;
       gap: 1.2rem;
       margin: 0;
-      padding: 0;
-      justify-content: flex-start;
+      min-height: 9.2rem;
+      padding: 1.8rem 2.4rem calc(1.8rem + env(safe-area-inset-bottom));
+      align-items: center;
+      justify-content: center;
     }
 
     .menu-drawer .list-social:empty {
@@ -944,18 +1006,18 @@
                 <div class="menu-drawer__utility-links">
                   {%- if section.settings.enable_country_selector or section.settings.enable_language_selector -%}
                     <div class="menu-drawer__localization header__localization">
-                      {%- if section.settings.enable_country_selector and localization.available_countries.size > 1 -%}
+                      {%- if section.settings.enable_country_selector -%}
                         <localization-form>
                           {%- form 'localization', id: 'HeaderCountryMobileForm', class: 'localization-form' -%}
                             <div class="no-js-hidden">
                               <h2 class="visually-hidden" id="HeaderCountryMobileLabel">{{ 'localization.country_label' | t }}</h2>
-                              {%- render 'country-localization', localPosition: 'HeaderCountryMobile' -%}
+                              {%- render 'country-localization', localPosition: 'HeaderCountryMobile', compact: true -%}
                             </div>
                           {%- endform -%}
                         </localization-form>
                       {% endif %}
 
-                      {%- if section.settings.enable_language_selector and localization.available_languages.size > 1 -%}
+                      {%- if section.settings.enable_language_selector -%}
                         <localization-form>
                           {%- form 'localization', id: 'HeaderLanguageMobileForm', class: 'localization-form' -%}
                             <div class="no-js-hidden">
@@ -1896,6 +1958,12 @@
       "unit": "px",
       "label": "Sticky border radius",
       "default": 16
+    },
+    {
+      "type": "font_picker",
+      "id": "mobile_drawer_font",
+      "label": "Mobile drawer font",
+      "default": "figtree_n4"
     },
     {
       "type": "range",
