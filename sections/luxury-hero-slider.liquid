@@ -539,42 +539,14 @@
     height: 1.6rem;
   }
 
-  {% if request.page_type == 'index' %}
-    body:has(#MainContent > .shopify-section:first-child #LuxuryHero-{{ section.id }}) .section-header {
-      position: absolute !important;
-      top: 0;
-      right: 0;
-      left: 0;
-      z-index: 30;
-      width: 100%;
-      margin: 0;
-    }
-
-    body:has(#MainContent > .shopify-section:first-child #LuxuryHero-{{ section.id }}) .header-wrapper {
-      color: #fff;
-      background: transparent !important;
-      border: 0;
-    }
-
-    body:has(#MainContent > .shopify-section:first-child #LuxuryHero-{{ section.id }}) .header__heading-link .h2,
-    body:has(#MainContent > .shopify-section:first-child #LuxuryHero-{{ section.id }}) .header__menu-item,
-    body:has(#MainContent > .shopify-section:first-child #LuxuryHero-{{ section.id }}) .header__active-menu-item,
-    body:has(#MainContent > .shopify-section:first-child #LuxuryHero-{{ section.id }}) .header__icon {
-      color: #fff;
-    }
-
-    body:has(#MainContent > .shopify-section:first-child #LuxuryHero-{{ section.id }}) .header__heading-logo {
-      filter: brightness(0) invert(1);
-    }
-  {% endif %}
-
   @media screen and (max-width: 749px) {
     #LuxuryHero-{{ section.id }} {
       left: auto;
       width: 100%;
       margin-left: 0;
-      height: calc(100svh - 6.8rem);
-      min-height: min(56rem, calc(100svh - 6.8rem));
+      height: 100vh;
+      height: 100svh;
+      min-height: 50rem;
     }
 
     #LuxuryHero-{{ section.id }} .luxury-hero__content {
@@ -671,36 +643,6 @@
       background: rgba(255, 255, 255, .12);
     }
 
-    body:has(#MainContent > .shopify-section:first-child #LuxuryHero-{{ section.id }}) .section-header {
-      position: relative !important;
-      top: auto;
-      background: #fff;
-    }
-
-    body:has(#MainContent > .shopify-section:first-child #LuxuryHero-{{ section.id }}) .header-wrapper {
-      color: #111;
-      background: #fff !important;
-      border-bottom: .1rem solid rgba(17, 17, 17, .14);
-    }
-
-    body:has(#MainContent > .shopify-section:first-child #LuxuryHero-{{ section.id }}) .header {
-      box-sizing: border-box;
-      height: 6.8rem;
-      min-height: 6.8rem;
-      padding-top: 0;
-      padding-bottom: 0;
-    }
-
-    body:has(#MainContent > .shopify-section:first-child #LuxuryHero-{{ section.id }}) .header__heading-link .h2,
-    body:has(#MainContent > .shopify-section:first-child #LuxuryHero-{{ section.id }}) .header__menu-item,
-    body:has(#MainContent > .shopify-section:first-child #LuxuryHero-{{ section.id }}) .header__active-menu-item,
-    body:has(#MainContent > .shopify-section:first-child #LuxuryHero-{{ section.id }}) .header__icon {
-      color: #111;
-    }
-
-    body:has(#MainContent > .shopify-section:first-child #LuxuryHero-{{ section.id }}) .header__heading-logo {
-      filter: none;
-    }
   }
 
   @media screen and (max-width: 749px) and (max-height: 600px) {
@@ -998,7 +940,7 @@
       "step": 100,
       "unit": "ms",
       "label": "Transition duration",
-      "default": 300
+      "default": 1200
     }
   ],
   "blocks": [
