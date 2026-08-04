@@ -250,9 +250,9 @@
       background: #fff !important;
       color: #202326;
       box-shadow: 0 1.6rem 4rem rgba(0, 0, 0, 0.18);
-      transform: translateX(-100%);
-      visibility: hidden;
-      opacity: 0;
+      transform: translateX(-100%) !important;
+      visibility: hidden !important;
+      opacity: 0 !important;
       pointer-events: none;
       overscroll-behavior: contain;
     }
@@ -265,9 +265,9 @@
 
     header-drawer > details.menu-drawer-container[open].menu-opening > .menu-drawer,
     header-drawer > details.menu-drawer-container[open] > .menu-drawer {
-      transform: translateX(0);
-      visibility: visible;
-      opacity: 1;
+      transform: translateX(0) !important;
+      visibility: visible !important;
+      opacity: 1 !important;
       pointer-events: auto;
     }
 
