@@ -1109,6 +1109,7 @@
       this.lastDirectionChange = 0;
       this.heroObserver = null;
       this.heroPassed = false;
+      this.heroBoundary = 0;
     }
 
     connectedCallback() {
@@ -1182,11 +1183,18 @@
       this.heroObserver?.disconnect();
       this.heroObserver = null;
       this.heroPassed = false;
+      this.heroBoundary = 0;
       this.hero = null;
       this.heroSection = null;
       if (this.getAttribute('data-page-type') !== 'index' || this.wrapper?.dataset.headerTransparent !== 'true') return;
       this.hero = document.querySelector('#MainContent [data-luxury-hero]');
       this.heroSection = this.hero?.closest('.shopify-section') || null;
+
+      if (this.hero) {
+        const main = document.querySelector('#MainContent');
+        const mainTop = main ? main.getBoundingClientRect().top + window.scrollY : 0;
+        this.heroBoundary = mainTop + this.hero.getBoundingClientRect().height;
+      }
 
       if (this.heroSection && 'IntersectionObserver' in window) {
         const headerOffset = Math.round(this.header?.getBoundingClientRect().height || 0);
@@ -1218,8 +1226,7 @@
       const scrollTop = Math.max(0, window.pageYOffset || document.documentElement.scrollTop);
       const delta = scrollTop - this.currentScrollTop;
       const atTop = scrollTop <= 4;
-      const heroEnd = this.heroSection ? this.heroSection.offsetTop + this.heroSection.offsetHeight : 0;
-      const heroHasEnded = Boolean(this.heroSection && (this.heroPassed || scrollTop >= Math.max(0, heroEnd - this.header.offsetHeight)));
+      const heroHasEnded = Boolean(this.hero && (this.heroPassed || scrollTop >= Math.max(0, this.heroBoundary - this.header.offsetHeight)));
       const mobile = this.isMobile.matches;
       const hasHero = Boolean(this.hero);
 
