@@ -488,6 +488,7 @@
     }
 
     .menu-drawer__submenu-toggle .icon-caret {
+      display: block !important;
       width: 1.2rem;
       height: 0.8rem;
       transform: rotate(-90deg);
@@ -960,6 +961,12 @@
                       {%- endif -%}
                     </div>
                   {%- endif -%}
+                  {%- liquid
+                    assign has_social_links = false
+                    if settings.social_twitter_link != blank or settings.social_facebook_link != blank or settings.social_pinterest_link != blank or settings.social_instagram_link != blank or settings.social_tiktok_link != blank or settings.social_tumblr_link != blank or settings.social_snapchat_link != blank or settings.social_youtube_link != blank or settings.social_vimeo_link != blank
+                      assign has_social_links = true
+                    endif
+                  -%}
                   <ul class="list list-social list-unstyled" role="list">
                     {%- if settings.social_twitter_link != blank -%}
                       <li class="list-social__item">
@@ -1033,6 +1040,20 @@
                         </a>
                       </li>
                     {%- endif -%}
+                    {%- unless has_social_links -%}
+                      <li class="list-social__item">
+                        <span class="list-social__link list-social__link--placeholder" aria-hidden="true">{%- render 'icon-facebook' -%}</span>
+                      </li>
+                      <li class="list-social__item">
+                        <span class="list-social__link list-social__link--placeholder" aria-hidden="true">{%- render 'icon-instagram' -%}</span>
+                      </li>
+                      <li class="list-social__item">
+                        <span class="list-social__link list-social__link--placeholder" aria-hidden="true">{%- render 'icon-youtube' -%}</span>
+                      </li>
+                      <li class="list-social__item">
+                        <span class="list-social__link list-social__link--placeholder" aria-hidden="true">{%- render 'icon-tiktok' -%}</span>
+                      </li>
+                    {%- endunless -%}
                   </ul>
                 </div>
               </div>
