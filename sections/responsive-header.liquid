@@ -1774,6 +1774,23 @@
   document.querySelectorAll('header-drawer').forEach((drawer) => {
     if (drawer.dataset.headerEnhanced === 'true') return;
     drawer.dataset.headerEnhanced = 'true';
+    const mainDetails = drawer.querySelector(':scope > details');
+    const backdrop = mainDetails?.querySelector(':scope > .menu-drawer__backdrop');
+
+    if (mainDetails && backdrop && backdrop.dataset.drawerBackdropEnhanced !== 'true') {
+      backdrop.dataset.drawerBackdropEnhanced = 'true';
+      const syncBackdrop = () => {
+        backdrop.hidden = !(mainDetails.open && mainDetails.classList.contains('menu-opening'));
+      };
+
+      syncBackdrop();
+      mainDetails.addEventListener('toggle', syncBackdrop);
+      new MutationObserver(syncBackdrop).observe(mainDetails, {
+        attributes: true,
+        attributeFilter: ['open', 'class'],
+      });
+    }
+
     drawer.querySelectorAll('[data-header-drawer-close]').forEach((closeButton) => {
       if (closeButton.dataset.drawerCloseEnhanced === 'true') return;
       closeButton.dataset.drawerCloseEnhanced = 'true';
