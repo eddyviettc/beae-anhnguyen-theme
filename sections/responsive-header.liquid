@@ -315,10 +315,21 @@
       transition: transform var(--header-drawer-duration) cubic-bezier(.22, 1, .36, 1), opacity var(--header-drawer-duration) ease !important;
     }
 
-    .menu-drawer-container > summary::before,
-    .menu-drawer-container > details[open] > summary::before {
-      display: none;
-      content: none;
+    /* Dawn's drawer stylesheet paints its own summary::before scrim. The
+       responsive header already has a dedicated backdrop, so suppress the
+       legacy scrim in every drawer state to prevent it remaining over the
+       page after the close animation. */
+    html.js header-drawer > details.menu-drawer-container > summary::before,
+    html.js header-drawer > details.menu-drawer-container[open] > summary::before,
+    html.js header-drawer > details.menu-drawer-container.menu-opening > summary::before {
+      content: none !important;
+      display: none !important;
+      visibility: hidden !important;
+      opacity: 0 !important;
+      background: transparent !important;
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      pointer-events: none !important;
     }
 
     /* Keep the panel off-canvas for the first open frame. Shopify adds
@@ -1810,59 +1821,6 @@
           event.preventDefault();
           event.stopImmediatePropagation();
           drawer.closeMenuDrawer(event, summary);
-
-          window.setTimeout(() => {
-            const viewportLayers = Array.from(document.querySelectorAll('body *'))
-              .map((element) => {
-                const style = window.getComputedStyle(element);
-                const rect = element.getBoundingClientRect();
-                return {
-                  tag: element.tagName.toLowerCase(),
-                  id: element.id,
-                  className: String(element.className || '').slice(0, 160),
-                  display: style.display,
-                  visibility: style.visibility,
-                  opacity: style.opacity,
-                  position: style.position,
-                  zIndex: style.zIndex,
-                  background: style.backgroundColor,
-                  filter: style.filter,
-                  backdropFilter: style.backdropFilter,
-                  pointerEvents: style.pointerEvents,
-                  rect: {
-                    x: Math.round(rect.x),
-                    y: Math.round(rect.y),
-                    width: Math.round(rect.width),
-                    height: Math.round(rect.height),
-                  },
-                };
-              })
-              .filter((item) => (
-                item.display !== 'none'
-                && item.visibility !== 'hidden'
-                && Number(item.opacity) > 0
-                && item.rect.width >= window.innerWidth * 0.8
-                && item.rect.height >= window.innerHeight * 0.8
-              ))
-              .slice(0, 40);
-            const summaryBefore = window.getComputedStyle(summary, '::before');
-
-            console.info('[RESPONSIVE_HEADER_DRAWER_DEBUG]', JSON.stringify({
-              detailsOpen: mainDetails.open,
-              detailsClass: mainDetails.className,
-              bodyClass: document.body.className,
-              backdropConnected: Boolean(document.querySelector('.menu-drawer__backdrop')),
-              summaryBefore: {
-                content: summaryBefore.content,
-                display: summaryBefore.display,
-                visibility: summaryBefore.visibility,
-                opacity: summaryBefore.opacity,
-                background: summaryBefore.backgroundColor,
-                backdropFilter: summaryBefore.backdropFilter,
-              },
-              viewportLayers,
-            }));
-          }, 800);
         }
       }, true);
     });
