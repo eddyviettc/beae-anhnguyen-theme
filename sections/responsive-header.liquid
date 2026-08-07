@@ -1776,14 +1776,23 @@
     drawer.dataset.headerEnhanced = 'true';
     const mainDetails = drawer.querySelector(':scope > details');
     const backdrop = mainDetails?.querySelector(':scope > .menu-drawer__backdrop');
+    const drawerPanel = mainDetails?.querySelector(':scope > .menu-drawer');
 
     if (mainDetails && backdrop && backdrop.dataset.drawerBackdropEnhanced !== 'true') {
       backdrop.dataset.drawerBackdropEnhanced = 'true';
       const syncBackdrop = () => {
-        backdrop.hidden = !(mainDetails.open && mainDetails.classList.contains('menu-opening'));
+        const isActive = mainDetails.open && mainDetails.classList.contains('menu-opening');
+
+        if (isActive) {
+          if (!backdrop.isConnected && drawerPanel) mainDetails.insertBefore(backdrop, drawerPanel);
+          backdrop.hidden = false;
+        } else {
+          backdrop.hidden = true;
+          if (backdrop.isConnected) backdrop.remove();
+        }
       };
 
-      syncBackdrop();
+      drawer._syncHeaderBackdrop = syncBackdrop;
       mainDetails.addEventListener('toggle', syncBackdrop);
       new MutationObserver(syncBackdrop).observe(mainDetails, {
         attributes: true,
@@ -1804,6 +1813,8 @@
         }
       }, true);
     });
+
+    drawer._syncHeaderBackdrop?.();
 
     drawer.querySelectorAll('.menu-drawer__submenu-close-all').forEach((closeButton) => {
       if (closeButton.dataset.drawerCloseEnhanced === 'true') return;
