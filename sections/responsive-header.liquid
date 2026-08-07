@@ -299,6 +299,7 @@
       opacity: 0 !important;
       pointer-events: none;
       overscroll-behavior: contain;
+      transition: transform var(--header-drawer-duration) cubic-bezier(.22, 1, .36, 1), opacity var(--header-drawer-duration) ease !important;
     }
 
     .menu-drawer-container > summary::before,
@@ -307,12 +308,17 @@
       content: none;
     }
 
-    header-drawer > details.menu-drawer-container[open].menu-opening > .menu-drawer,
+    /* Keep the panel off-canvas for the first open frame. Shopify adds
+       .menu-opening on the next task, which gives the transform a real
+       before/after state to animate between. */
     header-drawer > details.menu-drawer-container[open] > .menu-drawer {
-      transform: translateX(0) !important;
       visibility: visible !important;
       opacity: 1 !important;
       pointer-events: auto;
+    }
+
+    header-drawer > details.menu-drawer-container[open].menu-opening > .menu-drawer {
+      transform: translateX(0) !important;
     }
 
     header-drawer > details.menu-drawer-container:not([open]) > .menu-drawer {
