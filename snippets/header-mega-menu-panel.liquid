@@ -18,9 +18,9 @@
   endif
 
   if promo_image_2 == blank and promo_collection_2 != blank
-    assign promo_image_2 = promo_collection_2.featured_image
+    assign promo_image_2 = promo_collection_2.products[1].featured_image
     if promo_image_2 == blank
-      assign promo_image_2 = promo_collection_2.products[1].featured_image
+      assign promo_image_2 = promo_collection_2.featured_image
     endif
     if promo_image_2 == blank
       assign promo_image_2 = promo_collection_2.products.first.featured_image
