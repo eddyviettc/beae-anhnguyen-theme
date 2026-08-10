@@ -315,8 +315,11 @@
       padding: 0;
       overflow: hidden;
       color: #202326;
-      background: transparent;
+      background: #fff;
       border: 0;
+      border-top: 0.1rem solid rgba(32, 35, 38, 0.08);
+      border-radius: 0;
+      box-shadow: none;
       opacity: 0;
       pointer-events: none;
       visibility: hidden;
@@ -615,26 +618,11 @@
     }
 
     .header-mega-shell {
-      position: fixed;
-      top: var(--header-mega-top, 7.2rem);
-      right: 0;
-      left: 0;
-      z-index: 3;
-      width: 100vw;
-      height: 0;
-      max-height: calc(100svh - var(--header-mega-top, 7.2rem) - 2rem);
-      overflow: hidden;
-      background: #fff;
-      border-top: 0.1rem solid rgba(32, 35, 38, 0.08);
-      border-radius: 0 0 1.6rem 1.6rem;
-      box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.08);
-      pointer-events: none;
-      transition: height 300ms cubic-bezier(.6, .14, 0, 1);
-      will-change: height;
+      display: none;
     }
 
-    .section-header.mega-menu-open .header-mega-shell {
-      height: var(--header-mega-height, 0px);
+    .section-header {
+      isolation: isolate;
     }
 
     .header-mega-overlay {
@@ -643,7 +631,7 @@
       right: 0;
       bottom: 0;
       left: 0;
-      z-index: -1;
+      z-index: 3;
       display: block;
       width: 100%;
       padding: 0;
