@@ -325,6 +325,7 @@
     sticky-header[data-responsive-header='v2'] .helix-desktop-nav details > summary .header__menu-label {
       position: relative;
       display: inline-flex;
+      text-decoration: none !important;
     }
 
     sticky-header[data-responsive-header='v2'] .helix-desktop-nav details > summary .header__menu-label::after {
@@ -506,7 +507,9 @@
     }
 
     .helix-mega-menu--compact > .helix-mega-menu__content {
+      position: absolute;
       top: calc(100% - 0.1rem);
+      bottom: auto;
       right: auto;
       left: 0;
       width: min(31rem, calc(100vw - 2rem));
