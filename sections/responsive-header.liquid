@@ -359,29 +359,24 @@
       border: 0;
       border-radius: 0;
       box-shadow: none;
-      opacity: 0;
       pointer-events: none;
       visibility: hidden;
       transition:
         height 300ms cubic-bezier(.6, .14, 0, 1),
-        opacity 200ms cubic-bezier(.6, .14, 0, 1),
         visibility 0s linear 300ms;
     }
 
     .helix-mega-menu[open] > .helix-mega-menu__content {
       height: var(--header-mega-height, 0px);
-      opacity: 1;
       pointer-events: auto;
       visibility: visible;
       transition:
         height 300ms cubic-bezier(.6, .14, 0, 1),
-        opacity 200ms cubic-bezier(.6, .14, 0, 1),
         visibility 0s linear 0s;
     }
 
     .helix-mega-menu.is-closing > .helix-mega-menu__content {
       height: 0;
-      opacity: 0;
       pointer-events: none;
     }
 
