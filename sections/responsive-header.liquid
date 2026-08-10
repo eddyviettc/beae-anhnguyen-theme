@@ -2304,6 +2304,11 @@
       menu?.addEventListener('mouseleave', () => window.setTimeout(close, 40));
       menu?.addEventListener('focusin', open);
       menu?.addEventListener('focusout', () => window.setTimeout(close, 0));
+      summary?.addEventListener('click', (event) => {
+        if (!window.matchMedia('(min-width: 991px)').matches) return;
+        event.preventDefault();
+        open();
+      });
       details.addEventListener('toggle', () => syncDesktopMegaState(section));
     });
 
