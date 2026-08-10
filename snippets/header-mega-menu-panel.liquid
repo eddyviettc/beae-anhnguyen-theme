@@ -146,11 +146,11 @@
       <div class="helix-mega-products">
         <div class="helix-mega-products__header">
           <h3>{{ block.settings.featured_heading | default: 'Best deals 🔥' | escape }}</h3>
-          <div class="helix-mega-products__arrows" aria-hidden="true">
-            <button type="button" data-mega-products-prev tabindex="-1">
+          <div class="helix-mega-products__arrows">
+            <button type="button" data-mega-products-prev aria-label="Previous products">
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 5-7 7 7 7" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg>
             </button>
-            <button type="button" data-mega-products-next tabindex="-1">
+            <button type="button" data-mega-products-next aria-label="Next products">
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg>
             </button>
           </div>

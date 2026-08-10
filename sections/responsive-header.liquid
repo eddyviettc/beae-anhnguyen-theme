@@ -1788,9 +1788,7 @@
                     <header-menu class="helix-header-menu">
                       <details id="Details-HeaderMegaBlock-{{ block.id }}" class="mega-menu helix-mega-menu">
                         <summary class="header__menu-item list-menu__item link focus-inset" aria-controls="MegaMenu-Content-{{ block.id }}">
-                          <span class="header__menu-label">
-                            <a href="{{ block.settings.link | default: routes.all_products_collection_url }}">{{ block.settings.title | escape }}</a>
-                          </span>
+                          <span class="header__menu-label">{{ block.settings.title | escape }}</span>
                           {% render 'icon-caret' %}
                         </summary>
                         <div id="MegaMenu-Content-{{ block.id }}" class="helix-mega-menu__content motion-reduce" tabindex="-1">
