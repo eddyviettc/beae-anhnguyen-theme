@@ -1,0 +1,44 @@
+{% doc %}
+  Renders the header logo variants used by the transparent and sticky header states.
+
+  @param {image} [transparent_logo] - Optional logo for transparent hero headers.
+{% enddoc %}
+
+{% assign primary_logo = settings.logo %}
+{% assign logo_source = primary_logo | default: transparent_logo %}
+
+{% if logo_source != blank %}
+  {% assign logo_alt = logo_source.alt | default: shop.name | escape %}
+  {% assign logo_height = settings.logo_width | divided_by: logo_source.aspect_ratio %}
+  {% capture logo_sizes %}(max-width: {{ settings.logo_width | times: 2 }}px) 50vw, {{ settings.logo_width }}px{% endcapture %}
+  {% capture logo_widths %}{{ settings.logo_width }}, {{ settings.logo_width | times: 1.5 | round }}, {{ settings.logo_width | times: 2 }}{% endcapture %}
+  <div class="header__heading-logo-wrapper">
+    {% if primary_logo != blank %}
+      {{ primary_logo | image_url: width: 600 | image_tag:
+        class: 'header__heading-logo header__heading-logo--default motion-reduce',
+        widths: logo_widths,
+        height: logo_height,
+        width: settings.logo_width,
+        alt: logo_alt,
+        sizes: logo_sizes,
+        preload: true
+      }}
+    {% endif %}
+    {% if transparent_logo != blank %}
+      {% assign transparent_logo_height = settings.logo_width | divided_by: transparent_logo.aspect_ratio %}
+      {% assign transparent_logo_alt = transparent_logo.alt | default: shop.name | escape %}
+      {{ transparent_logo | image_url: width: 600 | image_tag:
+        class: 'header__heading-logo header__heading-logo--transparent motion-reduce',
+        widths: logo_widths,
+        height: transparent_logo_height,
+        width: settings.logo_width,
+        alt: transparent_logo_alt,
+        sizes: logo_sizes,
+        preload: true
+      }}
+    {% endif %}
+  </div>
+{% else %}
+  <span class="h2">{{ shop.name }}</span>
+{% endif %}
+
