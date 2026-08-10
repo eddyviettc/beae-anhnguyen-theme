@@ -479,6 +479,7 @@
     }
 
     .helix-mega-menu__link {
+      position: relative;
       display: inline-flex;
       width: fit-content;
       color: #313438;
@@ -489,6 +490,19 @@
       transition: color 160ms ease, transform 200ms ease;
     }
 
+    .helix-mega-menu__link::after {
+      position: absolute;
+      right: 0;
+      bottom: -0.35rem;
+      left: 0;
+      height: 0.1rem;
+      background: currentColor;
+      content: '';
+      transform: scaleX(0);
+      transform-origin: left center;
+      transition: transform 300ms cubic-bezier(.6, .14, 0, 1);
+    }
+
     .helix-mega-menu__column--strong .helix-mega-menu__link {
       font-weight: 650;
     }
@@ -496,9 +510,12 @@
     .helix-mega-menu__link:hover,
     .helix-mega-menu__link:focus-visible {
       color: #000;
-      text-decoration: underline;
-      text-underline-offset: 0.35rem;
       transform: translateX(0.2rem);
+    }
+
+    .helix-mega-menu__link:hover::after,
+    .helix-mega-menu__link:focus-visible::after {
+      transform: scaleX(1);
     }
 
     /* Menus without a featured/product area use a compact dropdown anchored to their trigger. */
@@ -544,7 +561,21 @@
     }
 
     .helix-mega-menu--compact .helix-mega-menu__link {
+      width: 100%;
+      padding: 0.7rem 1rem;
+      border-radius: 0.4rem;
       font-size: 1.55rem;
+      transition: color 160ms ease, background-color 160ms ease, transform 160ms ease;
+    }
+
+    .helix-mega-menu--compact .helix-mega-menu__link::after {
+      display: none;
+    }
+
+    .helix-mega-menu--compact .helix-mega-menu__link:hover,
+    .helix-mega-menu--compact .helix-mega-menu__link:focus-visible {
+      background: #f2f2f2;
+      transform: none;
     }
 
     .helix-mega-menu--compact .helix-mega-promos,
