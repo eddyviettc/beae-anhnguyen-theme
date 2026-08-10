@@ -318,7 +318,31 @@
       transition: transform 300ms cubic-bezier(.6, .14, 0, 1);
     }
 
-    sticky-header[data-responsive-header='v2'] .helix-desktop-nav details[open] > summary::after,
+    sticky-header[data-responsive-header='v2'] .helix-desktop-nav details > summary::after {
+      display: none;
+    }
+
+    sticky-header[data-responsive-header='v2'] .helix-desktop-nav details > summary .header__menu-label {
+      position: relative;
+      display: inline-flex;
+    }
+
+    sticky-header[data-responsive-header='v2'] .helix-desktop-nav details > summary .header__menu-label::after {
+      position: absolute;
+      right: 0;
+      bottom: -1rem;
+      left: 0;
+      height: 0.1rem;
+      background: currentColor;
+      content: '';
+      transform: scaleX(0);
+      transform-origin: left center;
+      transition: transform 300ms cubic-bezier(.6, .14, 0, 1);
+    }
+
+    sticky-header[data-responsive-header='v2'] .helix-desktop-nav details[open] > summary .header__menu-label::after,
+    sticky-header[data-responsive-header='v2'] .helix-desktop-nav details > summary:hover .header__menu-label::after,
+    sticky-header[data-responsive-header='v2'] .helix-desktop-nav details > summary:focus-visible .header__menu-label::after,
     sticky-header[data-responsive-header='v2'] .helix-desktop-nav__link:hover::after,
     sticky-header[data-responsive-header='v2'] .helix-desktop-nav__link:focus-visible::after {
       transform: scaleX(1);
@@ -2472,7 +2496,11 @@
     if (openMenu) {
       const panel = openMenu.querySelector(':scope > .helix-mega-menu__content');
       const inner = panel?.querySelector(':scope > .helix-mega-menu__inner');
-      const naturalHeight = Math.max(inner?.scrollHeight || 0, inner?.getBoundingClientRect().height || 0);
+      const naturalHeight = Math.max(
+        inner?.scrollHeight || 0,
+        inner?.getBoundingClientRect().height || 0,
+        panel?.scrollHeight || 0
+      );
       const availableHeight = Math.max(0, window.innerHeight - Math.max(0, headerBottom) - 20);
       const targetHeight = Math.min(Math.ceil(naturalHeight), Math.floor(availableHeight));
 
