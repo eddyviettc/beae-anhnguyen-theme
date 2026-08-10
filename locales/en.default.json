@@ -267,6 +267,7 @@
     "header": {
       "announcement": "Announcement",
       "menu": "Menu",
+      "open_menu": "Open {{ name }} menu",
       "cart_count": {
         "one": "{{ count }} item",
         "other": "{{ count }} items"

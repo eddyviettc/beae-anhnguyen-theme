@@ -31,19 +31,128 @@
       "settings": {}
     },
     "header": {
-      "type": "header",
+      "type": "responsive-header",
       "custom_css": [
         ".header__heading-link .h2 {font-size: 16px;}"
       ],
+      "blocks": {
+        "desktop-mega-women": {
+          "type": "mega_menu",
+          "settings": {
+            "title": "Women",
+            "link": "/collections/all",
+            "preset": "women",
+            "column_1_heading": "Top picks",
+            "column_1_menu": "",
+            "column_1_bold_links": true,
+            "column_2_heading": "By activity",
+            "column_2_menu": "",
+            "column_3_heading": "By feature",
+            "column_3_menu": "",
+            "promo_layout": "cards",
+            "promo_collection_1": "all",
+            "promo_1_image": "",
+            "promo_1_title": "Women's sale",
+            "promo_1_label": "Shop now",
+            "promo_1_link": "/collections/all",
+            "promo_collection_2": "all",
+            "promo_2_image": "",
+            "promo_2_title": "Women's favorites",
+            "promo_2_label": "Shop now",
+            "promo_2_link": "/collections/all",
+            "featured_heading": "Best deals 🔥",
+            "featured_collection": "all"
+          }
+        },
+        "desktop-mega-men": {
+          "type": "mega_menu",
+          "settings": {
+            "title": "Men",
+            "link": "/collections/all",
+            "preset": "men",
+            "column_1_heading": "Top picks",
+            "column_1_menu": "",
+            "column_1_bold_links": true,
+            "column_2_heading": "By activity",
+            "column_2_menu": "",
+            "column_3_heading": "By feature",
+            "column_3_menu": "",
+            "promo_layout": "products",
+            "promo_collection_1": "all",
+            "promo_1_image": "",
+            "promo_1_title": "Men's sale",
+            "promo_1_label": "Shop now",
+            "promo_1_link": "/collections/all",
+            "promo_collection_2": "all",
+            "promo_2_image": "",
+            "promo_2_title": "Men's favorites",
+            "promo_2_label": "Shop now",
+            "promo_2_link": "/collections/all",
+            "featured_heading": "Best deals 🔥",
+            "featured_collection": "all"
+          }
+        },
+        "desktop-mega-pages": {
+          "type": "mega_menu",
+          "settings": {
+            "title": "Pages",
+            "link": "/pages/about-us",
+            "preset": "pages",
+            "column_1_heading": "Explore",
+            "column_1_menu": "",
+            "column_1_bold_links": false,
+            "column_2_heading": "",
+            "column_2_menu": "",
+            "column_3_heading": "",
+            "column_3_menu": "",
+            "promo_layout": "none",
+            "promo_collection_1": "",
+            "promo_1_image": "",
+            "promo_1_title": "",
+            "promo_1_label": "Shop now",
+            "promo_1_link": "",
+            "promo_collection_2": "",
+            "promo_2_image": "",
+            "promo_2_title": "",
+            "promo_2_label": "Shop now",
+            "promo_2_link": "",
+            "featured_heading": "Best deals 🔥",
+            "featured_collection": ""
+          }
+        },
+        "desktop-link-find-shoes": {
+          "type": "desktop_link",
+          "settings": {
+            "title": "Find your shoes",
+            "link": "/collections/all"
+          }
+        }
+      },
+      "block_order": [
+        "desktop-mega-women",
+        "desktop-mega-men",
+        "desktop-mega-pages",
+        "desktop-link-find-shoes"
+      ],
       "settings": {
         "logo_position": "middle-center",
-        "menu": "footer",
-        "menu_type_desktop": "dropdown",
+        "menu": "main-menu",
+        "menu_type_desktop": "mega",
         "sticky_header_type": "always",
+        "transparent_header": true,
+        "transparent_color_scheme": "light",
+        "sticky_color_scheme": "dark",
+        "sticky_background": "#ffffff",
+        "sticky_shadow": "0 0.8rem 2.4rem rgba(0, 0, 0, 0.08)",
+        "sticky_horizontal_margin": 16,
+        "sticky_top_offset": 16,
+        "sticky_border_radius": 16,
+        "mobile_drawer_radius": 16,
+        "mobile_drawer_duration": 450,
         "show_line_separator": true,
         "color_scheme": "inverse",
-        "enable_country_selector": false,
-        "enable_language_selector": false,
+        "enable_country_selector": true,
+        "enable_language_selector": true,
         "mobile_logo_position": "center",
         "margin_bottom": 0,
         "padding_top": 8,

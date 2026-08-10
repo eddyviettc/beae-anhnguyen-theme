@@ -156,34 +156,6 @@
         "disabled": false,
         "settings": {}
       },
-      "11532412952436166569": {
-        "type": "shopify://apps/loox-reviews/blocks/loox-inject/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
-        "disabled": false,
-        "settings": {}
-      },
-      "4379643256173503040": {
-        "type": "shopify://apps/joy-subscription-app-cod-form/blocks/app-embed/6aa30d9c-ff0b-4f29-a82d-a633d8e04b9a",
-        "disabled": false,
-        "settings": {}
-      },
-      "1143683040400472741": {
-        "type": "shopify://apps/trustoo-io-reviews/blocks/trustoo-review-switch/c8f15077-6475-4e86-ad06-b66038d5ba2c",
-        "disabled": false,
-        "settings": {}
-      },
-      "16477348613150133823": {
-        "type": "shopify://apps/unlimited-bundles/blocks/script-app-block/d33d0f48-dee0-42a0-b156-2a5dce91814a",
-        "disabled": false,
-        "settings": {
-          "reload_on_line_item_properties": false,
-          "disable_reload_on_cart_update": false,
-          "disable_cart_attribute_tracker": false,
-          "disable_facebook_events": false,
-          "enable_reload_on_bundle_auto_match": false,
-          "use_h2_header": false,
-          "match_cart_discount_title": false
-        }
-      },
       "8765772171712610185": {
         "type": "shopify://apps/t-lab-ai-language-translate/blocks/language_switcher/b5b83690-efd4-434d-8c6a-a5cef4019faf",
         "disabled": true,
@@ -214,26 +186,9 @@
           "custom_switcher_border_color": "#000000"
         }
       },
-      "7570552984445421165": {
-        "type": "shopify://apps/yotpo-product-reviews/blocks/settings/eb7dfd7d-db44-4334-bc49-c893b51b36cf",
-        "disabled": false,
-        "settings": {}
-      },
-      "14339172867238703359": {
-        "type": "shopify://apps/yotpo-product-reviews/blocks/reviews_tab/eb7dfd7d-db44-4334-bc49-c893b51b36cf",
-        "disabled": false,
-        "settings": {
-          "product": ""
-        }
-      },
       "7914987560903345225": {
         "type": "shopify://apps/beae-page-builder/blocks/app-embed/f4353b90-19bd-4f19-8138-af38b7a6de94",
         "disabled": true,
-        "settings": {}
-      },
-      "14041968213898805026": {
-        "type": "shopify://apps/aov-free-gift-bxgy/blocks/app-embed-free-gift/de98edfe-90fa-4145-8a57-1055e0058723",
-        "disabled": false,
         "settings": {}
       },
       "12042751398604708466": {
@@ -243,36 +198,6 @@
       },
       "11672917484381304570": {
         "type": "shopify://apps/scroll-bee/blocks/app-embed/143250ee-275c-4434-9866-6b12d6a781b3",
-        "disabled": false,
-        "settings": {}
-      },
-      "855628211100114053": {
-        "type": "shopify://apps/klaviyo-email-marketing-sms/blocks/klaviyo-onsite-embed/2632fe16-c075-4321-a88b-50b567f42507",
-        "disabled": false,
-        "settings": {}
-      },
-      "6544682535036668446": {
-        "type": "shopify://apps/pumper-bundles/blocks/app-embed/0856870d-2aca-4b1e-a662-cf1797f61270",
-        "disabled": false,
-        "settings": {}
-      },
-      "4727195953647268973": {
-        "type": "shopify://apps/doran-shoppable-videos/blocks/app-embed/9f421243-1cc3-42c0-8a88-49922de1eacf",
-        "disabled": false,
-        "settings": {}
-      },
-      "7609861849053656801": {
-        "type": "shopify://apps/orichi-bundle/blocks/volume_discount/831adfc0-6cab-4c9a-9951-63aaa6f4e791",
-        "disabled": false,
-        "settings": {}
-      },
-      "14020781649437803805": {
-        "type": "shopify://apps/shopvid/blocks/app_embed/1216543a-6237-4445-a5f2-61991cd76022",
-        "disabled": false,
-        "settings": {}
-      },
-      "10508887350528622030": {
-        "type": "shopify://apps/appstle-bundles/blocks/appstle-bundle/8909921b-2d24-4d68-9b12-9d045d3dcb0a",
         "disabled": false,
         "settings": {}
       },
@@ -344,6 +269,82 @@
         "settings": {
           "custom_css": ""
         }
+      },
+      "10508887350528622030": {
+        "type": "shopify://apps/appstle-bundles/blocks/appstle-bundle/8909921b-2d24-4d68-9b12-9d045d3dcb0a",
+        "disabled": true,
+        "settings": {}
+      },
+      "14020781649437803805": {
+        "type": "shopify://apps/ag-shoppable-video/blocks/app_embed/1216543a-6237-4445-a5f2-61991cd76022",
+        "disabled": true,
+        "settings": {}
+      },
+      "7609861849053656801": {
+        "type": "shopify://apps/volume-discount-bundle/blocks/volume_discount/831adfc0-6cab-4c9a-9951-63aaa6f4e791",
+        "disabled": true,
+        "settings": {}
+      },
+      "4727195953647268973": {
+        "type": "shopify://apps/doran-shoppable-videos/blocks/app-embed/9f421243-1cc3-42c0-8a88-49922de1eacf",
+        "disabled": true,
+        "settings": {}
+      },
+      "6544682535036668446": {
+        "type": "shopify://apps/pumper-bundles/blocks/app-embed/0856870d-2aca-4b1e-a662-cf1797f61270",
+        "disabled": true,
+        "settings": {}
+      },
+      "855628211100114053": {
+        "type": "shopify://apps/klaviyo-email-marketing-sms/blocks/klaviyo-onsite-embed/2632fe16-c075-4321-a88b-50b567f42507",
+        "disabled": true,
+        "settings": {}
+      },
+      "14041968213898805026": {
+        "type": "shopify://apps/aov-ai-free-gift-bxgy/blocks/app-embed-free-gift/de98edfe-90fa-4145-8a57-1055e0058723",
+        "disabled": true,
+        "settings": {}
+      },
+      "14339172867238703359": {
+        "type": "shopify://apps/yotpo-product-reviews/blocks/reviews_tab/eb7dfd7d-db44-4334-bc49-c893b51b36cf",
+        "disabled": true,
+        "settings": {
+          "product": ""
+        }
+      },
+      "7570552984445421165": {
+        "type": "shopify://apps/yotpo-product-reviews/blocks/settings/eb7dfd7d-db44-4334-bc49-c893b51b36cf",
+        "disabled": true,
+        "settings": {}
+      },
+      "16477348613150133823": {
+        "type": "shopify://apps/unlimited-bundles/blocks/script-app-block/d33d0f48-dee0-42a0-b156-2a5dce91814a",
+        "disabled": true,
+        "settings": {
+          "reload_on_line_item_properties": false,
+          "disable_reload_on_cart_update": false,
+          "disable_cart_attribute_tracker": false,
+          "disable_facebook_events": false,
+          "enable_reload_on_bundle_auto_match": false,
+          "use_h2_header": false,
+          "match_cart_discount_title": false,
+          "enable_checkout_trigger_functions": false
+        }
+      },
+      "1143683040400472741": {
+        "type": "shopify://apps/trustwill-trustoo/blocks/trustoo-review-switch/c8f15077-6475-4e86-ad06-b66038d5ba2c",
+        "disabled": true,
+        "settings": {}
+      },
+      "4379643256173503040": {
+        "type": "shopify://apps/joy-subscription-app/blocks/app-embed/6aa30d9c-ff0b-4f29-a82d-a633d8e04b9a",
+        "disabled": true,
+        "settings": {}
+      },
+      "11532412952436166569": {
+        "type": "shopify://apps/loox-reviews/blocks/loox-inject/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
+        "disabled": true,
+        "settings": {}
       }
     }
   },

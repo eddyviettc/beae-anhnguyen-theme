@@ -1,9 +1,9 @@
-{%- comment -%}
-  Renders the country picker for the localization form
+{% doc %}
+  Renders the country picker for a localization form.
 
-  Accepts:
-    - localPosition: pass in the position in which the form is coming up to create specific IDs
-{%- endcomment -%}
+  @param {string} localPosition - Unique prefix used for disclosure IDs.
+  @param {boolean} [compact] - Shows a compact flag and currency label for the mobile drawer.
+{% enddoc %}
 
 <div class="disclosure">
   <button
@@ -13,10 +13,23 @@
     aria-controls="{{ localPosition }}List"
     aria-describedby="{{ localPosition }}Label"
   >
-    <span>
-      {{- localization.country.currency.iso_code }}
-      {{ localization.country.currency.symbol }} | {{ localization.country.name -}}
-    </span>
+    {%- if compact -%}
+      <span class="localization-form__country-label">
+        <span class="localization-form__country-flag{% if localization.country.iso_code == 'VN' %} localization-form__country-flag--vietnam{% endif %}" aria-hidden="true">
+          {%- if localization.country.iso_code == 'VN' -%}
+            ★
+          {%- else -%}
+            {{ localization.country.iso_code }}
+          {%- endif -%}
+        </span>
+        <span>{{ localization.country.currency.iso_code }} {{ localization.country.currency.symbol }}</span>
+      </span>
+    {%- else -%}
+      <span>
+        {{- localization.country.currency.iso_code }}
+        {{ localization.country.currency.symbol }} | {{ localization.country.name -}}
+      </span>
+    {%- endif -%}
     {% render 'icon-caret' %}
   </button>
   <div class="disclosure__list-wrapper" hidden>
