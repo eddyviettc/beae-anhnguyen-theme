@@ -1,0 +1,62 @@
+{%- liquid
+  assign preset = block.settings.preset | default: 'women'
+  assign fallback_url = routes.all_products_collection_url
+  assign first_menu = block.settings.column_1_menu
+  assign second_menu = block.settings.column_2_menu
+  assign third_menu = block.settings.column_3_menu
+-%}
+
+{%- if first_menu != blank -%}
+  {%- for item in first_menu.links -%}
+    <li>
+      <a href="{{ item.url }}" class="menu-drawer__menu-item list-menu__item link link--text focus-inset">
+        {{ item.title | escape }}
+      </a>
+    </li>
+  {%- endfor -%}
+{%- elsif preset == 'women' or preset == 'men' -%}
+  <li><a href="{{ fallback_url }}" class="menu-drawer__menu-item list-menu__item link link--text focus-inset">Best sellers</a></li>
+  <li><a href="{{ fallback_url }}" class="menu-drawer__menu-item list-menu__item link link--text focus-inset">Trending</a></li>
+  <li><a href="{{ fallback_url }}" class="menu-drawer__menu-item list-menu__item link link--text focus-inset">New arrivals</a></li>
+  <li><a href="{{ fallback_url }}" class="menu-drawer__menu-item list-menu__item link link--text focus-inset">On sale</a></li>
+{%- elsif preset == 'pages' -%}
+  <li><a href="{{ routes.root_url }}pages/about-us" class="menu-drawer__menu-item list-menu__item link link--text focus-inset">About us</a></li>
+  <li><a href="{{ routes.root_url }}pages/contact" class="menu-drawer__menu-item list-menu__item link link--text focus-inset">Contact</a></li>
+  <li><a href="{{ routes.root_url }}pages/faqs" class="menu-drawer__menu-item list-menu__item link link--text focus-inset">Faqs</a></li>
+  <li><a href="{{ routes.root_url }}pages/store-locations" class="menu-drawer__menu-item list-menu__item link link--text focus-inset">Store locations</a></li>
+  <li><a href="{{ routes.root_url }}pages/recently-viewed" class="menu-drawer__menu-item list-menu__item link link--text focus-inset">Recently viewed</a></li>
+  <li><a href="{{ routes.root_url }}blogs/news" class="menu-drawer__menu-item list-menu__item link link--text focus-inset">Our journal</a></li>
+{%- endif -%}
+
+{%- if second_menu != blank -%}
+  {%- for item in second_menu.links -%}
+    <li>
+      <a href="{{ item.url }}" class="menu-drawer__menu-item list-menu__item link link--text focus-inset">
+        {{ item.title | escape }}
+      </a>
+    </li>
+  {%- endfor -%}
+{%- elsif preset == 'women' or preset == 'men' -%}
+  <li><a href="{{ fallback_url }}" class="menu-drawer__menu-item list-menu__item link link--text focus-inset">Hiking</a></li>
+  <li><a href="{{ fallback_url }}" class="menu-drawer__menu-item list-menu__item link link--text focus-inset">Running</a></li>
+  <li><a href="{{ fallback_url }}" class="menu-drawer__menu-item list-menu__item link link--text focus-inset">Training</a></li>
+  <li><a href="{{ fallback_url }}" class="menu-drawer__menu-item list-menu__item link link--text focus-inset">Tennis</a></li>
+  <li><a href="{{ fallback_url }}" class="menu-drawer__menu-item list-menu__item link link--text focus-inset">Lifestyle</a></li>
+  <li><a href="{{ fallback_url }}" class="menu-drawer__menu-item list-menu__item link link--text focus-inset">Shop all</a></li>
+{%- endif -%}
+
+{%- if third_menu != blank -%}
+  {%- for item in third_menu.links -%}
+    <li>
+      <a href="{{ item.url }}" class="menu-drawer__menu-item list-menu__item link link--text focus-inset">
+        {{ item.title | escape }}
+      </a>
+    </li>
+  {%- endfor -%}
+{%- elsif preset == 'women' or preset == 'men' -%}
+  <li><a href="{{ fallback_url }}" class="menu-drawer__menu-item list-menu__item link link--text focus-inset">Cushioned</a></li>
+  <li><a href="{{ fallback_url }}" class="menu-drawer__menu-item list-menu__item link link--text focus-inset">Waterproof</a></li>
+  <li><a href="{{ fallback_url }}" class="menu-drawer__menu-item list-menu__item link link--text focus-inset">Water-resistant</a></li>
+  <li><a href="{{ fallback_url }}" class="menu-drawer__menu-item list-menu__item link link--text focus-inset">Breathable</a></li>
+  <li><a href="{{ fallback_url }}" class="menu-drawer__menu-item list-menu__item link link--text focus-inset">Windproof</a></li>
+{%- endif -%}

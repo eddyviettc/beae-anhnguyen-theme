@@ -1231,15 +1231,15 @@
     .menu-drawer__menu-item,
     .menu-drawer__menu-item--has-children {
       min-height: 5.2rem;
-      padding: 0;
+      padding: 0 1.6rem;
       color: #202326;
       background: transparent;
       font-family: var(--mobile-drawer-font-family);
-      font-size: 1.7rem;
+      font-size: 1.4rem;
       font-style: normal;
-      font-weight: 500;
-      letter-spacing: -0.01em;
-      line-height: 1.15;
+      font-weight: 400;
+      letter-spacing: 0;
+      line-height: 1.4;
     }
 
     .menu-drawer__menu-item:hover,
@@ -1262,7 +1262,7 @@
     .menu-drawer__menu-label,
     .menu-drawer__menu-item {
       min-height: 5.2rem;
-      padding: 0;
+      padding: 0 1.6rem;
     }
 
     .menu-drawer__menu-link {
@@ -1320,8 +1320,8 @@
 
     .menu-drawer__submenu-toggle {
       display: grid;
-      flex: 0 0 4rem;
-      width: 4rem;
+      flex: 0 0 3.6rem;
+      width: 3.6rem;
       min-height: 5.2rem;
       padding: 0;
       place-items: center;
@@ -1330,8 +1330,8 @@
 
     .menu-drawer__chevron {
       display: block;
-      width: 0.8rem;
-      height: 1.4rem;
+      width: 0.6rem;
+      height: 1rem;
       overflow: visible;
     }
 
@@ -1909,7 +1909,7 @@ sticky-header[data-responsive-header='v2'] .helix-mega-menu__column--strong .hel
 
 <sticky-header data-responsive-header="v2" data-sticky-type="{{ section.settings.sticky_header_type }}" data-page-type="{{ request.page_type }}" class="header-wrapper color-{{ section.settings.color_scheme }} gradient{% if section.settings.show_line_separator %} header-wrapper--border-bottom{% endif %}" data-header-transparent="{{ section.settings.transparent_header }}" data-header-transparent-scheme="{{ section.settings.transparent_color_scheme }}" data-header-sticky-scheme="{{ section.settings.sticky_color_scheme }}">
   <header class="header header--{{ section.settings.logo_position }} header--mobile-{{ section.settings.mobile_logo_position }} page-width{% if section.settings.menu_type_desktop == 'drawer' %} drawer-menu{% endif %}{% if section.settings.menu != blank %} header--has-menu{% endif %}{% if has_app_block %} header--has-app{% endif %}">
-    {%- if section.settings.menu != blank -%}
+    {%- if section.settings.menu != blank or has_desktop_menu_blocks -%}
       <header-drawer data-breakpoint="mobile">
         <details id="Details-menu-drawer-container" class="menu-drawer-container" data-header-main-drawer>
           <summary class="header__icon header__icon--menu header__icon--summary link focus-inset" aria-label="{{ 'sections.header.menu' | t }}" data-header-menu-toggle>
@@ -1933,7 +1933,11 @@ sticky-header[data-responsive-header='v2'] .helix-mega-menu__column--strong .hel
               </div>
               <div class="menu-drawer__navigation-container">
                 <nav class="menu-drawer__navigation">
-                  {% render 'header-menu-drawer', links: section.settings.menu.links, section_id: section.id, level: 0 %}
+                  {%- if has_desktop_menu_blocks -%}
+                    {% render 'header-block-menu-drawer', blocks: section.blocks, section_id: section.id %}
+                  {%- else -%}
+                    {% render 'header-menu-drawer', links: section.settings.menu.links, section_id: section.id, level: 0 %}
+                  {%- endif -%}
                 </nav>
                 <div class="menu-drawer__utility-links">
                   {%- if section.settings.enable_country_selector or section.settings.enable_language_selector -%}
