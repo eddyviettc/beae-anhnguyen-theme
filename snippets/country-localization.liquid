@@ -15,19 +15,21 @@
   >
     {%- if compact -%}
       <span class="localization-form__country-label">
-        <span class="localization-form__country-flag{% if localization.country.iso_code == 'VN' %} localization-form__country-flag--vietnam{% endif %}" aria-hidden="true">
-          {%- if localization.country.iso_code == 'VN' -%}
-            ★
-          {%- else -%}
-            {{ localization.country.iso_code }}
-          {%- endif -%}
-        </span>
+        <span
+          class="localization-form__country-flag{% if localization.country.iso_code == 'VN' %} localization-form__country-flag--vietnam{% endif %}"
+          style="--background-image: url(https://cdn.shopify.com/static/images/flags/{{ localization.country.iso_code | downcase }}.svg?width=20);"
+          aria-hidden="true"
+        ></span>
         <span>{{ localization.country.currency.iso_code }} {{ localization.country.currency.symbol }}</span>
       </span>
     {%- else -%}
-      <span>
-        {{- localization.country.currency.iso_code }}
-        {{ localization.country.currency.symbol }} | {{ localization.country.name -}}
+      <span class="localization-form__country-label">
+        <span
+          class="localization-form__country-flag{% if localization.country.iso_code == 'VN' %} localization-form__country-flag--vietnam{% endif %}"
+          style="--background-image: url(https://cdn.shopify.com/static/images/flags/{{ localization.country.iso_code | downcase }}.svg?width=20);"
+          aria-hidden="true"
+        ></span>
+        <span>{{ localization.country.currency.iso_code }} {{ localization.country.currency.symbol }}</span>
       </span>
     {%- endif -%}
     {% render 'icon-caret' %}
