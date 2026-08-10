@@ -224,6 +224,399 @@
     .header__inline-menu {
       display: block;
     }
+
+    sticky-header[data-responsive-header='v2'] .helix-desktop-nav {
+      align-self: stretch;
+      height: 100%;
+      font-family: {{ mobile_drawer_font.family }}, {{ mobile_drawer_font.fallback_families }};
+    }
+
+    sticky-header[data-responsive-header='v2'] .helix-desktop-nav > .list-menu--inline {
+      align-items: stretch;
+      height: 100%;
+      column-gap: clamp(1.8rem, 2.1vw, 4.2rem);
+    }
+
+    sticky-header[data-responsive-header='v2'] .helix-desktop-nav > .list-menu--inline > li,
+    sticky-header[data-responsive-header='v2'] .helix-desktop-nav header-menu,
+    sticky-header[data-responsive-header='v2'] .helix-desktop-nav details {
+      display: flex;
+      align-items: stretch;
+      height: 100%;
+    }
+
+    sticky-header[data-responsive-header='v2'] .helix-desktop-nav details > summary,
+    sticky-header[data-responsive-header='v2'] .helix-desktop-nav__link {
+      position: relative;
+      display: flex;
+      align-items: center;
+      min-height: 7.2rem;
+      padding: 0;
+      color: inherit;
+      font-size: clamp(1.35rem, 0.84vw, 1.6rem);
+      font-weight: 500;
+      line-height: 1;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    sticky-header[data-responsive-header='v2'] .helix-desktop-nav details > summary::-webkit-details-marker {
+      display: none;
+    }
+
+    sticky-header[data-responsive-header='v2'] .helix-desktop-nav details > summary::after,
+    sticky-header[data-responsive-header='v2'] .helix-desktop-nav__link::after {
+      position: absolute;
+      right: 0;
+      bottom: 1.5rem;
+      left: 0;
+      height: 0.1rem;
+      background: currentColor;
+      content: '';
+      opacity: 0;
+      transform: scaleX(0.35);
+      transform-origin: center;
+      transition: opacity 180ms ease, transform 260ms cubic-bezier(.22, 1, .36, 1);
+    }
+
+    sticky-header[data-responsive-header='v2'] .helix-desktop-nav details[open] > summary::after,
+    sticky-header[data-responsive-header='v2'] .helix-desktop-nav__link:hover::after,
+    sticky-header[data-responsive-header='v2'] .helix-desktop-nav__link:focus-visible::after {
+      opacity: 1;
+      transform: scaleX(1);
+    }
+
+    sticky-header[data-responsive-header='v2'] .helix-desktop-nav .header__menu-label a {
+      color: inherit;
+      font: inherit;
+      text-decoration: none;
+    }
+
+    sticky-header[data-responsive-header='v2'] .helix-desktop-nav .icon-caret {
+      position: static;
+      width: 0.9rem;
+      height: 0.6rem;
+      margin-left: 0.8rem;
+      transition: transform 260ms cubic-bezier(.22, 1, .36, 1);
+    }
+
+    sticky-header[data-responsive-header='v2'] .helix-desktop-nav details[open] > summary .icon-caret {
+      transform: rotate(180deg);
+    }
+
+    .helix-mega-menu__content {
+      position: fixed;
+      top: var(--header-mega-top, 7.2rem);
+      right: 0;
+      left: 0;
+      z-index: 4;
+      width: 100vw;
+      max-height: calc(100svh - var(--header-mega-top, 7.2rem) - 2rem);
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      overflow-y: auto;
+      color: #202326;
+      background: #fff;
+      border: 0;
+      border-top: 0.1rem solid rgba(32, 35, 38, 0.08);
+      border-radius: 0 0 1.6rem 1.6rem;
+      box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.08);
+      opacity: 0;
+      pointer-events: none;
+      visibility: hidden;
+      transform: translateY(-1rem);
+      transition: opacity 220ms ease, transform 360ms cubic-bezier(.22, 1, .36, 1), visibility 220ms ease;
+    }
+
+    .helix-mega-menu[open] > .helix-mega-menu__content {
+      opacity: 1;
+      pointer-events: auto;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .helix-mega-menu__inner {
+      display: grid;
+      grid-template-columns: minmax(44rem, 0.9fr) minmax(52rem, 1.35fr);
+      gap: clamp(4rem, 6vw, 12rem);
+      min-height: clamp(43rem, 48vh, 56rem);
+      padding: clamp(4rem, 5vw, 7.2rem) clamp(4rem, 4.2vw, 8rem) clamp(4.8rem, 5vw, 7.2rem);
+    }
+
+    .helix-mega-menu__inner:has(.helix-mega-menu__columns:only-child) {
+      grid-template-columns: minmax(44rem, 68rem);
+    }
+
+    .helix-mega-menu__columns {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: clamp(3.2rem, 4vw, 8rem);
+      align-content: start;
+    }
+
+    .helix-mega-menu__column-heading {
+      margin: 0 0 2rem;
+      color: #202326;
+      font-size: clamp(1.45rem, 0.95vw, 1.8rem);
+      font-weight: 600;
+      line-height: 1.25;
+    }
+
+    .helix-mega-menu__links {
+      display: grid;
+      gap: 1.5rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    .helix-mega-menu__link {
+      display: inline-flex;
+      width: fit-content;
+      color: #313438;
+      font-size: clamp(1.35rem, 0.88vw, 1.65rem);
+      font-weight: 400;
+      line-height: 1.35;
+      text-decoration: none;
+      transition: color 160ms ease, transform 200ms ease;
+    }
+
+    .helix-mega-menu__column--strong .helix-mega-menu__link {
+      font-weight: 650;
+    }
+
+    .helix-mega-menu__link:hover,
+    .helix-mega-menu__link:focus-visible {
+      color: #000;
+      text-decoration: underline;
+      text-underline-offset: 0.35rem;
+      transform: translateX(0.2rem);
+    }
+
+    .helix-mega-promos {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: clamp(1.6rem, 1.4vw, 2.8rem);
+      align-content: start;
+    }
+
+    .helix-mega-promo__image-link {
+      display: block;
+      height: clamp(20rem, 24vw, 31rem);
+      overflow: hidden;
+      background: #f3f4f4;
+      border-radius: 1.8rem;
+    }
+
+    .helix-mega-promo__image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 600ms cubic-bezier(.22, 1, .36, 1);
+    }
+
+    .helix-mega-promo:hover .helix-mega-promo__image {
+      transform: scale(1.035);
+    }
+
+    .helix-mega-promo h3 {
+      margin: 1.6rem 0 1rem;
+      font-size: clamp(1.55rem, 1vw, 1.9rem);
+      font-weight: 650;
+      line-height: 1.25;
+    }
+
+    .helix-mega-promo h3 a,
+    .helix-mega-promo__cta {
+      color: #202326;
+      text-decoration: none;
+    }
+
+    .helix-mega-promo__cta {
+      display: inline-flex;
+      gap: 1.1rem;
+      align-items: center;
+      font-size: clamp(1.35rem, 0.85vw, 1.6rem);
+    }
+
+    .helix-mega-promo__cta span {
+      transition: transform 180ms ease;
+    }
+
+    .helix-mega-promo__cta:hover span {
+      transform: translate(0.2rem, -0.2rem);
+    }
+
+    .helix-mega-products {
+      min-width: 0;
+    }
+
+    .helix-mega-products__header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 2.4rem;
+    }
+
+    .helix-mega-products__header h3 {
+      margin: 0;
+      font-size: clamp(1.7rem, 1.1vw, 2.1rem);
+      font-weight: 650;
+    }
+
+    .helix-mega-products__arrows {
+      display: flex;
+      gap: 0.6rem;
+    }
+
+    .helix-mega-products__arrows button {
+      display: grid;
+      width: 3.2rem;
+      height: 3.2rem;
+      padding: 0;
+      place-items: center;
+      color: #202326;
+      background: transparent;
+      border: 0;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    .helix-mega-products__arrows svg {
+      width: 2rem;
+      height: 2rem;
+    }
+
+    .helix-mega-products__track {
+      display: grid;
+      grid-auto-columns: minmax(21rem, 1fr);
+      grid-auto-flow: column;
+      gap: 1.6rem;
+      padding-bottom: 0.8rem;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      scrollbar-width: none;
+      scroll-snap-type: x mandatory;
+    }
+
+    .helix-mega-products__track::-webkit-scrollbar {
+      display: none;
+    }
+
+    .helix-mega-product {
+      min-width: 0;
+      scroll-snap-align: start;
+    }
+
+    .helix-mega-product__image-link {
+      position: relative;
+      display: grid;
+      height: clamp(20rem, 21vw, 30rem);
+      padding: 1.6rem;
+      place-items: center;
+      overflow: hidden;
+      background: #f6f6f6;
+      border-radius: 1.8rem;
+    }
+
+    .helix-mega-product__image {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      transition: transform 450ms cubic-bezier(.22, 1, .36, 1);
+    }
+
+    .helix-mega-product:hover .helix-mega-product__image {
+      transform: scale(1.035);
+    }
+
+    .helix-mega-product__badge {
+      position: absolute;
+      top: 1.4rem;
+      left: 1.4rem;
+      z-index: 1;
+      padding: 0.5rem 1rem;
+      color: #fff;
+      font-size: 1.2rem;
+      line-height: 1;
+      background: #ff8589;
+      border-radius: 99rem;
+    }
+
+    .helix-mega-product__title {
+      display: block;
+      margin-top: 1.3rem;
+      overflow: hidden;
+      color: #3d4043;
+      font-size: clamp(1.3rem, 0.8vw, 1.55rem);
+      text-decoration: none;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .helix-mega-product__price {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-top: 0.5rem;
+      color: #ff8589;
+      font-size: 1.35rem;
+    }
+
+    .helix-mega-product__price s {
+      color: #9a9da0;
+    }
+
+    .header-mega-overlay {
+      position: fixed;
+      top: var(--header-mega-top, 7.2rem);
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: -1;
+      display: block;
+      width: 100%;
+      padding: 0;
+      background: rgba(18, 24, 27, 0.62);
+      border: 0;
+      cursor: default;
+      opacity: 0;
+      pointer-events: none;
+      visibility: hidden;
+      backdrop-filter: blur(0.8rem) saturate(0.78);
+      -webkit-backdrop-filter: blur(0.8rem) saturate(0.78);
+      transition: opacity 260ms ease, visibility 260ms ease;
+    }
+
+    .section-header.mega-menu-open .header-mega-overlay {
+      opacity: 1;
+      pointer-events: auto;
+      visibility: visible;
+    }
+
+    .section-header.mega-menu-open .header-wrapper {
+      color: #202326 !important;
+      background: #fff !important;
+      border-color: rgba(32, 35, 38, 0.08) !important;
+      box-shadow: none !important;
+    }
+
+    .section-header.mega-menu-open .header-wrapper .header__menu-item,
+    .section-header.mega-menu-open .header-wrapper .header__icon,
+    .section-header.mega-menu-open .header-wrapper .header__heading-link,
+    .section-header.mega-menu-open .header-wrapper .header__heading-link .h2,
+    .section-header.mega-menu-open .header-wrapper .localization-form__select {
+      color: #202326 !important;
+    }
+
+    .section-header.mega-menu-open .header__heading-logo--transparent {
+      display: none !important;
+    }
+
+    .section-header.mega-menu-open .header__heading-logo--default {
+      display: inline-block !important;
+      filter: none !important;
+    }
   }
 
   @media screen and (max-width: 990px) {
@@ -820,8 +1213,17 @@
     .menu-drawer__submenu,
     .section-header,
     .header-wrapper,
-    .header__heading-logo-wrapper {
+    .header__heading-logo-wrapper,
+    .helix-mega-menu__content,
+    .helix-desktop-nav .icon-caret,
+    .helix-mega-promo__image,
+    .helix-mega-product__image,
+    .header-mega-overlay {
       transition-duration: 0.01ms !important;
+    }
+
+    .helix-mega-products__track {
+      scroll-behavior: auto !important;
     }
   }
 </style>
@@ -1117,6 +1519,8 @@
   for block in section.blocks
     if block.type == '@app'
       assign has_app_block = true
+    elsif block.type == 'mega_menu' or block.type == 'desktop_link'
+      assign has_desktop_menu_blocks = true
     endif
   endfor
 -%}
@@ -1373,7 +1777,42 @@
       {%- endif -%}
     {%- endif -%}
 
-    {%- if section.settings.menu != blank -%}
+    {%- if has_desktop_menu_blocks -%}
+      <nav class="header__inline-menu helix-desktop-nav" aria-label="{{ 'sections.header.menu' | t }}">
+        <ul class="list-menu list-menu--inline" role="list">
+          {%- for block in section.blocks -%}
+            {%- case block.type -%}
+              {%- when 'mega_menu' -%}
+                {%- if block.settings.title != blank -%}
+                  <li {{ block.shopify_attributes }}>
+                    <header-menu class="helix-header-menu">
+                      <details id="Details-HeaderMegaBlock-{{ block.id }}" class="mega-menu helix-mega-menu">
+                        <summary class="header__menu-item list-menu__item link focus-inset" aria-controls="MegaMenu-Content-{{ block.id }}">
+                          <span class="header__menu-label">
+                            <a href="{{ block.settings.link | default: routes.all_products_collection_url }}">{{ block.settings.title | escape }}</a>
+                          </span>
+                          {% render 'icon-caret' %}
+                        </summary>
+                        <div id="MegaMenu-Content-{{ block.id }}" class="helix-mega-menu__content motion-reduce" tabindex="-1">
+                          {% render 'header-mega-menu-panel', block: block %}
+                        </div>
+                      </details>
+                    </header-menu>
+                  </li>
+                {%- endif -%}
+              {%- when 'desktop_link' -%}
+                {%- if block.settings.title != blank -%}
+                  <li {{ block.shopify_attributes }}>
+                    <a href="{{ block.settings.link | default: routes.all_products_collection_url }}" class="helix-desktop-nav__link link focus-inset">
+                      {{ block.settings.title | escape }}
+                    </a>
+                  </li>
+                {%- endif -%}
+            {%- endcase -%}
+          {%- endfor -%}
+        </ul>
+      </nav>
+    {%- elsif section.settings.menu != blank -%}
       {%- if section.settings.menu_type_desktop == 'dropdown' -%}
         <nav class="header__inline-menu">
           <ul class="list-menu list-menu--inline" role="list">
@@ -1634,6 +2073,10 @@
   </header>
 </sticky-header>
 
+{%- if has_desktop_menu_blocks -%}
+  <button type="button" class="header-mega-overlay" data-header-mega-overlay aria-label="{{ 'accessibility.close' | t }}" tabindex="-1"></button>
+{%- endif -%}
+
 {%- if settings.cart_type == "notification" -%}
   {%- render 'cart-notification', color_scheme: section.settings.color_scheme, desktop_menu_type: section.settings.menu_type_desktop -%}
 {%- endif -%}
@@ -1819,34 +2262,91 @@
 
   if (!customElements.get('sticky-header')) customElements.define('sticky-header', StickyHeader);
 
+  const syncDesktopMegaState = (section) => {
+    if (!section) return;
+
+    const openMenu = section.querySelector('.helix-mega-menu[open]');
+    section.classList.toggle('mega-menu-open', Boolean(openMenu));
+
+    if (openMenu) {
+      const headerWrapper = section.querySelector('sticky-header');
+      const headerBottom = headerWrapper?.getBoundingClientRect().bottom || 0;
+      section.style.setProperty('--header-mega-top', `${Math.max(0, Math.round(headerBottom))}px`);
+    }
+  };
+
   const enhanceHeaderMenus = () => {
     document.querySelectorAll('header-menu > details').forEach((details) => {
       if (details.dataset.hoverEnhanced === 'true') return;
       details.dataset.hoverEnhanced = 'true';
       const menu = details.closest('header-menu');
       const summary = details.querySelector(':scope > summary');
+      const section = details.closest('.section-header');
 
       const open = () => {
         if (!window.matchMedia('(min-width: 991px)').matches) return;
+        section?.querySelectorAll('header-menu > details[open]').forEach((openDetails) => {
+          if (openDetails === details) return;
+          openDetails.removeAttribute('open');
+          openDetails.querySelector(':scope > summary')?.setAttribute('aria-expanded', 'false');
+        });
         details.setAttribute('open', '');
         summary?.setAttribute('aria-expanded', 'true');
+        syncDesktopMegaState(section);
       };
 
       const close = () => {
         if (details.matches(':hover') || details.contains(document.activeElement)) return;
         details.removeAttribute('open');
         summary?.setAttribute('aria-expanded', 'false');
+        syncDesktopMegaState(section);
       };
 
       menu?.addEventListener('mouseenter', open);
-      menu?.addEventListener('mouseleave', close);
+      menu?.addEventListener('mouseleave', () => window.setTimeout(close, 40));
       menu?.addEventListener('focusin', open);
       menu?.addEventListener('focusout', () => window.setTimeout(close, 0));
+      details.addEventListener('toggle', () => syncDesktopMegaState(section));
+    });
+
+    document.querySelectorAll('[data-header-mega-overlay]').forEach((overlay) => {
+      if (overlay.dataset.megaOverlayEnhanced === 'true') return;
+      overlay.dataset.megaOverlayEnhanced = 'true';
+      overlay.addEventListener('click', () => {
+        const section = overlay.closest('.section-header');
+        section?.querySelectorAll('header-menu > details[open]').forEach((details) => {
+          details.removeAttribute('open');
+          details.querySelector(':scope > summary')?.setAttribute('aria-expanded', 'false');
+        });
+        syncDesktopMegaState(section);
+      });
+    });
+
+    document.querySelectorAll('[data-mega-products-track]').forEach((track) => {
+      if (track.dataset.sliderEnhanced === 'true') return;
+      track.dataset.sliderEnhanced = 'true';
+      const wrapper = track.closest('.helix-mega-products');
+      const scrollTrack = (direction) => {
+        const card = track.querySelector('.helix-mega-product');
+        const distance = card ? card.getBoundingClientRect().width + 16 : track.clientWidth * 0.8;
+        track.scrollBy({ left: direction * distance, behavior: 'smooth' });
+      };
+      wrapper?.querySelector('[data-mega-products-prev]')?.addEventListener('click', () => scrollTrack(-1));
+      wrapper?.querySelector('[data-mega-products-next]')?.addEventListener('click', () => scrollTrack(1));
     });
   };
 
   enhanceHeaderMenus();
   document.addEventListener('shopify:section:load', enhanceHeaderMenus);
+
+  if (!window.__helixMegaPositionEnhanced) {
+    window.__helixMegaPositionEnhanced = true;
+    const syncOpenMegaPositions = () => {
+      document.querySelectorAll('.section-header.mega-menu-open').forEach(syncDesktopMegaState);
+    };
+    window.addEventListener('resize', syncOpenMegaPositions);
+    window.addEventListener('scroll', syncOpenMegaPositions, { passive: true });
+  }
 
   const enhanceHeaderDrawerLinks = () => {
     document.querySelectorAll('header-drawer .menu-drawer__menu-link').forEach((link) => {
@@ -1965,7 +2465,7 @@
 {
   "name": "t:sections.responsive_header.name",
   "class": "section-header",
-  "max_blocks": 3,
+  "max_blocks": 8,
   "settings": [
     {
       "type": "select",
@@ -2277,6 +2777,201 @@
   "blocks": [
     {
       "type": "@app"
+    },
+    {
+      "type": "mega_menu",
+      "name": "Desktop mega menu",
+      "limit": 4,
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Navigation label",
+          "default": "Women"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Navigation link"
+        },
+        {
+          "type": "select",
+          "id": "preset",
+          "label": "Fallback submenu content",
+          "options": [
+            {
+              "value": "women",
+              "label": "Women"
+            },
+            {
+              "value": "men",
+              "label": "Men"
+            },
+            {
+              "value": "pages",
+              "label": "Pages"
+            },
+            {
+              "value": "custom",
+              "label": "Custom menus only"
+            }
+          ],
+          "default": "women",
+          "info": "Used when a column menu below has not been selected."
+        },
+        {
+          "type": "header",
+          "content": "Submenu columns"
+        },
+        {
+          "type": "text",
+          "id": "column_1_heading",
+          "label": "Column 1 heading",
+          "default": "Top picks"
+        },
+        {
+          "type": "link_list",
+          "id": "column_1_menu",
+          "label": "Column 1 menu"
+        },
+        {
+          "type": "checkbox",
+          "id": "column_1_bold_links",
+          "label": "Bold column 1 links",
+          "default": true
+        },
+        {
+          "type": "text",
+          "id": "column_2_heading",
+          "label": "Column 2 heading",
+          "default": "By activity"
+        },
+        {
+          "type": "link_list",
+          "id": "column_2_menu",
+          "label": "Column 2 menu"
+        },
+        {
+          "type": "text",
+          "id": "column_3_heading",
+          "label": "Column 3 heading",
+          "default": "By feature"
+        },
+        {
+          "type": "link_list",
+          "id": "column_3_menu",
+          "label": "Column 3 menu"
+        },
+        {
+          "type": "header",
+          "content": "Featured area"
+        },
+        {
+          "type": "select",
+          "id": "promo_layout",
+          "label": "Featured layout",
+          "options": [
+            {
+              "value": "cards",
+              "label": "Two image cards"
+            },
+            {
+              "value": "products",
+              "label": "Collection products"
+            },
+            {
+              "value": "none",
+              "label": "No featured area"
+            }
+          ],
+          "default": "cards"
+        },
+        {
+          "type": "collection",
+          "id": "promo_collection_1",
+          "label": "Promo 1 collection"
+        },
+        {
+          "type": "image_picker",
+          "id": "promo_1_image",
+          "label": "Promo 1 image",
+          "info": "Overrides the selected collection image."
+        },
+        {
+          "type": "text",
+          "id": "promo_1_title",
+          "label": "Promo 1 title",
+          "default": "Women's sale"
+        },
+        {
+          "type": "text",
+          "id": "promo_1_label",
+          "label": "Promo 1 link label",
+          "default": "Shop now"
+        },
+        {
+          "type": "url",
+          "id": "promo_1_link",
+          "label": "Promo 1 link"
+        },
+        {
+          "type": "collection",
+          "id": "promo_collection_2",
+          "label": "Promo 2 collection"
+        },
+        {
+          "type": "image_picker",
+          "id": "promo_2_image",
+          "label": "Promo 2 image",
+          "info": "Overrides the selected collection image."
+        },
+        {
+          "type": "text",
+          "id": "promo_2_title",
+          "label": "Promo 2 title",
+          "default": "Women's favorites"
+        },
+        {
+          "type": "text",
+          "id": "promo_2_label",
+          "label": "Promo 2 link label",
+          "default": "Shop now"
+        },
+        {
+          "type": "url",
+          "id": "promo_2_link",
+          "label": "Promo 2 link"
+        },
+        {
+          "type": "text",
+          "id": "featured_heading",
+          "label": "Product area heading",
+          "default": "Best deals 🔥"
+        },
+        {
+          "type": "collection",
+          "id": "featured_collection",
+          "label": "Featured product collection"
+        }
+      ]
+    },
+    {
+      "type": "desktop_link",
+      "name": "Desktop link",
+      "limit": 4,
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Navigation label",
+          "default": "Find your shoes"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Navigation link"
+        }
+      ]
     }
   ]
 }
