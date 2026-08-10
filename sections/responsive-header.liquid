@@ -476,6 +476,60 @@
       transform: translateX(0.2rem);
     }
 
+    /* Menus without a featured/product area use a compact dropdown anchored to their trigger. */
+    .helix-mega-menu--compact {
+      position: relative;
+    }
+
+    .helix-mega-menu--compact > .helix-mega-menu__content {
+      top: calc(100% - 0.1rem);
+      right: auto;
+      left: 0;
+      width: min(31rem, calc(100vw - 2rem));
+      max-width: calc(100vw - 2rem);
+      max-height: calc(100svh - 8rem);
+      background: #fff;
+      border-radius: 1.8rem;
+      box-shadow: 0 1.4rem 3.2rem rgba(20, 24, 27, 0.14);
+    }
+
+    .helix-mega-menu--compact .helix-mega-menu__inner {
+      display: block;
+      min-height: 0;
+      padding: 2.2rem 2.6rem 2.8rem;
+    }
+
+    .helix-mega-menu--compact .helix-mega-menu__columns {
+      display: block;
+    }
+
+    .helix-mega-menu--compact .helix-mega-menu__column + .helix-mega-menu__column {
+      margin-top: 2rem;
+    }
+
+    .helix-mega-menu--compact .helix-mega-menu__column-heading {
+      margin-bottom: 1.6rem;
+      font-size: 1.4rem;
+    }
+
+    .helix-mega-menu--compact .helix-mega-menu__links {
+      gap: 1.45rem;
+    }
+
+    .helix-mega-menu--compact .helix-mega-menu__link {
+      font-size: 1.55rem;
+    }
+
+    .helix-mega-menu--compact .helix-mega-promos,
+    .helix-mega-menu--compact .helix-mega-products {
+      display: none;
+    }
+
+    .section-header.mega-menu-open.mega-menu-compact sticky-header[data-responsive-header='v2']::before,
+    .section-header.mega-menu-closing.mega-menu-compact sticky-header[data-responsive-header='v2']::before {
+      height: 0;
+    }
+
     .helix-mega-promos {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -716,6 +770,21 @@
     .section-header.mega-menu-closing .header__heading-logo--default {
       display: inline-block !important;
       filter: none !important;
+    }
+
+    .section-header.mega-menu-open.mega-menu-compact .header-wrapper,
+    .section-header.mega-menu-closing.mega-menu-compact .header-wrapper {
+      color: #202326 !important;
+      background: #fff !important;
+      border-color: rgba(32, 35, 38, 0.1) !important;
+      box-shadow: none !important;
+    }
+
+    .section-header.mega-menu-open.mega-menu-compact .header-mega-overlay,
+    .section-header.mega-menu-closing.mega-menu-compact .header-mega-overlay {
+      opacity: 0;
+      pointer-events: none;
+      visibility: hidden;
     }
   }
 
@@ -1896,7 +1965,7 @@
                 {%- if block.settings.title != blank -%}
                   <li {{ block.shopify_attributes }}>
                     <header-menu class="helix-header-menu">
-                      <details id="Details-HeaderMegaBlock-{{ block.id }}" class="mega-menu helix-mega-menu">
+                      <details id="Details-HeaderMegaBlock-{{ block.id }}" class="mega-menu helix-mega-menu{% if block.settings.promo_layout == 'none' or block.settings.preset == 'pages' %} helix-mega-menu--compact{% endif %}">
                         <summary class="header__menu-item list-menu__item link focus-inset" aria-controls="MegaMenu-Content-{{ block.id }}">
                           <span class="header__menu-label">{{ block.settings.title | escape }}</span>
                           {% render 'icon-caret' %}
@@ -2397,6 +2466,8 @@
       ? preferredMenu
       : section.querySelector('.helix-mega-menu[open]:not(.is-closing)');
     const closingMenu = section.querySelector('.helix-mega-menu[open].is-closing');
+    const compactMenu = openMenu || closingMenu;
+    section.classList.toggle('mega-menu-compact', Boolean(compactMenu?.classList.contains('helix-mega-menu--compact')));
 
     if (openMenu) {
       const panel = openMenu.querySelector(':scope > .helix-mega-menu__content');
@@ -2406,7 +2477,11 @@
       const targetHeight = Math.min(Math.ceil(naturalHeight), Math.floor(availableHeight));
 
       section.style.setProperty('--header-mega-height', `${targetHeight}px`);
-      section.style.setProperty('--header-mega-canvas-height', `${headerHeight + targetHeight}px`);
+      if (openMenu.classList.contains('helix-mega-menu--compact')) {
+        section.style.removeProperty('--header-mega-canvas-height');
+      } else {
+        section.style.setProperty('--header-mega-canvas-height', `${headerHeight + targetHeight}px`);
+      }
       section.classList.add('mega-menu-open');
       section.classList.remove('mega-menu-closing');
     } else {
